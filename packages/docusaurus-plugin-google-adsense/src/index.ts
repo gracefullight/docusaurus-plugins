@@ -11,7 +11,7 @@ export interface PluginOptions {
 
 export type Options = Partial<PluginOptions>;
 
-const pluginGoogleAdSenseOptionsSchema = Joi.object({
+const pluginOptionsSchema = Joi.object({
   adClient: Joi.string().required(),
 });
 
@@ -49,6 +49,6 @@ export function validateOptions({
   options,
   validate,
 }: OptionValidationContext<Options, PluginOptions>) {
-  const validatedOptions = validate(pluginGoogleAdSenseOptionsSchema, options);
+  const validatedOptions = validate(pluginOptionsSchema, options);
   return validatedOptions;
 }

@@ -12,7 +12,7 @@ export interface PluginOptions {
 
 export type Options = Partial<PluginOptions>;
 
-const pluginNaverAnalyticsOptionsSchema = Joi.object({
+const pluginOptionsSchema = Joi.object({
   siteId: Joi.string().required(),
 });
 
@@ -57,6 +57,6 @@ export function validateOptions({
   options,
   validate,
 }: OptionValidationContext<Options, PluginOptions>) {
-  const validatedOptions = validate(pluginNaverAnalyticsOptionsSchema, options);
+  const validatedOptions = validate(pluginOptionsSchema, options);
   return validatedOptions;
 }

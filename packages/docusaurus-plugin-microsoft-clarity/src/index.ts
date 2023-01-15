@@ -11,7 +11,7 @@ export interface PluginOptions {
 
 export type Options = Partial<PluginOptions>;
 
-const pluginMicrosoftClarityOptionsSchema = Joi.object({
+const pluginOptionsSchema = Joi.object({
   projectId: Joi.string().required(),
 });
 
@@ -49,9 +49,6 @@ export function validateOptions({
   options,
   validate,
 }: OptionValidationContext<Options, PluginOptions>) {
-  const validatedOptions = validate(
-    pluginMicrosoftClarityOptionsSchema,
-    options
-  );
+  const validatedOptions = validate(pluginOptionsSchema, options);
   return validatedOptions;
 }
