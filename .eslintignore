@@ -1,1 +1,4 @@
 .yarn
+
+packages/*/dist/
+packages/*/dist/*
