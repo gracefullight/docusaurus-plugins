@@ -1,6 +1,11 @@
 {
-  "name": "docu-plugins",
+  "name": "@gracefullight/docusaurus-plugins",
   "version": "0.0.0",
+  "author": {
+    "name": "gracefullight",
+    "email": "gracefullight.dev@gmail.com"
+  },
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "private": true,
   "workspaces": [
     "apps/*",

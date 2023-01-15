@@ -1965,6 +1965,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@gracefullight/docusaurus-plugins@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@gracefullight/docusaurus-plugins@workspace:."
+  dependencies:
+    "@changesets/cli": ^2.26.0
+    "@commitlint/cli": ^17.4.2
+    "@commitlint/config-conventional": ^17.4.2
+    devmoji: ^2.3.0
+    eslint-config-custom: "*"
+    husky: ^8.0.3
+    prettier: ^2.8.3
+    tsup: ^6.5.0
+    turbo: ^1.7.0
+  languageName: unknown
+  linkType: soft
+
 "@hapi/hoek@npm:^9.0.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
@@ -3874,22 +3890,6 @@ __metadata:
   checksum: fd7673ca77fe26cd5cba38d816bc72d641f500f1f9b25b83e8ce28827fe2da7ad583a8da26ab6af85f834138cf8dae9f69b0cd6ab925f52ddab1754db44d99ce
   languageName: node
   linkType: hard
-
-"docu-plugins@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "docu-plugins@workspace:."
-  dependencies:
-    "@changesets/cli": ^2.26.0
-    "@commitlint/cli": ^17.4.2
-    "@commitlint/config-conventional": ^17.4.2
-    devmoji: ^2.3.0
-    eslint-config-custom: "*"
-    husky: ^8.0.3
-    prettier: ^2.8.3
-    tsup: ^6.5.0
-    turbo: ^1.7.0
-  languageName: unknown
-  linkType: soft
 
 "dom-serializer@npm:^1.0.1":
   version: 1.4.1
