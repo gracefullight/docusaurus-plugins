@@ -1,7 +1,20 @@
+/**
+ * @type {import('eslint').Linter.Config}
+ */
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
+  parser: "@typescript-eslint/parser",
+  extends: [
+    "turbo",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+  ],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
+    "import/order": [
+      "error",
+      { alphabetize: { order: "asc" }, "newlines-between": "always" },
+    ],
   },
 };
