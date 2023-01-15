@@ -6,6 +6,14 @@
     "email": "gracefullight.dev@gmail.com"
   },
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "keywords": [
+    "google",
+    "adsense",
+    "docusaurus",
+    "docusaurus plugin",
+    "web advertising",
+    "ads"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
