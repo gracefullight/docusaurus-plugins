@@ -1831,7 +1831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/types@npm:>=2 <3":
+"@docusaurus/types@npm:^2":
   version: 2.2.0
   resolution: "@docusaurus/types@npm:2.2.0"
   dependencies:
@@ -1929,11 +1929,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gracefullight/docusaurus-plugin-channelio@workspace:packages/docusaurus-plugin-channelio":
+  version: 0.0.0-use.local
+  resolution: "@gracefullight/docusaurus-plugin-channelio@workspace:packages/docusaurus-plugin-channelio"
+  dependencies:
+    "@docusaurus/types": ^2
+    "@docusaurus/utils-validation": ^2
+    eslint-config-custom: "*"
+    tsup: "*"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@gracefullight/docusaurus-plugin-google-adsense@workspace:packages/docusaurus-plugin-google-adsense":
   version: 0.0.0-use.local
   resolution: "@gracefullight/docusaurus-plugin-google-adsense@workspace:packages/docusaurus-plugin-google-adsense"
   dependencies:
-    "@docusaurus/types": ">=2 <3"
+    "@docusaurus/types": ^2
     "@docusaurus/utils-validation": ^2
     eslint-config-custom: "*"
     tsup: "*"
@@ -1945,7 +1957,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gracefullight/docusaurus-plugin-microsoft-clarity@workspace:packages/docusaurus-plugin-microsoft-clarity"
   dependencies:
-    "@docusaurus/types": ">=2 <3"
+    "@docusaurus/types": ^2
     "@docusaurus/utils-validation": ^2
     eslint-config-custom: "*"
     tsup: "*"
@@ -1957,7 +1969,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gracefullight/docusaurus-plugin-naver-analytics@workspace:packages/docusaurus-plugin-naver-analytics"
   dependencies:
-    "@docusaurus/types": ">=2 <3"
+    "@docusaurus/types": ^2
     "@docusaurus/utils-validation": ^2
     eslint-config-custom: "*"
     tsup: "*"

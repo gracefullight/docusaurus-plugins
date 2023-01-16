@@ -1,19 +1,17 @@
 {
-  "name": "@gracefullight/docusaurus-plugin-microsoft-clarity",
-  "version": "0.1.1",
+  "name": "@gracefullight/docusaurus-plugin-channelio",
+  "version": "0.1.0",
   "author": {
     "name": "gracefullight",
     "email": "gracefullight.dev@gmail.com"
   },
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "keywords": [
-    "microsoft",
-    "clarity",
+    "channelio",
+    "channel",
+    "chat",
     "docusaurus",
-    "docusaurus plugin",
-    "web analytics",
-    "analytics",
-    "rum"
+    "docusaurus plugin"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

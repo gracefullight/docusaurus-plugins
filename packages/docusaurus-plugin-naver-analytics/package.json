@@ -7,13 +7,11 @@
   },
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "keywords": [
-    "microsoft",
-    "clarity",
+    "naver",
+    "analytics",
     "docusaurus",
     "docusaurus plugin",
-    "web analytics",
-    "analytics",
-    "rum"
+    "web analytics"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -26,7 +24,7 @@
     "@docusaurus/utils-validation": "^2"
   },
   "devDependencies": {
-    "@docusaurus/types": ">=2 <3",
+    "@docusaurus/types": "^2",
     "eslint-config-custom": "*",
     "tsup": "*",
     "typescript": "^4.9.4"

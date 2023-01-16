@@ -7,11 +7,12 @@
   },
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "keywords": [
-    "naver",
-    "analytics",
+    "google",
+    "adsense",
     "docusaurus",
     "docusaurus plugin",
-    "web analytics"
+    "web advertising",
+    "ads"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -24,7 +25,7 @@
     "@docusaurus/utils-validation": "^2"
   },
   "devDependencies": {
-    "@docusaurus/types": ">=2 <3",
+    "@docusaurus/types": "^2",
     "eslint-config-custom": "*",
     "tsup": "*",
     "typescript": "^4.9.4"
