@@ -26,7 +26,6 @@
     "devmoji": "^2.3.0",
     "eslint-config-custom": "*",
     "husky": "^8.0.3",
-    "prettier": "^2.8.3",
     "tsup": "^6.5.0",
     "turbo": "^1.7.0"
   },
