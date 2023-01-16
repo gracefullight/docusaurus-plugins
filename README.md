@@ -2,9 +2,10 @@
 
 This monorepo contains a collection of plugins for [Docusaurus](https://docusaurus.io/) to enhance your documentation website. The following plugins are included:
 
-- [@gracefullight/docusaurus-plugin-naver-analytics](https://yarn.pm/@gracefullight/docusaurus-plugin-naver-analytics): Adds support for Naver Analytics on your website.
-- [@gracefullight/docusaurus-plugin-google-adsense](https://yarn.pm/@gracefullight/docusaurus-plugin-google-adsense): Adds support for Google Adsense on your website.
-- [@gracefullight/docusaurus-plugin-microsoft-clarity](https://yarn.pm/@gracefullight/docusaurus-plugin-microsoft-clarity): Adds support for Microsoft Clarity on your website.
+- [@gracefullight/docusaurus-plugin-naver-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-naver-analytics)
+- [@gracefullight/docusaurus-plugin-google-adsense](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-google-adsense)
+- [@gracefullight/docusaurus-plugin-microsoft-clarity](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-microsoft-clarity)
+- [@gracefullight/docusaurus-plugin-channelio](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-channelio)
 
 ## Installation
 
