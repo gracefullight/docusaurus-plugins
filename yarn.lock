@@ -1941,6 +1941,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@gracefullight/docusaurus-plugin-chatra@workspace:packages/docusaurus-plugin-chatra":
+  version: 0.0.0-use.local
+  resolution: "@gracefullight/docusaurus-plugin-chatra@workspace:packages/docusaurus-plugin-chatra"
+  dependencies:
+    "@docusaurus/types": ^2
+    "@docusaurus/utils-validation": ^2
+    eslint-config-custom: "*"
+    tsup: "*"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@gracefullight/docusaurus-plugin-google-adsense@workspace:packages/docusaurus-plugin-google-adsense":
   version: 0.0.0-use.local
   resolution: "@gracefullight/docusaurus-plugin-google-adsense@workspace:packages/docusaurus-plugin-google-adsense"
