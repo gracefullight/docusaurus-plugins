@@ -15,12 +15,12 @@ const pluginOptionsSchema = Joi.object({
   chatraId: Joi.string().required(),
 });
 
-export default async function naverAnalytics(
+export default async function chatra(
   _: LoadContext,
   options: PluginOptions
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-naver-analytics",
+    name: "@gracefullight/docusaurus-plugin-chatra",
     injectHtmlTags() {
       return {
         headTags: [
