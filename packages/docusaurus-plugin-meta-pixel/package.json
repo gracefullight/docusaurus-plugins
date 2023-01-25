@@ -1,0 +1,34 @@
+{
+  "name": "@gracefullight/docusaurus-plugin-meta-pixel",
+  "version": "0.1.0",
+  "author": {
+    "name": "gracefullight",
+    "email": "gracefullight.dev@gmail.com"
+  },
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "keywords": [
+    "facebook",
+    "meta",
+    "pixel",
+    "web analytics",
+    "analytics",
+    "docusaurus",
+    "docusaurus plugin"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --minify",
+    "dev": "yarn build --watch"
+  },
+  "dependencies": {
+    "@docusaurus/utils-validation": "^2"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^2",
+    "eslint-config-custom": "*",
+    "tsup": "*",
+    "typescript": "^4.9.4"
+  }
+}
