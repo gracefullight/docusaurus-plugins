@@ -1,0 +1,1 @@
+export { NewPluginCommand } from "./NewPluginCommand";

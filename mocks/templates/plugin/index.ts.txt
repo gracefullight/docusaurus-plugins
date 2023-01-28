@@ -1,0 +1,57 @@
+import type {
+  LoadContext,
+  Plugin,
+  OptionValidationContext,
+} from "@docusaurus/types";
+import { Joi } from "@docusaurus/utils-validation";
+
+export interface PluginOptions {
+  ${ option }: string;
+}
+
+export type Options = Partial<PluginOptions>;
+
+const pluginOptionsSchema = Joi.object({
+  ${ option }: Joi.string().required(),
+});
+
+export default async function ${ pluginNameCamel }(
+  _: LoadContext,
+  options: PluginOptions
+): Promise<Plugin> {
+  return {
+    name: "@gracefullight/docusaurus-plugin-${ pluginName }",
+    injectHtmlTags() {
+      return {
+        headTags: [
+          {
+            tagName: "link",
+            attributes: {
+              rel: "preconnect",
+              href: "https://${ domain }",
+            },
+          },
+          {
+            tagName: "script",
+            attributes: {
+              src: "https://",
+              async: true,
+            },
+          },
+          {
+            tagName: "script",
+            innerHTML: ``,
+          },
+        ],
+      };
+    },
+  };
+}
+
+export function validateOptions({
+  options,
+  validate,
+}: OptionValidationContext<Options, PluginOptions>) {
+  const validatedOptions = validate(pluginOptionsSchema, options);
+  return validatedOptions;
+}
