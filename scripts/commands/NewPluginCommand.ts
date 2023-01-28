@@ -19,6 +19,12 @@ import {
   toUpper,
 } from "lodash";
 
+interface ReplaceOptions {
+  from: string;
+  to: string;
+  variables: Record<string, string>;
+}
+
 export class NewPluginCommand extends Command {
   static paths = [[`new`]];
   static usage = Command.Usage({
@@ -37,6 +43,42 @@ export class NewPluginCommand extends Command {
   requiredOptionName = Option.String("-o,--option", "key");
   preconnectDomain = Option.String("-d,--domain", "");
 
+  private async replaceInDirectory({ from, to, variables }: ReplaceOptions) {
+    await ensureDir(to);
+    for (const fileDirent of await readdir(from, { withFileTypes: true })) {
+      const fileName = fileDirent.name;
+      if (fileDirent.isDirectory()) {
+        // ? readdir recursive
+        await this.replaceInDirectory({
+          from: join(from, fileName),
+          to: join(to, fileName),
+          variables,
+        });
+      } else {
+        const pluginFileName =
+          extname(fileName) === ".txt"
+            ? fileName.substring(0, fileName.lastIndexOf(".txt"))
+            : fileName;
+
+        // ? Read from template, Replace texts, Write to plugin
+        createReadStream(join(from, fileName))
+          .pipe(
+            new Transform({
+              transform(file, _, callback) {
+                this.push(template(file.toString())(variables));
+                callback();
+              },
+            })
+          )
+          .pipe(createWriteStream(join(to, pluginFileName)))
+          .on("error", (error) => {
+            this.context.stderr.write("Unexpected stream error\n");
+            this.context.stderr.write(JSON.stringify(error));
+          });
+      }
+    }
+  }
+
   async execute() {
     const pluginName = kebabCase(this.pluginName);
     const requiredOptionName = camelCase(this.requiredOptionName);
@@ -54,47 +96,27 @@ export class NewPluginCommand extends Command {
     }
 
     this.context.stdout.write(`📋 Copy plugin template\n`);
-    const templateVariables = {
-      // ? For package.json
-      pluginName,
-      // ? For README.md
-      pluginNameStart: startCase(toLower(pluginName)),
-      // ? For Plugin Function name
-      pluginNameCamel: camelCase(pluginName),
-      // ? For Keyword
-      pluginNameLower: toLower(pluginName.replace(/-/g, " ")),
-      // ? For Plugin Function option
-      option: requiredOptionName,
-      // ? For README.md
-      optionUpper: toUpper(snakeCase(requiredOptionName)),
-      domain: this.preconnectDomain,
-    };
 
-    await ensureDir(pluginDirectory);
     const mockDirectory = resolve(__dirname, "../../mocks/templates/plugin");
-
-    for (const file of await readdir(mockDirectory)) {
-      const pluginFile =
-        extname(file) === ".txt"
-          ? file.substring(0, file.lastIndexOf(".txt"))
-          : file;
-
-      // ? Read from template, Replace texts, Write to plugin
-      createReadStream(join(mockDirectory, file))
-        .pipe(
-          new Transform({
-            transform(file, _, callback) {
-              this.push(template(file.toString())(templateVariables));
-              callback();
-            },
-          })
-        )
-        .pipe(createWriteStream(join(pluginDirectory, pluginFile)))
-        .on("error", (error) => {
-          this.context.stderr.write("Unexpected stream error\n");
-          this.context.stderr.write(JSON.stringify(error));
-        });
-    }
+    await this.replaceInDirectory({
+      from: mockDirectory,
+      to: pluginDirectory,
+      variables: {
+        // ? For package.json
+        pluginName,
+        // ? For README.md
+        pluginNameStart: startCase(toLower(pluginName)),
+        // ? For Plugin Function name
+        pluginNameCamel: camelCase(pluginName),
+        // ? For Keyword
+        pluginNameLower: toLower(pluginName.replace(/-/g, " ")),
+        // ? For Plugin Function option
+        option: requiredOptionName,
+        // ? For README.md
+        optionUpper: toUpper(snakeCase(requiredOptionName)),
+        domain: this.preconnectDomain,
+      },
+    });
 
     this.context.stdout.write(`🪄 New Plugin ${pluginDirectory}/index.ts\n`);
   }
