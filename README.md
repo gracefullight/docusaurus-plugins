@@ -2,12 +2,13 @@
 
 This monorepo contains a collection of plugins for [Docusaurus](https://docusaurus.io/) to enhance your documentation website. The following plugins are included:
 
-- [@gracefullight/docusaurus-plugin-naver-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-naver-analytics)
-- [@gracefullight/docusaurus-plugin-google-adsense](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-google-adsense)
-- [@gracefullight/docusaurus-plugin-meta-pixel](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-meta-pixel)
-- [@gracefullight/docusaurus-plugin-microsoft-clarity](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-microsoft-clarity)
 - [@gracefullight/docusaurus-plugin-channelio](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-channelio)
 - [@gracefullight/docusaurus-plugin-chatra](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-chatra)
+- [@gracefullight/docusaurus-plugin-google-adsense](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-google-adsense)
+- [@gracefullight/docusaurus-plugin-intercom](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-intercom)
+- [@gracefullight/docusaurus-plugin-meta-pixel](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-meta-pixel)
+- [@gracefullight/docusaurus-plugin-microsoft-clarity](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-microsoft-clarity)
+- [@gracefullight/docusaurus-plugin-naver-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-naver-analytics)
 - [@gracefullight/docusaurus-plugin-sentry](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-sentry)
 
 ## Installation
