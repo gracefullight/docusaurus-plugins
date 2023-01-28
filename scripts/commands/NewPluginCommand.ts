@@ -28,7 +28,7 @@ export class NewPluginCommand extends Command {
     examples: [
       [
         `Create a new plugin named "my-plugin"`,
-        `$0 new my-plugin -o optionName`,
+        `$0 new my-plugin -o optionName -d scriptDomain`,
       ],
     ],
   });
