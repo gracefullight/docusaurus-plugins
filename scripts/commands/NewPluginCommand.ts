@@ -91,11 +91,11 @@ export class NewPluginCommand extends Command {
         )
         .pipe(createWriteStream(join(pluginDirectory, pluginFile)))
         .on("error", (error) => {
-          this.context.stderr.write("Unexpected stream error");
+          this.context.stderr.write("Unexpected stream error\n");
           this.context.stderr.write(JSON.stringify(error));
         });
     }
 
-    this.context.stdout.write(`🪄 New Plugin ${pluginDirectory}/index.ts \n`);
+    this.context.stdout.write(`🪄 New Plugin ${pluginDirectory}/index.ts\n`);
   }
 }
