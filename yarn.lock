@@ -1965,6 +1965,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@gracefullight/docusaurus-plugin-intercom@workspace:packages/docusaurus-plugin-intercom":
+  version: 0.0.0-use.local
+  resolution: "@gracefullight/docusaurus-plugin-intercom@workspace:packages/docusaurus-plugin-intercom"
+  dependencies:
+    "@docusaurus/types": ^2
+    "@docusaurus/utils-validation": ^2
+    eslint-config-custom: "*"
+    tsup: "*"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@gracefullight/docusaurus-plugin-meta-pixel@workspace:packages/docusaurus-plugin-meta-pixel":
   version: 0.0.0-use.local
   resolution: "@gracefullight/docusaurus-plugin-meta-pixel@workspace:packages/docusaurus-plugin-meta-pixel"
