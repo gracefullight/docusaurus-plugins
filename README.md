@@ -2,6 +2,7 @@
 
 This monorepo contains a collection of plugins for [Docusaurus](https://docusaurus.io/) to enhance your documentation website. The following plugins are included:
 
+- [@gracefullight/docusaurus-plugin-baidu-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-baidu-analytics)
 - [@gracefullight/docusaurus-plugin-channelio](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-channelio)
 - [@gracefullight/docusaurus-plugin-chatra](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-chatra)
 - [@gracefullight/docusaurus-plugin-cloudflare-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-cloudflare-analytics)

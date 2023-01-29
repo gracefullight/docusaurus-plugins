@@ -1929,6 +1929,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gracefullight/docusaurus-plugin-baidu-analytics@workspace:packages/docusaurus-plugin-baidu-analytics":
+  version: 0.0.0-use.local
+  resolution: "@gracefullight/docusaurus-plugin-baidu-analytics@workspace:packages/docusaurus-plugin-baidu-analytics"
+  dependencies:
+    "@docusaurus/types": ^2
+    "@docusaurus/utils-validation": ^2
+    eslint-config-custom: "*"
+    tsup: "*"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@gracefullight/docusaurus-plugin-channelio@workspace:packages/docusaurus-plugin-channelio":
   version: 0.0.0-use.local
   resolution: "@gracefullight/docusaurus-plugin-channelio@workspace:packages/docusaurus-plugin-channelio"
