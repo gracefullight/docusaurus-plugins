@@ -3,14 +3,17 @@
     "adsense",
     "channelio",
     "chatra",
+    "clickmap",
     "clipanion",
     "commitlint",
     "devmoji",
     "gitter",
     "gracefullight",
+    "Metrica",
     "naver",
     "preconnect",
     "tonji",
-    "tsup"
+    "tsup",
+    "webvisor"
   ]
 }
