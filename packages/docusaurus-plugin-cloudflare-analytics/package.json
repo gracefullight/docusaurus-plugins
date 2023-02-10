@@ -27,6 +27,6 @@
     "@docusaurus/types": "^2",
     "eslint-config-custom": "*",
     "tsup": "*",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   }
 }
