@@ -1,5 +1,11 @@
 # @gracefullight/docusaurus-plugin-microsoft-clarity
 
+## 0.1.3
+
+### Patch Changes
+
+- migrate yarn to pnpm (no code changes)
+
 ## 0.1.2
 
 ### Patch Changes
