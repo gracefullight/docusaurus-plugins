@@ -19,7 +19,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup src/index.ts --format cjs --dts --minify",
-    "dev": "yarn build --watch"
+    "dev": "pnpm build --watch"
   },
   "dependencies": {
     "@docusaurus/utils-validation": "^2"

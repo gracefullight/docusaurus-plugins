@@ -8,7 +8,7 @@ const [, , ...args] = process.argv;
 
 const cli = new Cli({
   binaryLabel: `${name}-cli`,
-  binaryName: "yarn cmd",
+  binaryName: "pnpm cmd",
   binaryVersion: `0.1.0`,
 });
 

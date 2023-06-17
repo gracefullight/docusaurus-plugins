@@ -4,10 +4,10 @@ This plugin provides an easy way to add Yandex Metrica to your Docusaurus docume
 
 ## Installation
 
-You can install this plugin via yarn:
+You can install this plugin via pnpm:
 
 ```bash
-yarn add @gracefullight/docusaurus-plugin-yandex-metrica
+pnpm add @gracefullight/docusaurus-plugin-yandex-metrica
 ```
 
 To use this plugin, you will need to configure it in your Docusaurus `docusaurus.config.js` file. You can add the following configuration to enable the plugin:

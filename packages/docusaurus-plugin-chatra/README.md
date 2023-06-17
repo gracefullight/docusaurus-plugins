@@ -4,10 +4,10 @@ This plugin provides an easy way to add chatra chat client to your Docusaurus do
 
 ## Installation
 
-You can install this plugin via yarn:
+You can install this plugin via pnpm:
 
 ```bash
-yarn add @gracefullight/docusaurus-plugin-chatra
+pnpm add @gracefullight/docusaurus-plugin-chatra
 ```
 
 To use this plugin, you will need to configure it in your Docusaurus `docusaurus.config.js` file. You can add the following configuration to enable the plugin:

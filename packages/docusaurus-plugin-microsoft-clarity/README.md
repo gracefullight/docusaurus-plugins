@@ -4,10 +4,10 @@ This Docusaurus plugin adds support for Microsoft Clarity on your website.
 
 ## Installation
 
-You can install this plugin via yarn:
+You can install this plugin via pnpm:
 
 ```bash
-yarn add @gracefullight/docusaurus-plugin-microsoft-clarity
+pnpm add @gracefullight/docusaurus-plugin-microsoft-clarity
 ```
 
 ## Usage

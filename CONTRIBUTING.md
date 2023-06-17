@@ -11,7 +11,7 @@ Following these guidelines helps to communicate that you respect the time of the
 To create a new docusaurus plugin, run the following command:
 
 ```bash
-yarn cmd new <PLUGIN_NAME> -o <OPTION_NAME> -d <SCRIPT_DOMAIN>
+pnpm cmd new <PLUGIN_NAME> -o <OPTION_NAME> -d <SCRIPT_DOMAIN>
 ```
 
 Replace `<PLUGIN_NAME>` with the desired name for your plugin (kebab-case format), `<OPTION_NAME>` with the option name for your plugin (camelCase format), and `<SCRIPT_DOMAIN>` with the domain that the plugin will preconnect to.

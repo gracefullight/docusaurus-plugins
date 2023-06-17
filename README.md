@@ -17,10 +17,10 @@ This monorepo contains a collection of plugins for [Docusaurus](https://docusaur
 
 ## Installation
 
-You can install these plugins via yarn:
+You can install these plugins via pnpm:
 
 ```bash
-yarn add @gracefullight/docusaurus-plugin-${PLUGIN_NAME}
+pnpm add @gracefullight/docusaurus-plugin-${PLUGIN_NAME}
 ```
 
 ## Usage

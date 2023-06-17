@@ -4,10 +4,10 @@ This Docusaurus plugin adds support for Meta Pixel on your website.
 
 ## Installation
 
-You can install this plugin via yarn:
+You can install this plugin via pnpm:
 
 ```bash
-yarn add @gracefullight/docusaurus-plugin-meta-pixel
+pnpm add @gracefullight/docusaurus-plugin-meta-pixel
 ```
 
 ## Usage
