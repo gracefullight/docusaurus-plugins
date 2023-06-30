@@ -30,7 +30,7 @@ To use these plugins, you will need to configure them in your Docusaurus `docusa
 
 ## Contributing
 
-If you find a bug or want to suggest a new feature, please open an issue or a pull request.
+Contributions are welcome. If you find a bug or want to suggest a new feature, please open an issue or a pull request. To contribute a new plugin, you can use the command `pnpm cmd new --help`.
 
 ## License
 
