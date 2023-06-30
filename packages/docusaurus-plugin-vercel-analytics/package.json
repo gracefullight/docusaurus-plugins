@@ -1,5 +1,5 @@
 {
-  "name": "@gracefullight/docusaurus-plugin-${ pluginName }",
+  "name": "@gracefullight/docusaurus-plugin-vercel-analytics",
   "version": "0.1.0",
   "author": {
     "name": "gracefullight",
@@ -7,7 +7,8 @@
   },
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "keywords": [
-    "${ pluginNameLower }",
+    "vercel",
+    "vercel analytics",
     "docusaurus",
     "docusaurus plugin"
   ],
