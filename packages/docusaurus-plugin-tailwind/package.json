@@ -1,0 +1,33 @@
+{
+  "name": "@gracefullight/docusaurus-plugin-tailwind",
+  "version": "0.1.0",
+  "author": {
+    "name": "gracefullight",
+    "email": "gracefullight.dev@gmail.com"
+  },
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "keywords": [
+    "tailwind",
+    "docusaurus",
+    "docusaurus plugin"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --minify",
+    "dev": "pnpm build --watch"
+  },
+  "dependencies": {
+    "@docusaurus/utils-validation": "^2",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^2",
+    "eslint-config-custom": "*",
+    "tsup": "*",
+    "typescript": "^5.1.6"
+  }
+}
