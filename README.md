@@ -13,6 +13,7 @@ This monorepo contains a collection of plugins for [Docusaurus](https://docusaur
 - [@gracefullight/docusaurus-plugin-microsoft-clarity](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-microsoft-clarity)
 - [@gracefullight/docusaurus-plugin-naver-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-naver-analytics)
 - [@gracefullight/docusaurus-plugin-sentry](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-sentry)
+- [@gracefullight/docusaurus-plugin-tailwind](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-tailwind)
 - [@gracefullight/docusaurus-plugin-vercel-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-vercel-analytics)
 - [@gracefullight/docusaurus-plugin-yandex-metrica](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-yandex-metrica)
 
