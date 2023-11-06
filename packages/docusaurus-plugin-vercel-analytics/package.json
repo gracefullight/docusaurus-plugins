@@ -1,6 +1,6 @@
 {
   "name": "@gracefullight/docusaurus-plugin-vercel-analytics",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "gracefullight",
     "email": "gracefullight.dev@gmail.com"
