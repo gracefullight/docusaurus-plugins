@@ -21,7 +21,7 @@ const pluginOptionsSchema = Joi.object({
 
 export default async function sentry(
   _: LoadContext,
-  options: PluginOptions
+  options: PluginOptions,
 ): Promise<Plugin> {
   const lazy = options.lazy === false ? "no" : "yes";
 

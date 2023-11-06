@@ -19,13 +19,13 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
-    "@docusaurus/utils-validation": "^2",
+    "@docusaurus/utils-validation": "^3",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
-    "@docusaurus/types": "^2",
+    "@docusaurus/types": "^3",
     "eslint-config-custom": "*",
     "tsup": "*",
     "typescript": "^5.2.2"

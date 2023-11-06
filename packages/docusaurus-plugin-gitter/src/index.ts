@@ -1,7 +1,7 @@
 import type {
   LoadContext,
-  Plugin,
   OptionValidationContext,
+  Plugin,
 } from "@docusaurus/types";
 import { Joi } from "@docusaurus/utils-validation";
 
@@ -17,7 +17,7 @@ const pluginOptionsSchema = Joi.object({
 
 export default async function gitter(
   _: LoadContext,
-  options: PluginOptions
+  options: PluginOptions,
 ): Promise<Plugin> {
   return {
     name: "@gracefullight/docusaurus-plugin-gitter",

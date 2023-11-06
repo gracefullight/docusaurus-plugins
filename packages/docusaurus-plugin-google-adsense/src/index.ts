@@ -17,7 +17,7 @@ const pluginOptionsSchema = Joi.object({
 
 export default async function googleAdSense(
   _: LoadContext,
-  options: PluginOptions
+  options: PluginOptions,
 ): Promise<Plugin> {
   return {
     name: "@gracefullight/docusaurus-plugin-google-adsense",
