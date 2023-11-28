@@ -1,46 +1,48 @@
 {
   "name": "@gracefullight/docusaurus-plugins",
   "version": "0.1.0",
+  "private": true,
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "author": {
     "name": "gracefullight",
     "email": "gracefullight.dev@gmail.com"
   },
-  "repository": "https://github.com/gracefullight/docusaurus-plugins",
-  "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
-  "engines": {
-    "node": "18"
-  },
-  "packageManager": "^pnpm@8.10.2",
   "scripts": {
-    "prepare": "husky install",
     "build": "turbo run build",
+    "cmd": "node -r @swc-node/register scripts/index.ts",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "prepare": "husky install",
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
-    "cmd": "node -r @swc-node/register scripts/index.ts"
+    "sort-package-json": "pnpx sort-package-json \"package.json\" \"packages/*/package.json\""
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
-    "@commitlint/cli": "^18.2.0",
-    "@commitlint/config-conventional": "^18.1.0",
-    "@commitlint/types": "^18.1.0",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/types": "^18.4.3",
     "@swc-node/register": "^1.6.8",
-    "@swc/core": "^1.3.96",
-    "@types/fs-extra": "^11.0.3",
-    "@types/lodash": "^4.14.200",
-    "clipanion": "3.2.1",
+    "@swc/core": "^1.3.99",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.14.202",
+    "clipanion": "4.0.0-rc.2",
     "devmoji": "^2.3.0",
     "eslint-config-custom": "*",
-    "fs-extra": "^11.1.1",
+    "fs-extra": "^11.2.0",
     "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
+    "lint-staged": "^15.1.0",
     "lodash": "^4.17.21",
-    "tsup": "^7.2.0",
+    "sort-package-json": "^2.6.0",
+    "tsup": "^8.0.1",
     "turbo": "^1.10.16"
+  },
+  "packageManager": "^pnpm@8.11.0",
+  "engines": {
+    "node": "20"
   }
 }

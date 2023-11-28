@@ -1,11 +1,6 @@
 {
   "name": "@gracefullight/docusaurus-plugin-cloudflare-analytics",
   "version": "1.0.0",
-  "author": {
-    "name": "gracefullight",
-    "email": "gracefullight.dev@gmail.com"
-  },
-  "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "keywords": [
     "cloudflare",
     "cloudflare analytics",
@@ -13,9 +8,14 @@
     "docusaurus plugin",
     "web analytics"
   ],
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "license": "MIT",
+  "author": {
+    "name": "gracefullight",
+    "email": "gracefullight.dev@gmail.com"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "license": "MIT",
   "scripts": {
     "build": "tsup src/index.ts --format cjs --dts --minify",
     "dev": "yapnpmrn build --watch"
@@ -27,6 +27,6 @@
     "@docusaurus/types": "^3",
     "eslint-config-custom": "*",
     "tsup": "*",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   }
 }
