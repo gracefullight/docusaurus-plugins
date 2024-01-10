@@ -14,6 +14,6 @@ To use this plugin, you will need to configure it in your Docusaurus `docusaurus
 
 ```js
 module.exports = {
-  plugins: [["@gracefullight/docusaurus-plugin-vercel-analytics"]],
+  plugins: ["@gracefullight/docusaurus-plugin-vercel-analytics"],
 };
 ```
