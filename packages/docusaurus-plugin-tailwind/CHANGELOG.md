@@ -1,5 +1,11 @@
 # @gracefullight/docusaurus-plugin-tailwind
 
+## 1.0.1
+
+### Patch Changes
+
+- bump dependency version
+
 ## 1.0.0
 
 ### Major Changes
