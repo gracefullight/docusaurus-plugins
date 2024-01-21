@@ -18,7 +18,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs --dts --minify",
-    "dev": "yapnpmrn build --watch"
+    "dev": "pnpm build --watch"
   },
   "dependencies": {
     "@docusaurus/utils-validation": "^3"
@@ -27,6 +27,6 @@
     "@docusaurus/types": "^3",
     "eslint-config-custom": "*",
     "tsup": "*",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   }
 }
