@@ -43,7 +43,7 @@ export default async function vercelAnalytics(
               src: `${scriptDomain}${scriptPath}`,
               defer: true,
               "data-sdkn": "@vercel/analytics",
-              "data-sdkv": "1.0.1",
+              "data-sdkv": "1.1.2",
             },
           },
         ],
