@@ -3,11 +3,11 @@ import { Transform } from "stream";
 
 import { Command, Option, UsageError } from "clipanion";
 import {
+  createReadStream,
+  createWriteStream,
+  ensureDir,
   pathExists,
   readdir,
-  createWriteStream,
-  createReadStream,
-  ensureDir,
 } from "fs-extra";
 import {
   camelCase,
@@ -26,8 +26,8 @@ interface ReplaceOptions {
 }
 
 export class NewPluginCommand extends Command {
-  static paths = [[`new`]];
-  static usage = Command.Usage({
+  static readonly paths = [[`new`]];
+  static readonly usage = Command.Usage({
     description: "create a new docusaurus plugin",
     details:
       "This command will create a new docusaurus plugin in the packages directory with the specified name. The plugin will include a basic template with options for customization.",
@@ -68,7 +68,7 @@ export class NewPluginCommand extends Command {
                 this.push(template(file.toString())(variables));
                 callback();
               },
-            })
+            }),
           )
           .pipe(createWriteStream(join(to, pluginFileName)))
           .on("error", (error) => {
@@ -88,7 +88,7 @@ export class NewPluginCommand extends Command {
     const pluginDirectory = join(
       pluginRoot,
       "packages",
-      `docusaurus-plugin-${pluginName}`
+      `docusaurus-plugin-${pluginName}`,
     );
 
     if (await pathExists(pluginDirectory)) {
