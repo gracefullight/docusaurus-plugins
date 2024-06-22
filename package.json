@@ -1,6 +1,6 @@
 {
   "name": "@gracefullight/docusaurus-plugins",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "author": {
@@ -22,26 +22,26 @@
     "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\""
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.3",
+    "@changesets/cli": "^2.27.5",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
-    "@swc-node/register": "^1.9.1",
-    "@swc/core": "^1.5.7",
+    "@swc-node/register": "^1.9.2",
+    "@swc/core": "^1.6.5",
     "@types/fs-extra": "^11.0.4",
-    "@types/lodash": "^4.17.4",
+    "@types/lodash": "^4.17.5",
     "clipanion": "4.0.0-rc.3",
     "devmoji": "^2.3.0",
     "eslint-config-custom": "*",
     "fs-extra": "^11.2.0",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.4",
+    "lint-staged": "^15.2.7",
     "lodash": "^4.17.21",
     "sort-package-json": "^2.10.0",
-    "tsup": "^8.0.2",
-    "turbo": "^1.13.3"
+    "tsup": "^8.1.0",
+    "turbo": "^2.0.4"
   },
-  "packageManager": "pnpm@9.1.2",
+  "packageManager": "pnpm@9.4.0",
   "engines": {
     "node": "20"
   }
