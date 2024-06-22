@@ -15,13 +15,14 @@
     "build": "turbo run build",
     "cmd": "node -r @swc-node/register scripts/index.ts",
     "dev": "turbo run dev --parallel",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "biome format --write .",
     "lint": "oxlint --fix",
     "prepare": "husky install",
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\""
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.2",
     "@changesets/cli": "^2.27.5",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",

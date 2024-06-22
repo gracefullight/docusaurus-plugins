@@ -1,0 +1,29 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+  "files": {
+    "ignore": [
+      "**/.DS_Store",
+      "**/node_modules",
+      "**/npm-debug.log",
+      "**/dist",
+      "*/package-lock.json",
+      "**/.vscode",
+      "**/coverage",
+      "**/*.log",
+      "**/package-lock.json"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto"
+  },
+  "organizeImports": { "enabled": true },
+  "linter": {
+    "enabled": false
+  }
+}
