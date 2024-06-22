@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@docusaurus/types": "^3",
-    "eslint-config-custom": "*",
     "tsup": "*",
     "typescript": "^5.4.5"
   }
