@@ -3,7 +3,8 @@
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
     "ms-vscode.vscode-typescript-next",
-    "dbaeumer.vscode-eslint",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "biomejs.biome",
+    "oxc.oxc-vscode"
   ]
 }

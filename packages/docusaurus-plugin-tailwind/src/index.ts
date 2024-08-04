@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import type { Plugin, PostCssOptions } from "@docusaurus/types";
 
 export default function docusaurusTailwindCss(): Plugin {

@@ -15,7 +15,6 @@ const cli = new Cli({
 cli.register(Builtins.HelpCommand);
 Object.keys(Commands).forEach((cmd) => {
   // ! allowComputed
-  // eslint-disable-next-line import/namespace
   cli.register(Commands[cmd]);
 });
 cli.runExit(args);
