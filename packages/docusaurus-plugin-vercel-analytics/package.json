@@ -1,12 +1,7 @@
 {
   "name": "@gracefullight/docusaurus-plugin-vercel-analytics",
   "version": "1.0.1",
-  "keywords": [
-    "vercel",
-    "vercel analytics",
-    "docusaurus",
-    "docusaurus plugin"
-  ],
+  "keywords": ["vercel", "vercel analytics", "docusaurus", "docusaurus plugin"],
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "license": "MIT",
   "author": {
