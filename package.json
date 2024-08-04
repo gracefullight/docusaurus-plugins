@@ -7,10 +7,6 @@
     "name": "gracefullight",
     "email": "gracefullight.dev@gmail.com"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "cmd": "node -r @swc-node/register scripts/index.ts",
