@@ -15,8 +15,8 @@ importers:
         specifier: ^2.27.7
         version: 2.27.7
       '@commitlint/cli':
-        specifier: ^19.3.0
-        version: 19.3.0(@types/node@20.5.1)(typescript@5.4.5)
+        specifier: ^19.4.0
+        version: 19.4.0(@types/node@20.5.1)(typescript@5.4.5)
       '@commitlint/config-conventional':
         specifier: ^19.2.2
         version: 19.2.2
@@ -25,10 +25,10 @@ importers:
         version: 19.0.3
       '@swc-node/register':
         specifier: ^1.10.9
-        version: 1.10.9(@swc/core@1.7.5)(@swc/types@0.1.12)(typescript@5.4.5)
+        version: 1.10.9(@swc/core@1.7.14)(@swc/types@0.1.12)(typescript@5.4.5)
       '@swc/core':
-        specifier: ^1.7.5
-        version: 1.7.5
+        specifier: ^1.7.14
+        version: 1.7.14
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -45,39 +45,39 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
       husky:
-        specifier: ^9.1.4
-        version: 9.1.4
+        specifier: ^9.1.5
+        version: 9.1.5
       lint-staged:
-        specifier: ^15.2.8
-        version: 15.2.8
+        specifier: ^15.2.9
+        version: 15.2.9
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
       oxlint:
-        specifier: ^0.6.1
-        version: 0.6.1
+        specifier: ^0.8.0
+        version: 0.8.0
       sort-package-json:
-        specifier: ^2.10.0
-        version: 2.10.0
+        specifier: ^2.10.1
+        version: 2.10.1
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@swc/core@1.7.5)(jiti@1.21.0)(postcss@8.4.33)(typescript@5.4.5)(yaml@2.5.0)
+        version: 8.2.4(@swc/core@1.7.14)(jiti@1.21.0)(postcss@8.4.33)(typescript@5.4.5)(yaml@2.5.0)
       turbo:
-        specifier: ^2.0.11
-        version: 2.0.11
+        specifier: ^2.0.14
+        version: 2.0.14
 
   packages/docusaurus-plugin-baidu-analytics:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.18.4)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.18.4)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -86,14 +86,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -102,14 +102,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -118,14 +118,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -134,14 +134,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -150,14 +150,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -166,14 +166,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -182,14 +182,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -198,14 +198,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -214,14 +214,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -230,14 +230,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -246,7 +246,7 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.18.4)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.18.4)
       autoprefixer:
         specifier: ^10.4.17
         version: 10.4.17(postcss@8.4.33)
@@ -259,10 +259,10 @@ importers:
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.2.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.2.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -271,14 +271,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.18.4)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.18.4)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.1.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.1.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -287,14 +287,14 @@ importers:
     dependencies:
       '@docusaurus/utils-validation':
         specifier: ^3
-        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+        version: 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
     devDependencies:
       '@docusaurus/types':
         specifier: ^3
-        version: 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tsup:
         specifier: '*'
-        version: 7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5)
+        version: 7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -1052,8 +1052,8 @@ packages:
   '@changesets/write@0.3.1':
     resolution: {integrity: sha512-SyGtMXzH3qFqlHKcvFY2eX+6b0NGiFcNav8AFsYwy5l8hejOeoeTDemu5Yjmke2V5jpzY+pBvM0vCCQ3gdZpfw==}
 
-  '@commitlint/cli@19.3.0':
-    resolution: {integrity: sha512-LgYWOwuDR7BSTQ9OLZ12m7F/qhNY+NpAyPBgo4YNMkACE7lGuUnuQq1yi9hz1KA4+3VqpOYl8H1rY/LYK43v7g==}
+  '@commitlint/cli@19.4.0':
+    resolution: {integrity: sha512-sJX4J9UioVwZHq7JWM9tjT5bgWYaIN3rC4FP7YwfEwBYiIO+wMyRttRvQLNkow0vCdM0D67r9NEWU0Ui03I4Eg==}
     engines: {node: '>=v18'}
     hasBin: true
 
@@ -1085,8 +1085,8 @@ packages:
     resolution: {integrity: sha512-xrzMmz4JqwGyKQKTpFzlN0dx0TAiT7Ran1fqEBgEmEj+PU98crOFtysJgY+QdeSagx6EDRigQIXJVnfrI0ratA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/load@19.2.0':
-    resolution: {integrity: sha512-XvxxLJTKqZojCxaBQ7u92qQLFMMZc4+p9qrIq/9kJDy8DOrEa7P1yx7Tjdc2u2JxIalqT4KOGraVgCE7eCYJyQ==}
+  '@commitlint/load@19.4.0':
+    resolution: {integrity: sha512-I4lCWaEZYQJ1y+Y+gdvbGAx9pYPavqZAZ3/7/8BpWh+QjscAn8AjsUpLV2PycBsEx7gupq5gM4BViV9xwTIJuw==}
     engines: {node: '>=v18'}
 
   '@commitlint/message@19.0.0':
@@ -1097,8 +1097,8 @@ packages:
     resolution: {integrity: sha512-Il+tNyOb8VDxN3P6XoBBwWJtKKGzHlitEuXA5BP6ir/3loWlsSqDr5aecl6hZcC/spjq4pHqNh0qPlfeWu38QA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/read@19.2.1':
-    resolution: {integrity: sha512-qETc4+PL0EUv7Q36lJbPG+NJiBOGg7SSC7B5BsPWOmei+Dyif80ErfWQ0qXoW9oCh7GTpTNRoaVhiI8RbhuaNw==}
+  '@commitlint/read@19.4.0':
+    resolution: {integrity: sha512-r95jLOEZzKDakXtnQub+zR3xjdnrl2XzerPwm7ch1/cc5JGq04tyaNpa6ty0CRCWdVrk4CZHhqHozb8yZwy2+g==}
     engines: {node: '>=v18'}
 
   '@commitlint/resolve-extends@19.1.0':
@@ -1536,43 +1536,43 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@oxlint/darwin-arm64@0.6.1':
-    resolution: {integrity: sha512-qnPtdpX4a2wZJYHo/7pO5oHGFfA1t47M+gN9d/ds2+C7UzfZyp1kgE6cjeBidnkpSnFWUPfOmuoOOrFs8Ig+Sw==}
+  '@oxlint/darwin-arm64@0.8.0':
+    resolution: {integrity: sha512-z4sfJfx2W/8F8KaAZn8OwSrqXSo60lMFAxEp1J6qqQQFXL/LJSVVnLKNpUkc+ztZLX+YHiV5/re6hI+0giGQcw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@oxlint/darwin-x64@0.6.1':
-    resolution: {integrity: sha512-/M126TTjEfzNRwYgopJ1qMxbJMUzzrMY64PjbXTID7ig7nLyxcMSAp454Znf8Sh/3uulPODynmkCdkReiGqPvw==}
+  '@oxlint/darwin-x64@0.8.0':
+    resolution: {integrity: sha512-iTpYRGpBTcXvcedRmeoustSstC3+2pi4ZU7Fz0mZ2r8y1Nk3iP16zufXhfRHYBCRBTbdTHi/WWN7JywkZEWkPw==}
     cpu: [x64]
     os: [darwin]
 
-  '@oxlint/linux-arm64-gnu@0.6.1':
-    resolution: {integrity: sha512-120Qbek2yJz59iIzS0bwoM2717UTd6MRggDBgRw70rN0zdzkAZhORSywuC+EPq8U6ltIqYeMfcl+sGq7ZyhPyg==}
+  '@oxlint/linux-arm64-gnu@0.8.0':
+    resolution: {integrity: sha512-IHaHkfYAjQ8aip5yBsrNJLrId3FHxPCMuns8H1NJ6kWzpSMlD4wcPvymYvZ6hmk0kJ64wS6JaiTS47tH/Ijo3A==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint/linux-arm64-musl@0.6.1':
-    resolution: {integrity: sha512-wT0T+YOW8Ng2WGcLnWCylEpHwUDRun2HomTNslRed4RQzTWOisyp6hNB8sS6JZlRGYoCGUePgwBy7GM2P0IQYw==}
+  '@oxlint/linux-arm64-musl@0.8.0':
+    resolution: {integrity: sha512-ckuJSgV4yKo76l9avjk+iV+TXJko+FUPfya3xJS0fAWFROlfE9URXQeaTjrRnlZuiFbG8xLRLnpuzI+0YQK/4Q==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint/linux-x64-gnu@0.6.1':
-    resolution: {integrity: sha512-4qUcfTDXGOrm3/ohiCG09ZvjpCZImg1yI/IaOo25ij9VXLoaWUYJ6vbxY1GqPQegqZhli7fbFXQ5FP6AwjhBtQ==}
+  '@oxlint/linux-x64-gnu@0.8.0':
+    resolution: {integrity: sha512-bJb2q5749vVYOrAe8Dij3dnJGIM2wDKOzjNVyj4gH+zMBve2Wv+5C5jphBa2ac2sV2OqaBsEp8rQVBjqbFQAaA==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint/linux-x64-musl@0.6.1':
-    resolution: {integrity: sha512-v0O46xwi0EW+J3QxIZAU1h+2voIsq+BZc6/mPKzkSlnyYSPECBDFOG6IJF/rf7qzsjvIeFqdYB+sGGCxoxM5mg==}
+  '@oxlint/linux-x64-musl@0.8.0':
+    resolution: {integrity: sha512-6ECoFNXxxp/mOtMexsimrsVr4JbBqVMYRw8fsQejIBjivWa6wsJioXnz84Yb7zieT9Ln99+MJY8TKn6AFqipDQ==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint/win32-arm64@0.6.1':
-    resolution: {integrity: sha512-51NQgkd/XDQzAvFHKanjhFyKoPXvomNBHJnQF3iEYKmAGT2+VOOF9N6ism/FTLn+xGdzLBVU51xwRlmpCXt3kQ==}
+  '@oxlint/win32-arm64@0.8.0':
+    resolution: {integrity: sha512-x0l1qYePXz5/ZF0H2thMunBay7rFdv8+602S4keB+Ju0R5bkmCBJvFp398TZbeq7VK/7Rdola12SIFEKeh9FFQ==}
     cpu: [arm64]
     os: [win32]
 
-  '@oxlint/win32-x64@0.6.1':
-    resolution: {integrity: sha512-T8uLmIxbs1X2wbiZzIjxHJgtYEOGl7d+wZTzj701JsKHsY8DWtOCvMMgmd3EoO0XX8PPxpJYdZDWupdiIlYQ4Q==}
+  '@oxlint/win32-x64@0.8.0':
+    resolution: {integrity: sha512-ue8zp7Ahi8WmIscl5EM7w4lbq5LE2dekWJazRhsRJpiDH5ktaYAEA701CD4h0d9PVVCKNyDePZTgV9VHDbdxTA==}
     cpu: [x64]
     os: [win32]
 
@@ -1763,68 +1763,68 @@ packages:
   '@swc-node/sourcemap-support@0.5.1':
     resolution: {integrity: sha512-JxIvIo/Hrpv0JCHSyRpetAdQ6lB27oFYhv0PKCNf1g2gUXOjpeR1exrXccRxLMuAV5WAmGFBwRnNOJqN38+qtg==}
 
-  '@swc/core-darwin-arm64@1.7.5':
-    resolution: {integrity: sha512-Y+bvW9C4/u26DskMbtQKT4FU6QQenaDYkKDi028vDIKAa7v1NZqYG9wmhD/Ih7n5EUy2uJ5I5EWD7WaoLzT6PA==}
+  '@swc/core-darwin-arm64@1.7.14':
+    resolution: {integrity: sha512-V0OUXjOH+hdGxDYG8NkQzy25mKOpcNKFpqtZEzLe5V/CpLJPnpg1+pMz70m14s9ZFda9OxsjlvPbg1FLUwhgIQ==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@swc/core-darwin-x64@1.7.5':
-    resolution: {integrity: sha512-AuIbDlcaAhYS6mtF4UqvXgrLeAfXZbVf4pgtgShPbutF80VbCQiIB55zOFz5aZdCpsBVuCWcBq0zLneK+VQKkQ==}
+  '@swc/core-darwin-x64@1.7.14':
+    resolution: {integrity: sha512-9iFvUnxG6FC3An5ogp5jbBfQuUmTTwy8KMB+ZddUoPB3NR1eV+Y9vOh/tfWcenSJbgOKDLgYC5D/b1mHAprsrQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [darwin]
 
-  '@swc/core-linux-arm-gnueabihf@1.7.5':
-    resolution: {integrity: sha512-99uBPHITRqgGwCXAjHY94VaV3Z40+D2NQNgR1t6xQpO8ZnevI6YSzX6GVZfBnV7+7oisiGkrVEwfIRRa+1s8FA==}
+  '@swc/core-linux-arm-gnueabihf@1.7.14':
+    resolution: {integrity: sha512-zGJsef9qPivKSH8Vv4F/HiBXBTHZ5Hs3ZjVGo/UIdWPJF8fTL9OVADiRrl34Q7zOZEtGXRwEKLUW1SCQcbDvZA==}
     engines: {node: '>=10'}
     cpu: [arm]
     os: [linux]
 
-  '@swc/core-linux-arm64-gnu@1.7.5':
-    resolution: {integrity: sha512-xHL3Erlz+OGGCG4h6K2HWiR56H5UYMuBWWPbbUufi2bJpfhuKQy/X3vWffwL8ZVfJmCUwr4/G91GHcm32uYzRg==}
+  '@swc/core-linux-arm64-gnu@1.7.14':
+    resolution: {integrity: sha512-AxV3MPsoI7i4B8FXOew3dx3N8y00YoJYvIPfxelw07RegeCEH3aHp2U2DtgbP/NV1ugZMx0TL2Z2DEvocmA51g==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-arm64-musl@1.7.5':
-    resolution: {integrity: sha512-5ArGdqvFMszNHdi4a67vopeYq8d1K+FuTWDrblHrAvZFhAyv+GQz2PnKqYOgl0sWmQxsNPfNwBFtxACpUO3Jzg==}
+  '@swc/core-linux-arm64-musl@1.7.14':
+    resolution: {integrity: sha512-JDLdNjUj3zPehd4+DrQD8Ltb3B5lD8D05IwePyDWw+uR/YPc7w/TX1FUVci5h3giJnlMCJRvi1IQYV7K1n7KtQ==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-x64-gnu@1.7.5':
-    resolution: {integrity: sha512-mSVVV/PFzCGtI1nVQQyx34NwCMgSurF6ZX/me8pUAX054vsE/pSFL66xN+kQOe/1Z/LOd4UmXFkZ/EzOSnYcSg==}
+  '@swc/core-linux-x64-gnu@1.7.14':
+    resolution: {integrity: sha512-Siy5OvPCLLWmMdx4msnEs8HvEVUEigSn0+3pbLjv78iwzXd0qSBNHUPZyC1xeurVaUbpNDxZTpPRIwpqNE2+Og==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-linux-x64-musl@1.7.5':
-    resolution: {integrity: sha512-09hY3ZKMUORXVunESKS9yuP78+gQbr759GKHo8wyCdtAx8lCZdEjfI5NtC7/1VqwfeE32/U6u+5MBTVhZTt0AA==}
+  '@swc/core-linux-x64-musl@1.7.14':
+    resolution: {integrity: sha512-FtEGm9mwtRYQNK43WMtUIadxHs/ja2rnDurB99os0ZoFTGG2IHuht2zD97W0wB8JbqEabT1XwSG9Y5wmN+ciEQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-win32-arm64-msvc@1.7.5':
-    resolution: {integrity: sha512-B/UDtPI3RlYRFW42xQxOpl6kI/9LtkD7No+XeRIKQTPe15EP2o+rUlv7CmKljVBXgJ8KmaQbZlaEh1YP+QZEEQ==}
+  '@swc/core-win32-arm64-msvc@1.7.14':
+    resolution: {integrity: sha512-Jp8KDlfq7Ntt2/BXr0y344cYgB1zf0DaLzDZ1ZJR6rYlAzWYSccLYcxHa97VGnsYhhPspMpmCvHid97oe2hl4A==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [win32]
 
-  '@swc/core-win32-ia32-msvc@1.7.5':
-    resolution: {integrity: sha512-BgLesVGmIY6Nub/sURqtSRvWYcbCE/ACfuZB3bZHVKD6nsZJJuOpdB8oC41fZPyc8yZUzL3XTBIifkT2RP+w9w==}
+  '@swc/core-win32-ia32-msvc@1.7.14':
+    resolution: {integrity: sha512-I+cFsXF0OU0J9J4zdWiQKKLURO5dvCujH9Jr8N0cErdy54l9d4gfIxdctfTF+7FyXtWKLTCkp+oby9BQhkFGWA==}
     engines: {node: '>=10'}
     cpu: [ia32]
     os: [win32]
 
-  '@swc/core-win32-x64-msvc@1.7.5':
-    resolution: {integrity: sha512-CnF557tidLfQRPczcqDJ8x+LBQYsFa0Ra6w2+YU1iFUboaI2jJVuqt3vEChu80y6JiRIBAaaV2L/GawDJh1dIQ==}
+  '@swc/core-win32-x64-msvc@1.7.14':
+    resolution: {integrity: sha512-NNrprQCK6d28mG436jVo2TD+vACHseUECacEBGZ9Ef0qfOIWS1XIt2MisQKG0Oea2VvLFl6tF/V4Lnx/H0Sn3Q==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [win32]
 
-  '@swc/core@1.7.5':
-    resolution: {integrity: sha512-qKK0/Ta4qvxs/ok3XyYVPT7OBenwRn1sSINf1cKQTBHPqr7U/uB4k2GTl6JgEs8H4PiJrMTNWfMLTucIoVSfAg==}
+  '@swc/core@1.7.14':
+    resolution: {integrity: sha512-9aeXeifnyuvc2pcuuhPQgVUwdpGEzZ+9nJu0W8/hNl/aESFsJGR5i9uQJRGu0atoNr01gK092fvmqMmQAPcKow==}
     engines: {node: '>=10'}
     peerDependencies:
       '@swc/helpers': '*'
@@ -2670,8 +2670,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  husky@9.1.4:
-    resolution: {integrity: sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==}
+  husky@9.1.5:
+    resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2865,8 +2865,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@15.2.8:
-    resolution: {integrity: sha512-PUWFf2zQzsd9EFU+kM1d7UP+AZDbKFKuj+9JNVTBkhUFhbg4MAt6WfyMMwBfM4lYqd4D2Jwac5iuTu9rVj4zCQ==}
+  lint-staged@15.2.9:
+    resolution: {integrity: sha512-BZAt8Lk3sEnxw7tfxM7jeZlPRuT4M68O0/CwZhhaw6eeWu0Lz5eERE3m386InivXB64fp/mDID452h48tvKlRQ==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -3091,8 +3091,8 @@ packages:
   oxc-resolver@1.10.2:
     resolution: {integrity: sha512-NIbwVqoU8Bhl7PVtItHCg+VFFokIDwBgIgFUwFG2Y8ePhxftFh5xG+KLar5PLWXlCP4WunPIuXD3jr3v6/MfRw==}
 
-  oxlint@0.6.1:
-    resolution: {integrity: sha512-V66/akd9Gu2+KE6zP/QNTqlmBChL2Q9tPYR9CguKML1SaR/URXmgpvx+0ZfFIA+pDz/VzOOM0w79ozfakbW82w==}
+  oxlint@0.8.0:
+    resolution: {integrity: sha512-J0UT+PBXXjSmOTxRZEVjQdQrHzEFxkNxD9YFfAo2KdlQtUi1vlPACr2nHbYVkQYAh+spxF/SOoULUWEYjUN4NQ==}
     engines: {node: '>=14.*'}
     hasBin: true
 
@@ -3483,8 +3483,8 @@ packages:
   sort-object-keys@1.1.3:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
 
-  sort-package-json@2.10.0:
-    resolution: {integrity: sha512-MYecfvObMwJjjJskhxYfuOADkXp1ZMMnCFC8yhp+9HDsk7HhR336hd7eiBs96lTXfiqmUNI+WQCeCMRBhl251g==}
+  sort-package-json@2.10.1:
+    resolution: {integrity: sha512-d76wfhgUuGypKqY72Unm5LFnMpACbdxXsLPcL27pOsSrmVqH3PztFp1uq+Z22suk15h7vXmTesuh2aEjdCqb5w==}
     hasBin: true
 
   source-map-js@1.0.2:
@@ -3741,38 +3741,38 @@ packages:
       typescript:
         optional: true
 
-  turbo-darwin-64@2.0.11:
-    resolution: {integrity: sha512-YlHEEhcm+jI1BSZoLugGHUWDfRXaNaQIv7tGQBfadYjo9kixBnqoTOU6s1ubOrQMID+lizZZQs79GXwqM6vohg==}
+  turbo-darwin-64@2.0.14:
+    resolution: {integrity: sha512-kwfDmjNwlNfvtrvT29+ZBg5n1Wvxl891bFHchMJyzMoR0HOE9N1NSNdSZb9wG3e7sYNIu4uDkNk+VBEqJW0HzQ==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.0.11:
-    resolution: {integrity: sha512-K/YW+hWzRQ/wGmtffxllH4M1tgy8OlwgXODrIiAGzkSpZl9+pIsem/F86UULlhsIeavBYK/LS5+dzV3DPMjJ9w==}
+  turbo-darwin-arm64@2.0.14:
+    resolution: {integrity: sha512-m3LXYEshCx3wc4ZClM6gb01KYpFmtjQ9IBF3A7ofjb6ahux3xlYZJZ3uFCLAGHuvGLuJ3htfiPbwlDPTdknqqw==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.0.11:
-    resolution: {integrity: sha512-mv8CwGP06UPweMh1Vlp6PI6OWnkuibxfIJ4Vlof7xqjohAaZU5FLqeOeHkjQflH/6YrCVuS9wrK0TFOu+meTtA==}
+  turbo-linux-64@2.0.14:
+    resolution: {integrity: sha512-7vBzCPdoTtR92SNn2JMgj1FlMmyonGmpMaQdgAB1OVYtuQ6NVGoh7/lODfaILqXjpvmFSVbpBIDrKOT6EvcprQ==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.0.11:
-    resolution: {integrity: sha512-wLE5tl4oriTmHbuayc0ki0csaCplmVLj+uCWtecM/mfBuZgNS9ICNM9c4sB+Cfl5tlBBFeepqRNgvRvn8WeVZg==}
+  turbo-linux-arm64@2.0.14:
+    resolution: {integrity: sha512-jwH+c0bfjpBf26K/tdEFatmnYyXwGROjbr6bZmNcL8R+IkGAc/cglL+OToqJnQZTgZvH7uDGbeSyUo7IsHyjuA==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.0.11:
-    resolution: {integrity: sha512-tja3zvVCSWu3HizOoeQv0qDJ+GeWGWRFOOM6a8i3BYnXLgGKAaDZFcjwzgC50tWiAw4aowIVR4OouwIyRhLBaQ==}
+  turbo-windows-64@2.0.14:
+    resolution: {integrity: sha512-w9/XwkHSzvLjmioo6cl3S1yRfI6swxsV1j1eJwtl66JM4/pn0H2rBa855R0n7hZnmI6H5ywLt/nLt6Ae8RTDmw==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.0.11:
-    resolution: {integrity: sha512-sYjXP6k94Bqh99R+y3M1Ks6LRIEZybMz+7enA8GKl6JJ2ZFaXxTnS6q+/2+ii1+rRwxohj5OBb4gxODcF8Jd4w==}
+  turbo-windows-arm64@2.0.14:
+    resolution: {integrity: sha512-XaQlyYk+Rf4xS5XWCo8XCMIpssgGGy8blzLfolN6YBp4baElIWMlkLZHDbGyiFmCbNf9I9gJI64XGRG+LVyyjA==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.0.11:
-    resolution: {integrity: sha512-imDlFFAvitbCm1JtDFJ6eG882qwxHUmVT2noPb3p2jq5o5DuXOchMbkVS9kUeC3/4WpY5N0GBZ3RvqNyjHZw1Q==}
+  turbo@2.0.14:
+    resolution: {integrity: sha512-00JjdCMD/cpsjP0Izkjcm8Oaor5yUCfDwODtaLb+WyblyadkaDEisGhy3Dbd5az9n+5iLSPiUgf+WjPbns6MRg==}
     hasBin: true
 
   typanion@3.12.1:
@@ -4958,12 +4958,12 @@ snapshots:
       human-id: 1.0.2
       prettier: 2.8.8
 
-  '@commitlint/cli@19.3.0(@types/node@20.5.1)(typescript@5.4.5)':
+  '@commitlint/cli@19.4.0(@types/node@20.5.1)(typescript@5.4.5)':
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.2.2
-      '@commitlint/load': 19.2.0(@types/node@20.5.1)(typescript@5.4.5)
-      '@commitlint/read': 19.2.1
+      '@commitlint/load': 19.4.0(@types/node@20.5.1)(typescript@5.4.5)
+      '@commitlint/read': 19.4.0
       '@commitlint/types': 19.0.3
       execa: 8.0.1
       yargs: 17.6.2
@@ -5009,7 +5009,7 @@ snapshots:
       '@commitlint/rules': 19.0.3
       '@commitlint/types': 19.0.3
 
-  '@commitlint/load@19.2.0(@types/node@20.5.1)(typescript@5.4.5)':
+  '@commitlint/load@19.4.0(@types/node@20.5.1)(typescript@5.4.5)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -5033,7 +5033,7 @@ snapshots:
       conventional-changelog-angular: 7.0.0
       conventional-commits-parser: 5.0.0
 
-  '@commitlint/read@19.2.1':
+  '@commitlint/read@19.4.0':
     dependencies:
       '@commitlint/top-level': 19.0.0
       '@commitlint/types': 19.0.3
@@ -5074,7 +5074,7 @@ snapshots:
       chalk: 4.1.2
       tslib: 2.6.2
 
-  '@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.2.12
@@ -5084,7 +5084,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-helmet-async: 1.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       utility-types: 3.10.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)
       webpack-merge: 5.9.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -5092,7 +5092,7 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.2.12
@@ -5102,7 +5102,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-helmet-async: 1.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       utility-types: 3.10.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)
       webpack-merge: 5.9.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -5110,10 +5110,10 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/utils-validation@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.18.4)':
+  '@docusaurus/utils-validation@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.18.4)':
     dependencies:
       '@docusaurus/logger': 3.0.0
-      '@docusaurus/utils': 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.18.4)
+      '@docusaurus/utils': 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.18.4)
       joi: 17.9.2
       js-yaml: 4.1.0
       tslib: 2.6.2
@@ -5125,10 +5125,10 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/utils-validation@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)':
+  '@docusaurus/utils-validation@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)':
     dependencies:
       '@docusaurus/logger': 3.0.0
-      '@docusaurus/utils': 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)
+      '@docusaurus/utils': 3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)
       joi: 17.9.2
       js-yaml: 4.1.0
       tslib: 2.6.2
@@ -5140,12 +5140,12 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/utils@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.18.4)':
+  '@docusaurus/utils@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.18.4)':
     dependencies:
       '@docusaurus/logger': 3.0.0
       '@svgr/webpack': 6.5.1
       escape-string-regexp: 4.0.0
-      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4))
+      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4))
       fs-extra: 11.2.0
       github-slugger: 1.5.0
       globby: 11.1.0
@@ -5157,10 +5157,10 @@ snapshots:
       resolve-pathname: 3.0.0
       shelljs: 0.8.5
       tslib: 2.6.2
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)))(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4))
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)))(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4))
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)
     optionalDependencies:
-      '@docusaurus/types': 3.0.0(@swc/core@1.7.5)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@docusaurus/types': 3.0.0(@swc/core@1.7.14)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     transitivePeerDependencies:
       - '@swc/core'
       - esbuild
@@ -5168,12 +5168,12 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@docusaurus/utils@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.5)(esbuild@0.23.0)':
+  '@docusaurus/utils@3.0.0(@docusaurus/types@3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@swc/core@1.7.14)(esbuild@0.23.0)':
     dependencies:
       '@docusaurus/logger': 3.0.0
       '@svgr/webpack': 6.5.1
       escape-string-regexp: 4.0.0
-      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0))
+      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0))
       fs-extra: 11.2.0
       github-slugger: 1.5.0
       globby: 11.1.0
@@ -5185,10 +5185,10 @@ snapshots:
       resolve-pathname: 3.0.0
       shelljs: 0.8.5
       tslib: 2.6.2
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)))(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0))
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)))(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0))
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)
     optionalDependencies:
-      '@docusaurus/types': 3.0.0(@swc/core@1.7.5)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@docusaurus/types': 3.0.0(@swc/core@1.7.14)(esbuild@0.23.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     transitivePeerDependencies:
       - '@swc/core'
       - esbuild
@@ -5457,28 +5457,28 @@ snapshots:
   '@oxc-resolver/binding-win32-x64-msvc@1.10.2':
     optional: true
 
-  '@oxlint/darwin-arm64@0.6.1':
+  '@oxlint/darwin-arm64@0.8.0':
     optional: true
 
-  '@oxlint/darwin-x64@0.6.1':
+  '@oxlint/darwin-x64@0.8.0':
     optional: true
 
-  '@oxlint/linux-arm64-gnu@0.6.1':
+  '@oxlint/linux-arm64-gnu@0.8.0':
     optional: true
 
-  '@oxlint/linux-arm64-musl@0.6.1':
+  '@oxlint/linux-arm64-musl@0.8.0':
     optional: true
 
-  '@oxlint/linux-x64-gnu@0.6.1':
+  '@oxlint/linux-x64-gnu@0.8.0':
     optional: true
 
-  '@oxlint/linux-x64-musl@0.6.1':
+  '@oxlint/linux-x64-musl@0.8.0':
     optional: true
 
-  '@oxlint/win32-arm64@0.6.1':
+  '@oxlint/win32-arm64@0.8.0':
     optional: true
 
-  '@oxlint/win32-x64@0.6.1':
+  '@oxlint/win32-x64@0.8.0':
     optional: true
 
   '@pkgjs/parseargs@0.11.0':
@@ -5629,16 +5629,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@swc-node/core@1.13.3(@swc/core@1.7.5)(@swc/types@0.1.12)':
+  '@swc-node/core@1.13.3(@swc/core@1.7.14)(@swc/types@0.1.12)':
     dependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       '@swc/types': 0.1.12
 
-  '@swc-node/register@1.10.9(@swc/core@1.7.5)(@swc/types@0.1.12)(typescript@5.4.5)':
+  '@swc-node/register@1.10.9(@swc/core@1.7.14)(@swc/types@0.1.12)(typescript@5.4.5)':
     dependencies:
-      '@swc-node/core': 1.13.3(@swc/core@1.7.5)(@swc/types@0.1.12)
+      '@swc-node/core': 1.13.3(@swc/core@1.7.14)(@swc/types@0.1.12)
       '@swc-node/sourcemap-support': 0.5.1
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       colorette: 2.0.20
       debug: 4.3.5
       oxc-resolver: 1.10.2
@@ -5654,51 +5654,51 @@ snapshots:
       source-map-support: 0.5.21
       tslib: 2.6.3
 
-  '@swc/core-darwin-arm64@1.7.5':
+  '@swc/core-darwin-arm64@1.7.14':
     optional: true
 
-  '@swc/core-darwin-x64@1.7.5':
+  '@swc/core-darwin-x64@1.7.14':
     optional: true
 
-  '@swc/core-linux-arm-gnueabihf@1.7.5':
+  '@swc/core-linux-arm-gnueabihf@1.7.14':
     optional: true
 
-  '@swc/core-linux-arm64-gnu@1.7.5':
+  '@swc/core-linux-arm64-gnu@1.7.14':
     optional: true
 
-  '@swc/core-linux-arm64-musl@1.7.5':
+  '@swc/core-linux-arm64-musl@1.7.14':
     optional: true
 
-  '@swc/core-linux-x64-gnu@1.7.5':
+  '@swc/core-linux-x64-gnu@1.7.14':
     optional: true
 
-  '@swc/core-linux-x64-musl@1.7.5':
+  '@swc/core-linux-x64-musl@1.7.14':
     optional: true
 
-  '@swc/core-win32-arm64-msvc@1.7.5':
+  '@swc/core-win32-arm64-msvc@1.7.14':
     optional: true
 
-  '@swc/core-win32-ia32-msvc@1.7.5':
+  '@swc/core-win32-ia32-msvc@1.7.14':
     optional: true
 
-  '@swc/core-win32-x64-msvc@1.7.5':
+  '@swc/core-win32-x64-msvc@1.7.14':
     optional: true
 
-  '@swc/core@1.7.5':
+  '@swc/core@1.7.14':
     dependencies:
       '@swc/counter': 0.1.3
       '@swc/types': 0.1.12
     optionalDependencies:
-      '@swc/core-darwin-arm64': 1.7.5
-      '@swc/core-darwin-x64': 1.7.5
-      '@swc/core-linux-arm-gnueabihf': 1.7.5
-      '@swc/core-linux-arm64-gnu': 1.7.5
-      '@swc/core-linux-arm64-musl': 1.7.5
-      '@swc/core-linux-x64-gnu': 1.7.5
-      '@swc/core-linux-x64-musl': 1.7.5
-      '@swc/core-win32-arm64-msvc': 1.7.5
-      '@swc/core-win32-ia32-msvc': 1.7.5
-      '@swc/core-win32-x64-msvc': 1.7.5
+      '@swc/core-darwin-arm64': 1.7.14
+      '@swc/core-darwin-x64': 1.7.14
+      '@swc/core-linux-arm-gnueabihf': 1.7.14
+      '@swc/core-linux-arm64-gnu': 1.7.14
+      '@swc/core-linux-arm64-musl': 1.7.14
+      '@swc/core-linux-x64-gnu': 1.7.14
+      '@swc/core-linux-x64-musl': 1.7.14
+      '@swc/core-win32-arm64-msvc': 1.7.14
+      '@swc/core-win32-ia32-msvc': 1.7.14
+      '@swc/core-win32-x64-msvc': 1.7.14
 
   '@swc/counter@0.1.3': {}
 
@@ -6428,17 +6428,17 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
-  file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)):
+  file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)):
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)
 
-  file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)):
+  file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)):
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)
 
   fill-range@7.0.1:
     dependencies:
@@ -6606,7 +6606,7 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  husky@9.1.4: {}
+  husky@9.1.5: {}
 
   iconv-lite@0.4.24:
     dependencies:
@@ -6759,7 +6759,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@15.2.8:
+  lint-staged@15.2.9:
     dependencies:
       chalk: 5.3.0
       commander: 12.1.0
@@ -6977,16 +6977,16 @@ snapshots:
       '@oxc-resolver/binding-win32-arm64-msvc': 1.10.2
       '@oxc-resolver/binding-win32-x64-msvc': 1.10.2
 
-  oxlint@0.6.1:
+  oxlint@0.8.0:
     optionalDependencies:
-      '@oxlint/darwin-arm64': 0.6.1
-      '@oxlint/darwin-x64': 0.6.1
-      '@oxlint/linux-arm64-gnu': 0.6.1
-      '@oxlint/linux-arm64-musl': 0.6.1
-      '@oxlint/linux-x64-gnu': 0.6.1
-      '@oxlint/linux-x64-musl': 0.6.1
-      '@oxlint/win32-arm64': 0.6.1
-      '@oxlint/win32-x64': 0.6.1
+      '@oxlint/darwin-arm64': 0.8.0
+      '@oxlint/darwin-x64': 0.8.0
+      '@oxlint/linux-arm64-gnu': 0.8.0
+      '@oxlint/linux-arm64-musl': 0.8.0
+      '@oxlint/linux-x64-gnu': 0.8.0
+      '@oxlint/linux-x64-musl': 0.8.0
+      '@oxlint/win32-arm64': 0.8.0
+      '@oxlint/win32-x64': 0.8.0
 
   p-filter@2.1.0:
     dependencies:
@@ -7340,7 +7340,7 @@ snapshots:
 
   sort-object-keys@1.1.3: {}
 
-  sort-package-json@2.10.0:
+  sort-package-json@2.10.1:
     dependencies:
       detect-indent: 7.0.1
       detect-newline: 4.0.1
@@ -7497,28 +7497,28 @@ snapshots:
 
   term-size@2.2.1: {}
 
-  terser-webpack-plugin@5.3.9(@swc/core@1.7.5)(esbuild@0.18.4)(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)):
+  terser-webpack-plugin@5.3.9(@swc/core@1.7.14)(esbuild@0.18.4)(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.18
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.18.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)
     optionalDependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       esbuild: 0.18.4
 
-  terser-webpack-plugin@5.3.9(@swc/core@1.7.5)(esbuild@0.23.0)(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)):
+  terser-webpack-plugin@5.3.9(@swc/core@1.7.14)(esbuild@0.23.0)(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.18
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.18.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)
     optionalDependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       esbuild: 0.23.0
 
   terser@5.18.0:
@@ -7564,7 +7564,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@7.0.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5):
+  tsup@7.0.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5):
     dependencies:
       bundle-require: 4.0.1(esbuild@0.18.4)
       cac: 6.7.14
@@ -7581,14 +7581,14 @@ snapshots:
       sucrase: 3.29.0
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       postcss: 8.4.33
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
 
-  tsup@7.1.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5):
+  tsup@7.1.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5):
     dependencies:
       bundle-require: 4.0.1(esbuild@0.18.4)
       cac: 6.7.14
@@ -7605,14 +7605,14 @@ snapshots:
       sucrase: 3.29.0
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       postcss: 8.4.33
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
 
-  tsup@7.2.0(@swc/core@1.7.5)(postcss@8.4.33)(typescript@5.4.5):
+  tsup@7.2.0(@swc/core@1.7.14)(postcss@8.4.33)(typescript@5.4.5):
     dependencies:
       bundle-require: 4.0.1(esbuild@0.18.4)
       cac: 6.7.14
@@ -7629,14 +7629,14 @@ snapshots:
       sucrase: 3.29.0
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       postcss: 8.4.33
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
 
-  tsup@8.2.4(@swc/core@1.7.5)(jiti@1.21.0)(postcss@8.4.33)(typescript@5.4.5)(yaml@2.5.0):
+  tsup@8.2.4(@swc/core@1.7.14)(jiti@1.21.0)(postcss@8.4.33)(typescript@5.4.5)(yaml@2.5.0):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -7655,7 +7655,7 @@ snapshots:
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.7.5
+      '@swc/core': 1.7.14
       postcss: 8.4.33
       typescript: 5.4.5
     transitivePeerDependencies:
@@ -7664,32 +7664,32 @@ snapshots:
       - tsx
       - yaml
 
-  turbo-darwin-64@2.0.11:
+  turbo-darwin-64@2.0.14:
     optional: true
 
-  turbo-darwin-arm64@2.0.11:
+  turbo-darwin-arm64@2.0.14:
     optional: true
 
-  turbo-linux-64@2.0.11:
+  turbo-linux-64@2.0.14:
     optional: true
 
-  turbo-linux-arm64@2.0.11:
+  turbo-linux-arm64@2.0.14:
     optional: true
 
-  turbo-windows-64@2.0.11:
+  turbo-windows-64@2.0.14:
     optional: true
 
-  turbo-windows-arm64@2.0.11:
+  turbo-windows-arm64@2.0.14:
     optional: true
 
-  turbo@2.0.11:
+  turbo@2.0.14:
     optionalDependencies:
-      turbo-darwin-64: 2.0.11
-      turbo-darwin-arm64: 2.0.11
-      turbo-linux-64: 2.0.11
-      turbo-linux-arm64: 2.0.11
-      turbo-windows-64: 2.0.11
-      turbo-windows-arm64: 2.0.11
+      turbo-darwin-64: 2.0.14
+      turbo-darwin-arm64: 2.0.14
+      turbo-linux-64: 2.0.14
+      turbo-linux-arm64: 2.0.14
+      turbo-windows-64: 2.0.14
+      turbo-windows-arm64: 2.0.14
 
   typanion@3.12.1: {}
 
@@ -7728,23 +7728,23 @@ snapshots:
     dependencies:
       punycode: 2.2.0
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)))(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)))(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.18.4)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.18.4)
     optionalDependencies:
-      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4))
+      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4))
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)))(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)))(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.89.0(@swc/core@1.7.5)(esbuild@0.23.0)
+      webpack: 5.89.0(@swc/core@1.7.14)(esbuild@0.23.0)
     optionalDependencies:
-      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0))
+      file-loader: 6.2.0(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0))
 
   util-deprecate@1.0.2: {}
 
@@ -7764,7 +7764,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4):
+  webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4):
     dependencies:
       '@types/eslint-scope': 3.7.4
       '@types/estree': 1.0.1
@@ -7787,7 +7787,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.9(@swc/core@1.7.5)(esbuild@0.18.4)(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.18.4))
+      terser-webpack-plugin: 5.3.9(@swc/core@1.7.14)(esbuild@0.18.4)(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.18.4))
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -7795,7 +7795,7 @@ snapshots:
       - esbuild
       - uglify-js
 
-  webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0):
+  webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0):
     dependencies:
       '@types/eslint-scope': 3.7.4
       '@types/estree': 1.0.1
@@ -7818,7 +7818,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.9(@swc/core@1.7.5)(esbuild@0.23.0)(webpack@5.89.0(@swc/core@1.7.5)(esbuild@0.23.0))
+      terser-webpack-plugin: 5.3.9(@swc/core@1.7.14)(esbuild@0.23.0)(webpack@5.89.0(@swc/core@1.7.14)(esbuild@0.23.0))
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
