@@ -12,7 +12,7 @@
     "cmd": "node -r @swc-node/register scripts/index.ts",
     "dev": "turbo run dev --parallel",
     "format": "biome format --write .",
-    "lint": "oxlint --fix",
+    "lint": "oxlint --fix --import-plugin",
     "prepare": "husky install",
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\""

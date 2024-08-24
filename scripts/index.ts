@@ -13,8 +13,6 @@ const cli = new Cli({
 });
 
 cli.register(Builtins.HelpCommand);
-Object.keys(Commands).forEach((cmd) => {
-  // ! allowComputed
-  cli.register(Commands[cmd]);
-});
+cli.register(Commands.NewPluginCommand);
+
 cli.runExit(args);
