@@ -1,7 +1,7 @@
 import type {
   LoadContext,
-  Plugin,
   OptionValidationContext,
+  Plugin,
 } from "@docusaurus/types";
 import { Joi } from "@docusaurus/utils-validation";
 

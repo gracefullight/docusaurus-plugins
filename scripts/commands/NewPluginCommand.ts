@@ -1,5 +1,5 @@
-import { extname, join, resolve } from "path";
-import { Transform } from "stream";
+import { extname, join, resolve } from "node:path";
+import { Transform } from "node:stream";
 
 import { Command, Option, UsageError } from "clipanion";
 import {
@@ -45,38 +45,46 @@ export class NewPluginCommand extends Command {
 
   private async replaceInDirectory({ from, to, variables }: ReplaceOptions) {
     await ensureDir(to);
-    for (const fileDirent of await readdir(from, { withFileTypes: true })) {
-      const fileName = fileDirent.name;
-      if (fileDirent.isDirectory()) {
-        // ? readdir recursive
-        await this.replaceInDirectory({
-          from: join(from, fileName),
-          to: join(to, fileName),
-          variables,
-        });
-      } else {
-        const pluginFileName =
-          extname(fileName) === ".txt"
-            ? fileName.substring(0, fileName.lastIndexOf(".txt"))
-            : fileName;
+    const fileDirents = await readdir(from, { withFileTypes: true });
 
-        // ? Read from template, Replace texts, Write to plugin
-        createReadStream(join(from, fileName))
-          .pipe(
-            new Transform({
-              transform(file, _, callback) {
-                this.push(template(file.toString())(variables));
-                callback();
-              },
-            }),
-          )
-          .pipe(createWriteStream(join(to, pluginFileName)))
-          .on("error", (error) => {
-            this.context.stderr.write("Unexpected stream error\n");
-            this.context.stderr.write(JSON.stringify(error));
+    await Promise.all(
+      fileDirents.map(async (fileDirent) => {
+        const fileName = fileDirent.name;
+        if (fileDirent.isDirectory()) {
+          // readdir recursive
+          await this.replaceInDirectory({
+            from: join(from, fileName),
+            to: join(to, fileName),
+            variables,
           });
-      }
-    }
+        } else {
+          const pluginFileName =
+            extname(fileName) === ".txt"
+              ? fileName.substring(0, fileName.lastIndexOf(".txt"))
+              : fileName;
+
+          // Read from template, Replace texts, Write to plugin
+          await new Promise((resolve, reject) => {
+            createReadStream(join(from, fileName))
+              .pipe(
+                new Transform({
+                  transform(file, _, callback) {
+                    this.push(template(file.toString())(variables));
+                    callback();
+                  },
+                }),
+              )
+              .pipe(createWriteStream(join(to, pluginFileName)))
+              .on("error", (error) => {
+                this.context.stderr.write("Unexpected stream error\n");
+                this.context.stderr.write(JSON.stringify(error));
+                reject(error);
+              })
+              .on("finish", resolve);
+          });
+        }
+      }),
+    );
   }
 
   async execute() {
