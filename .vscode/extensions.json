@@ -2,7 +2,6 @@
   "recommendations": [
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
-    "ms-vscode.vscode-typescript-next",
     "streetsidesoftware.code-spell-checker",
     "biomejs.biome",
     "oxc.oxc-vscode"

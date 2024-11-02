@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@docusaurus/types": "^3",
+    "@gracefullight-docusaurus/tsconfig": "workspace:^",
     "tsup": "*",
     "typescript": "^5.4.5"
   }

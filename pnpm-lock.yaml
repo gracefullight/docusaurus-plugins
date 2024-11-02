@@ -75,6 +75,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -91,6 +94,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -107,6 +113,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -123,6 +132,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -139,6 +151,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -155,6 +170,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -171,6 +189,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -187,6 +208,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -203,6 +227,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -219,6 +246,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -235,6 +265,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -260,6 +293,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.2.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -276,6 +312,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.18.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.1.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
@@ -292,6 +331,9 @@ importers:
       '@docusaurus/types':
         specifier: ^3
         version: 3.0.0(@swc/core@1.7.42)(esbuild@0.24.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@gracefullight-docusaurus/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
       tsup:
         specifier: '*'
         version: 7.0.0(@swc/core@1.7.42)(postcss@8.4.33)(typescript@5.4.5)
