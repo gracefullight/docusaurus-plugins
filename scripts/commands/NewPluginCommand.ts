@@ -2,6 +2,8 @@ import { extname, join, resolve } from "node:path";
 import { Transform } from "node:stream";
 
 import { Command, Option, UsageError } from "clipanion";
+import { camelCase, kebabCase, snakeCase, startCase } from "es-toolkit";
+import { template, toLower, toUpper } from "es-toolkit/compat";
 import {
   createReadStream,
   createWriteStream,
@@ -9,15 +11,6 @@ import {
   pathExists,
   readdir,
 } from "fs-extra";
-import {
-  camelCase,
-  kebabCase,
-  snakeCase,
-  startCase,
-  template,
-  toLower,
-  toUpper,
-} from "lodash";
 
 interface ReplaceOptions {
   from: string;
