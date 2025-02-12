@@ -17,9 +17,6 @@
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\""
   },
-  "dependencies": {
-    "es-toolkit": "^1.32.0"
-  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@changesets/cli": "^2.27.12",
@@ -31,6 +28,7 @@
     "@types/fs-extra": "^11.0.4",
     "clipanion": "4.0.0-rc.4",
     "devmoji": "^2.3.0",
+    "es-toolkit": "^1.32.0",
     "fs-extra": "^11.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",

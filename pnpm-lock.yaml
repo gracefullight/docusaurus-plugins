@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      es-toolkit:
-        specifier: ^1.32.0
-        version: 1.32.0
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
@@ -42,6 +38,9 @@ importers:
       devmoji:
         specifier: ^2.3.0
         version: 2.3.0
+      es-toolkit:
+        specifier: ^1.32.0
+        version: 1.32.0
       fs-extra:
         specifier: ^11.3.0
         version: 11.3.0
