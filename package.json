@@ -19,26 +19,26 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.27.12",
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
-    "@commitlint/types": "^19.5.0",
-    "@swc-node/register": "^1.10.9",
-    "@swc/core": "^1.10.15",
+    "@changesets/cli": "^2.28.1",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/types": "^19.8.0",
+    "@swc-node/register": "^1.10.10",
+    "@swc/core": "^1.11.9",
     "@types/fs-extra": "^11.0.4",
     "clipanion": "4.0.0-rc.4",
     "devmoji": "^2.3.0",
-    "es-toolkit": "^1.32.0",
+    "es-toolkit": "^1.33.0",
     "fs-extra": "^11.3.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "oxlint": "^0.15.10",
-    "sort-package-json": "^2.14.0",
-    "tsup": "^8.3.6",
-    "turbo": "^2.4.1"
+    "lint-staged": "^15.5.0",
+    "oxlint": "^0.16.0",
+    "sort-package-json": "^3.0.0",
+    "tsup": "^8.4.0",
+    "turbo": "^2.4.4"
   },
   "engines": {
     "node": "22",
-    "pnpm": "9"
+    "pnpm": "10"
   }
 }
