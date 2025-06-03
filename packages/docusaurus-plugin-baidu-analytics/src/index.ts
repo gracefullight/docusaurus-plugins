@@ -40,7 +40,7 @@ export default async function baiduAnalytics(
           },
           {
             tagName: "script",
-            innerHTML: `if (!window._hmt) window._hmt = [];`,
+            innerHTML: "if (!window._hmt) window._hmt = [];",
           },
         ],
       };

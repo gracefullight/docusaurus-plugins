@@ -1,1 +1,1 @@
-export { NewPluginCommand } from "./NewPluginCommand";
+export { NewPluginCommand } from "./new-plugin-command";

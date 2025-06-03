@@ -19,7 +19,7 @@ interface ReplaceOptions {
 }
 
 export class NewPluginCommand extends Command {
-  static readonly paths = [[`new`]];
+  static readonly paths = [["new"]];
   static readonly usage = Command.Usage({
     description: "create a new docusaurus plugin",
     details:
@@ -27,7 +27,7 @@ export class NewPluginCommand extends Command {
     examples: [
       [
         `Create a new plugin named "my-plugin"`,
-        `$0 new my-plugin -o optionName -d scriptDomain`,
+        "$0 new my-plugin -o optionName -d scriptDomain",
       ],
     ],
   });
@@ -73,7 +73,9 @@ export class NewPluginCommand extends Command {
                 this.context.stderr.write(JSON.stringify(error));
                 reject(error);
               })
-              .on("finish", resolve);
+              .on("finish", () => {
+                resolve(true);
+              });
           });
         }
       }),
@@ -96,7 +98,7 @@ export class NewPluginCommand extends Command {
       throw new UsageError(`Plugin ${pluginName} already exists`);
     }
 
-    this.context.stdout.write(`📋 Copy plugin template\n`);
+    this.context.stdout.write("📋 Copy plugin template\n");
 
     const mockDirectory = resolve(__dirname, "../../mocks/templates/plugin");
     await this.replaceInDirectory({
