@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "cmd": "node -r @swc-node/register scripts/index.ts",
+    "cmd": "tsx scripts/index.ts",
     "dev": "turbo run dev --parallel",
     "format": "biome format --write .",
     "lint": "biome check --fix --unsafe --no-errors-on-unmatched",
@@ -23,8 +23,6 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/types": "^19.8.1",
-    "@swc-node/register": "^1.10.10",
-    "@swc/core": "^1.11.29",
     "@types/fs-extra": "^11.0.4",
     "clipanion": "4.0.0-rc.4",
     "devmoji": "^2.3.0",
@@ -34,6 +32,7 @@
     "lint-staged": "^16.1.0",
     "sort-package-json": "^3.2.1",
     "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
     "turbo": "^2.5.4"
   },
   "engines": {
