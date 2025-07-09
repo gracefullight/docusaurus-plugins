@@ -1,24 +1,10 @@
 {
-  "name": "@gracefullight/docusaurus-plugins",
-  "version": "0.3.0",
-  "private": true,
-  "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "author": {
-    "name": "gracefullight",
-    "email": "gracefullight.dev@gmail.com"
-  },
-  "scripts": {
-    "build": "turbo run build",
-    "cmd": "tsx scripts/index.ts",
-    "dev": "turbo run dev --parallel",
-    "format": "biome format --write .",
-    "lint": "biome check --fix --unsafe --no-errors-on-unmatched",
-    "prepare": "husky",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish",
-    "sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\""
+    "email": "gracefullight.dev@gmail.com",
+    "name": "gracefullight"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.1.1",
     "@changesets/cli": "^2.29.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
@@ -30,7 +16,6 @@
     "fs-extra": "^11.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
-    "sort-package-json": "^3.2.1",
     "tsup": "^8.5.0",
     "tsx": "^4.19.4",
     "turbo": "^2.5.4"
@@ -38,5 +23,18 @@
   "engines": {
     "node": "22",
     "pnpm": "10"
-  }
+  },
+  "name": "@gracefullight/docusaurus-plugins",
+  "private": true,
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "scripts": {
+    "build": "turbo run build",
+    "cmd": "tsx scripts/index.ts",
+    "dev": "turbo run dev --parallel",
+    "format": "biome format --write .",
+    "lint": "biome check --fix --unsafe --no-errors-on-unmatched",
+    "prepare": "husky",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+  },
+  "version": "0.3.0"
 }

@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -20,28 +21,28 @@ export default async function googleAdSense(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-google-adsense",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://pagead2.googlesyndication.com",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             attributes: {
-              src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${options.adClient}`,
               async: true,
               crossOrigin: "anonymous",
+              src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${options.adClient}`,
             },
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-google-adsense",
   };
 }
 

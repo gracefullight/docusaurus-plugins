@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -20,19 +21,17 @@ export default async function intercom(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-intercom",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://widget.intercom.io",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             innerHTML: `window.intercomSettings = {
               app_id: ${options.appId}
             };
@@ -62,10 +61,12 @@ export default async function intercom(
                 }
               }
             })();`,
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-intercom",
   };
 }
 

@@ -1,6 +1,5 @@
 import { extname, join, resolve } from "node:path";
 import { Transform } from "node:stream";
-
 import { Command, Option, UsageError } from "clipanion";
 import { camelCase, kebabCase, snakeCase, startCase } from "es-toolkit";
 import { template, toLower, toUpper } from "es-toolkit/compat";
@@ -105,19 +104,19 @@ export class NewPluginCommand extends Command {
       from: mockDirectory,
       to: pluginDirectory,
       variables: {
-        // ? For package.json
-        pluginName,
-        // ? For README.md
-        pluginNameStart: startCase(toLower(pluginName)),
-        // ? For Plugin Function name
-        pluginNameCamel: camelCase(pluginName),
-        // ? For Keyword
-        pluginNameLower: toLower(pluginName.replace(/-/g, " ")),
+        domain: this.preconnectDomain,
         // ? For Plugin Function option
         option: requiredOptionName,
         // ? For README.md
         optionUpper: toUpper(snakeCase(requiredOptionName)),
-        domain: this.preconnectDomain,
+        // ? For package.json
+        pluginName,
+        // ? For Plugin Function name
+        pluginNameCamel: camelCase(pluginName),
+        // ? For Keyword
+        pluginNameLower: toLower(pluginName.replace(/-/g, " ")),
+        // ? For README.md
+        pluginNameStart: startCase(toLower(pluginName)),
       },
     });
 

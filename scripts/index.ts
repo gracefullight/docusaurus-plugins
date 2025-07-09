@@ -1,7 +1,5 @@
 import { Builtins, Cli } from "clipanion";
-
 import { name } from "../package.json";
-
 import * as Commands from "./commands";
 
 const [, , ...args] = process.argv;

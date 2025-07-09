@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -20,19 +21,17 @@ export default async function chatra(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-chatra",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://call.chatra.io",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             innerHTML: `(function(d, w, c) {
               w.ChatraID = '${options.chatraId}';
               var s = d.createElement('script');
@@ -43,10 +42,12 @@ export default async function chatra(
               s.src = 'https://call.chatra.io/chatra.js';
               if (d.head) d.head.appendChild(s);
           })(document, window, 'Chatra');`,
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-chatra",
   };
 }
 

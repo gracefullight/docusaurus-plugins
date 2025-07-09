@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -14,8 +15,8 @@ export interface PluginOptions {
 export type Options = Partial<PluginOptions>;
 
 const pluginOptionsSchema = Joi.object({
-  publicKey: Joi.string().required(),
   lazy: Joi.bool(),
+  publicKey: Joi.string().required(),
   tracesSampleRate: Joi.number().min(0).max(1),
 });
 
@@ -26,36 +27,36 @@ export default async function sentry(
   const lazy = options.lazy === false ? "no" : "yes";
 
   return {
-    name: "@gracefullight/docusaurus-plugin-sentry",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://js.sentry-cdn.com",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             attributes: {
-              src: `https://js.sentry-cdn.com/${options.publicKey}.min.js`,
               crossOrigin: "anonymous",
               "data-lazy": lazy,
+              src: `https://js.sentry-cdn.com/${options.publicKey}.min.js`,
             },
+            tagName: "script",
           },
           {
-            tagName: "script",
             innerHTML: `Sentry.onLoad(function() {
               Sentry.init({
                 tracesSampleRate: ${options.tracesSampleRate ?? 1}
               });
             });`,
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-sentry",
   };
 }
 

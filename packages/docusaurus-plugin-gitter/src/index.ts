@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -20,33 +21,33 @@ export default async function gitter(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-gitter",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://sidecar.gitter.im",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             innerHTML: `((window.gitter = {}).chat = {}).options = {
               room: '${options.room}'
             };`,
+            tagName: "script",
           },
           {
-            tagName: "script",
             attributes: {
-              src: "https://sidecar.gitter.im/dist/sidecar.v1.js",
               async: true,
+              src: "https://sidecar.gitter.im/dist/sidecar.v1.js",
             },
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-gitter",
   };
 }
 

@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -20,7 +21,6 @@ export default async function vercelAnalytics(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-vercel-analytics",
     injectHtmlTags() {
       // ? https://github.com/vercel/analytics/blob/main/packages/web/src/generic.ts
       const isDevelopment =
@@ -31,24 +31,25 @@ export default async function vercelAnalytics(
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: scriptDomain,
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             attributes: {
-              src: `${scriptDomain}${scriptPath}`,
-              defer: true,
               "data-sdkn": "@vercel/analytics",
               "data-sdkv": "1.1.2",
+              defer: true,
+              src: `${scriptDomain}${scriptPath}`,
             },
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-vercel-analytics",
   };
 }
 

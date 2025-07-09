@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 // ? https://channel.io/user-chat
@@ -21,19 +22,17 @@ export default async function channelIO(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-channelio",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://cdn.channel.io",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             innerHTML: `(function() {
               var w = window;
               if (w.ChannelIO) {
@@ -72,10 +71,12 @@ export default async function channelIO(
             ChannelIO('boot', {
               "pluginKey": "${options.pluginKey}"
             });`,
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-channelio",
   };
 }
 

@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
@@ -22,19 +23,17 @@ export default async function yandexMetrica(
   options: PluginOptions,
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-yandex-metrica",
     injectHtmlTags() {
       return {
         headTags: [
           {
-            tagName: "link",
             attributes: {
-              rel: "preconnect",
               href: "https://mc.yandex.ru",
+              rel: "preconnect",
             },
+            tagName: "link",
           },
           {
-            tagName: "script",
             innerHTML: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
               m[i].l=1*new Date();
               for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -47,10 +46,12 @@ export default async function yandexMetrica(
                 accurateTrackBounce: true,
                 webvisor: ${options.webvisor ? "true" : "false"}
               });`,
+            tagName: "script",
           },
         ],
       };
     },
+    name: "@gracefullight/docusaurus-plugin-yandex-metrica",
   };
 }
 

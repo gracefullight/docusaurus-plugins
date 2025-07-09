@@ -1,25 +1,72 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": []
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space"
-  },
-  "organizeImports": {
+  "$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              {
+                "type": true
+              },
+              ":BLANK_LINE:",
+              ":URL:",
+              ":NODE:",
+              ":PACKAGE_WITH_PROTOCOL:",
+              ":PACKAGE:",
+              ":ALIAS:",
+              ":PATH:",
+              "**"
+            ]
+          }
+        },
+        "useSortedAttributes": "on",
+        "useSortedKeys": "on"
+      }
+    },
     "enabled": true
   },
-  "linter": {
+  "files": {
+    "includes": [
+      "**",
+      "!**/.DS_Store",
+      "!**/.docusaurus",
+      "!**/build",
+      "!**/coverage",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/pnpm-lock.yaml",
+      "!**/*.log"
+    ]
+  },
+  "formatter": {
+    "attributePosition": "auto",
     "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
+  "linter": {
+    "domains": {
+      "react": "all",
+      "test": "all"
+    },
+    "enabled": true,
+    "includes": ["**", "!**/.vscode", "!**/dist"],
     "rules": {
-      "recommended": true,
       "complexity": {
         "noExcessiveCognitiveComplexity": "error",
         "noUselessStringConcat": "error",
@@ -28,25 +75,46 @@
       },
       "correctness": {
         "noConstantMathMinMaxClamp": "error",
+        "noPrivateImports": "error",
         "noUnusedFunctionParameters": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "useArrayLiterals": "error",
         "useHookAtTopLevel": "error"
       },
       "nursery": {
-        "noEnum": "error",
-        "noNestedTernary": "error"
+        "noFloatingPromises": "error",
+        "noUselessBackrefInRegex": "error",
+        "noUselessEscapeInString": "error",
+        "noUselessUndefined": "error",
+        "useConsistentObjectDefinition": "error",
+        "useConsistentResponse": "error",
+        "useExhaustiveSwitchCases": "error",
+        "useNumericSeparators": "error",
+        "useObjectSpread": "error",
+        "useParseIntRadix": "error",
+        "useSingleJsDocAsterisk": "error",
+        "useSymbolDescription": "error"
       },
+      "recommended": true,
       "style": {
+        "noEnum": "error",
+        "noInferrableTypes": "error",
         "noNegationElse": "error",
+        "noNestedTernary": "error",
+        "noParameterAssign": "error",
         "noParameterProperties": "error",
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error",
         "noYodaExpression": "error",
+        "useArrayLiterals": "error",
+        "useAsConstAssertion": "error",
         "useCollapsedElseIf": "error",
         "useConsistentArrayType": "error",
         "useConsistentBuiltinInstantiation": "error",
+        "useDefaultParameterLast": "error",
         "useDefaultSwitchClause": "error",
+        "useEnumInitializers": "error",
         "useExplicitLengthCheck": "error",
         "useExportType": "error",
         "useFilenamingConvention": {
@@ -55,20 +123,27 @@
             "filenameCases": ["kebab-case"]
           }
         },
-        "useImportType": "error",
+        "useImportType": {
+          "level": "error",
+          "options": {
+            "style": "separatedType"
+          }
+        },
+        "useNumberNamespace": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
         "useThrowNewError": "error"
       },
       "suspicious": {
         "noEmptyBlockStatements": "error",
-        "useAwait": "error",
+        "useAwait": "off",
         "useErrorMessage": "error"
       }
-    },
-    "ignore": [".vscode", "dist"]
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
     }
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false
   }
 }

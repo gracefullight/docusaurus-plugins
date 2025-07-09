@@ -1,26 +1,7 @@
 {
-  "name": "@gracefullight/docusaurus-plugin-yandex-metrica",
-  "version": "1.0.0",
-  "keywords": [
-    "yandex",
-    "metrica",
-    "yandex metrica",
-    "yandex analytics",
-    "docusaurus",
-    "docusaurus plugin",
-    "web analytics"
-  ],
-  "repository": "https://github.com/gracefullight/docusaurus-plugins",
-  "license": "MIT",
   "author": {
-    "name": "gracefullight",
-    "email": "gracefullight.dev@gmail.com"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup src/index.ts --format cjs --dts --minify",
-    "dev": "pnpm build --watch"
+    "email": "gracefullight.dev@gmail.com",
+    "name": "gracefullight"
   },
   "dependencies": {
     "@docusaurus/utils-validation": "^3"
@@ -30,5 +11,24 @@
     "@gracefullight-docusaurus/tsconfig": "workspace:^",
     "tsup": "*",
     "typescript": "^5.4.5"
-  }
+  },
+  "keywords": [
+    "yandex",
+    "metrica",
+    "yandex metrica",
+    "yandex analytics",
+    "docusaurus",
+    "docusaurus plugin",
+    "web analytics"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "name": "@gracefullight/docusaurus-plugin-yandex-metrica",
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --minify",
+    "dev": "pnpm build --watch"
+  },
+  "types": "./dist/index.d.ts",
+  "version": "1.0.0"
 }
