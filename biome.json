@@ -37,7 +37,8 @@
       "!**/dist",
       "!**/node_modules",
       "!**/pnpm-lock.yaml",
-      "!**/*.log"
+      "!**/*.log",
+      "!turbo/generators/templates/**"
     ]
   },
   "formatter": {
@@ -65,7 +66,12 @@
       "test": "all"
     },
     "enabled": true,
-    "includes": ["**", "!**/.vscode", "!**/dist"],
+    "includes": [
+      "**",
+      "!**/.vscode",
+      "!**/dist",
+      "!turbo/generators/templates/**"
+    ],
     "rules": {
       "complexity": {
         "noExcessiveCognitiveComplexity": "error",

@@ -6,21 +6,21 @@ import type {
 import { Joi } from "@docusaurus/utils-validation";
 
 export interface PluginOptions {
-  ${ option }: string;
+  {{ option }}: string;
 }
 
 export type Options = Partial<PluginOptions>;
 
 const pluginOptionsSchema = Joi.object({
-  ${ option }: Joi.string().required(),
+  {{ option }}: Joi.string().required(),
 });
 
-export default async function ${ pluginNameCamel }(
+export default async function {{ pluginNameCamel }}(
   _: LoadContext,
   options: PluginOptions
 ): Promise<Plugin> {
   return {
-    name: "@gracefullight/docusaurus-plugin-${ pluginName }",
+    name: "@gracefullight/docusaurus-plugin-{{ pluginName }}",
     injectHtmlTags() {
       return {
         headTags: [
@@ -28,7 +28,7 @@ export default async function ${ pluginNameCamel }(
             tagName: "link",
             attributes: {
               rel: "preconnect",
-              href: "https://${ domain }",
+              href: "https://{{ domain }}",
             },
           },
           {
