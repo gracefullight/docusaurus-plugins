@@ -9,15 +9,12 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/types": "^19.8.1",
-    "@types/fs-extra": "^11.0.4",
-    "clipanion": "4.0.0-rc.4",
+    "@turbo/gen": "^2.5.4",
     "devmoji": "^2.3.0",
     "es-toolkit": "^1.38.0",
-    "fs-extra": "^11.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
     "tsup": "^8.5.0",
-    "tsx": "^4.19.4",
     "turbo": "^2.5.4"
   },
   "engines": {
@@ -25,13 +22,14 @@
     "pnpm": "10"
   },
   "name": "@gracefullight/docusaurus-plugins",
+  "packageManager": "pnpm@10.0.0",
   "private": true,
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
     "build": "turbo run build",
-    "cmd": "tsx scripts/index.ts",
     "dev": "turbo run dev --parallel",
     "format": "biome format --write .",
+    "gen": "turbo gen",
     "lint": "biome check --fix --unsafe --no-errors-on-unmatched",
     "prepare": "husky",
     "publish-packages": "turbo run build lint && changeset version && changeset publish"
