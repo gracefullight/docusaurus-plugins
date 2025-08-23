@@ -1,5 +1,6 @@
 import type { PlopTypes } from "@turbo/gen";
 
+import { execSync } from "node:child_process";
 import path from "node:path";
 import { camelCase, kebabCase, snakeCase, startCase } from "es-toolkit";
 import { toLower, toUpper } from "es-toolkit/compat";
@@ -30,6 +31,10 @@ export default function generator(plop: PlopTypes.NodePlopAPI) {
           stripExtensions: ["hbs"],
           templateFiles: `${templateRoot}/**/*`,
           type: "addMany",
+        },
+        () => {
+          execSync("pnpm install", { stdio: "inherit" });
+          return "installed dependencies";
         },
       ];
     },
