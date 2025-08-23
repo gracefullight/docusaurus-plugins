@@ -1,7 +1,10 @@
 import type { PlopTypes } from "@turbo/gen";
 
+import path from "node:path";
 import { camelCase, kebabCase, snakeCase, startCase } from "es-toolkit";
 import { toLower, toUpper } from "es-toolkit/compat";
+
+const templateRoot = path.resolve("turbo/generators/templates/plugin");
 
 export default function generator(plop: PlopTypes.NodePlopAPI) {
   plop.setGenerator("plugin", {
@@ -21,11 +24,11 @@ export default function generator(plop: PlopTypes.NodePlopAPI) {
       const destination = `packages/docusaurus-plugin-${pluginName}`;
       return [
         {
-          base: "turbo/generators/templates/plugin",
+          base: templateRoot,
           data,
           destination,
           stripExtensions: ["hbs"],
-          templateFiles: "turbo/generators/templates/plugin/**",
+          templateFiles: `${templateRoot}/**/*`,
           type: "addMany",
         },
       ];
