@@ -3,7 +3,6 @@
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "biomejs.biome",
-    "oxc.oxc-vscode"
+    "biomejs.biome"
   ]
 }
