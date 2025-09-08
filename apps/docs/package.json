@@ -19,8 +19,7 @@
   "private": true,
   "scripts": {
     "build": "pnpm prepare-docs && docusaurus build",
-    "prepare-docs": "tsx ./scripts/prepare-docs.ts",
-    "start": "pnpm prepare-docs && docusaurus start"
-  },
-  "type": "module"
+    "dev": "pnpm prepare-docs && docusaurus start",
+    "prepare-docs": "tsx ./scripts/prepare-docs.ts"
+  }
 }
