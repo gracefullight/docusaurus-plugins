@@ -1,8 +1,4 @@
-import type {
-  LoadContext,
-  OptionValidationContext,
-  Plugin,
-} from "@docusaurus/types";
+import type { LoadContext, OptionValidationContext } from "@docusaurus/types";
 
 import { Joi } from "@docusaurus/utils-validation";
 
@@ -21,7 +17,7 @@ const pluginOptionsSchema = Joi.object({
 export default async function yandexMetrica(
   _: LoadContext,
   options: PluginOptions,
-): Promise<Plugin> {
+) {
   return {
     injectHtmlTags() {
       return {
@@ -38,9 +34,10 @@ export default async function yandexMetrica(
               m[i].l=1*new Date();
               for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
               k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-              (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+              (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=${options.counterId}", "ym");
             
               ym(${options.counterId}, "init", {
+                ssr: true,
                 clickmap: true,
                 trackLinks: true,
                 accurateTrackBounce: true,
