@@ -1,0 +1,20 @@
+.header-github-link {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  margin-left: 0.5rem;
+}
+
+.header-github-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  background: var(--ifm-navbar-link-color);
+  -webkit-mask: url("/img/github.svg") no-repeat center;
+  mask: url("/img/github.svg") no-repeat center;
+}
+
+.header-github-link:hover::before {
+  background: var(--ifm-navbar-link-hover-color);
+}
