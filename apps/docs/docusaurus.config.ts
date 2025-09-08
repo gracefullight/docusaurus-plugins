@@ -17,6 +17,8 @@ const themeConfig: ThemeConfig = {
 
 const config: Config = {
   baseUrl: "/docusaurus-plugins/",
+  // Ensure branch-based GH Pages deploys target the right branch
+  deploymentBranch: "gh-pages",
   favicon: "img/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -36,6 +38,8 @@ const config: Config = {
   projectName: "docusaurus-plugins",
   themeConfig,
   title: "docusaurus-plugins",
+  // Set explicit trailingSlash for GitHub Pages to avoid redirect quirks
+  trailingSlash: true,
   url: "https://gracefullight.github.io",
 };
 

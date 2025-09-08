@@ -3,6 +3,7 @@ name: Deploy Docs
 on:
   push:
     branches: ["main"]
+  workflow_dispatch: {}
 
 # Branch-based Pages deployment via `docusaurus deploy`
 permissions:
@@ -24,6 +25,23 @@ jobs:
           node-version: 22
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
+      - name: Ensure gh-pages branch exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            echo "gh-pages branch exists"
+          else
+            echo "Initializing gh-pages branch"
+            git switch --orphan gh-pages
+            git rm -rf . || true
+            echo '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/docusaurus-plugins/">' > index.html
+            git add -A
+            git commit -m "chore: initialize gh-pages"
+            git push origin gh-pages
+            git switch -
+          fi
       - name: Configure git identity
         run: |
           git config user.name "github-actions[bot]"
