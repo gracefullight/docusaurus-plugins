@@ -32,6 +32,9 @@ const config: Config = {
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
         },
+        theme: {
+          customCss: "./src/css/custom.css",
+        },
       },
     ],
   ],
