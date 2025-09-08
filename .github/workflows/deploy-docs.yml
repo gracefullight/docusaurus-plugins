@@ -1,53 +1,42 @@
-name: Deploy Docs
+name: Node CI
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch: {}
 
-# Branch-based Pages deployment via `docusaurus deploy`
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    env:
+      GIT_USER: github-actions[bot]
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
-          # Required to push to gh-pages
           fetch-depth: 0
-      - name: Configure git identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - uses: pnpm/action-setup@v3
         with:
           version: 10
-      - uses: actions/setup-node@v4
+      - name: SETUP_NODE_${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: "pnpm"
-      - run: pnpm install --frozen-lockfile
-      - name: Ensure gh-pages branch exists
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - name: BEFORE_SCRIPT
         run: |
-          set -e
-          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
-            echo "gh-pages branch exists"
-          else
-            echo "Initializing gh-pages branch"
-            git switch --orphan gh-pages
-            git rm -rf . || true
-            echo '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/docusaurus-plugins/">' > index.html
-            git add index.html
-            git commit -m "chore: initialize gh-pages"
-            git push origin gh-pages
-            git switch -
-          fi
-      - name: Deploy with Docusaurus
-        env:
-          GIT_USER: github-actions[bot]
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: INSTALL_PACKAGES
+        run: pnpm install --frozen-lockfile
+      - name: BUILD
+        run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" run build
+      - name: DEPLOY
         run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" run deploy
