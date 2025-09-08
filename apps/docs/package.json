@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
+    "@docusaurus/theme-classic": "^3.8.1",
+    "@mdx-js/react": "^3.1.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "@gracefullight-docusaurus/tsconfig": "workspace:^",
+    "@types/react": "^19.1",
+    "@types/react-dom": "^19.1"
+  },
+  "name": "@gracefullight/docusaurus-plugin-docs",
+  "private": true,
+  "scripts": {
+    "build": "pnpm prepare-docs && docusaurus build",
+    "dev": "pnpm prepare-docs && docusaurus start",
+    "prepare-docs": "tsx ./scripts/prepare-docs.ts"
+  }
+}

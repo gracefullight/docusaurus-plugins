@@ -12,6 +12,7 @@ coverage
 .next/
 out/
 build
+.docusaurus
 
 # misc
 .DS_Store
@@ -34,3 +35,9 @@ yarn-error.log*
 
 packages/*/dist/
 packages/*/dist/*
+
+# Ignore everything inside docs/ by default (generated content)
+apps/docs/docs/*
+apps/docs/docs/intro.md
+# But keep the placeholder file
+!apps/docs/docs/.gitkeep
