@@ -17,6 +17,10 @@ jobs:
         with:
           # Required to push to gh-pages
           fetch-depth: 0
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - uses: pnpm/action-setup@v3
         with:
           version: 10
@@ -37,15 +41,11 @@ jobs:
             git switch --orphan gh-pages
             git rm -rf . || true
             echo '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/docusaurus-plugins/">' > index.html
-            git add -A
+            git add index.html
             git commit -m "chore: initialize gh-pages"
             git push origin gh-pages
             git switch -
           fi
-      - name: Configure git identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Deploy with Docusaurus
         env:
           GIT_USER: github-actions[bot]
