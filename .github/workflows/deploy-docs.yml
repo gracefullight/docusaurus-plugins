@@ -26,17 +26,20 @@ jobs:
           node-version: 22
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter docs build
-      - uses: actions/upload-pages-artifact@v3
+      # Build the Docusaurus site in apps/docs
+      # The previous filter didn't match any workspace package, so no build ran.
+      # Use the actual package name to ensure the build step executes.
+      - run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" build
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: apps/docs/build
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+    # Use the reserved GitHub Pages environment without URL expression
+    # to avoid job-level expression context limitations.
+    # environment: github-pages
     steps:
       - id: deploy
         uses: actions/deploy-pages@v4
