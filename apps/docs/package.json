@@ -19,6 +19,7 @@
   "private": true,
   "scripts": {
     "build": "pnpm prepare-docs && docusaurus build",
+    "deploy": "pnpm prepare-docs && docusaurus deploy",
     "dev": "pnpm prepare-docs && docusaurus start",
     "prepare-docs": "tsx ./scripts/prepare-docs.ts"
   }

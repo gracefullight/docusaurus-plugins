@@ -4,20 +4,18 @@ on:
   push:
     branches: ["main"]
 
+# Branch-based Pages deployment via `docusaurus deploy`
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Required to push to gh-pages
+          fetch-depth: 0
       - uses: pnpm/action-setup@v3
         with:
           version: 10
@@ -26,20 +24,12 @@ jobs:
           node-version: 22
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
-      # Build the Docusaurus site in apps/docs
-      # The previous filter didn't match any workspace package, so no build ran.
-      # Use the actual package name to ensure the build step executes.
-      - run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" build
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: apps/docs/build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # Use the reserved GitHub Pages environment without URL expression
-    # to avoid job-level expression context limitations.
-    # environment: github-pages
-    steps:
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Deploy with Docusaurus
+        env:
+          GIT_USER: github-actions[bot]
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" run deploy
