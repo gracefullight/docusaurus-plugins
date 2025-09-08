@@ -33,7 +33,7 @@
     "gen": "turbo gen",
     "lint": "biome check --fix --unsafe --no-errors-on-unmatched",
     "prepare": "husky",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+    "publish-packages": "turbo run build && changeset version && changeset publish"
   },
   "version": "0.3.0"
 }
