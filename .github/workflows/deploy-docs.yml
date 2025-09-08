@@ -25,8 +25,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - name: SETUP_NODE_${{ matrix.node-version }}
         uses: actions/setup-node@v5
         with:

@@ -23,7 +23,7 @@
     "pnpm": "10"
   },
   "name": "@gracefullight/docusaurus-plugins",
-  "packageManager": "pnpm@10.0.0",
+  "packageManager": "pnpm@10.15.1",
   "private": true,
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
