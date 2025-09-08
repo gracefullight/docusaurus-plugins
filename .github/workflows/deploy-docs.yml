@@ -32,8 +32,9 @@ jobs:
           cache: pnpm
       - name: BEFORE_SCRIPT
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Configure git identity globally so commits in temp gh-pages clone succeed
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: INSTALL_PACKAGES
         run: pnpm install --frozen-lockfile
       - name: BUILD
