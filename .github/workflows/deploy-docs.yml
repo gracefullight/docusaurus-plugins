@@ -16,7 +16,6 @@ jobs:
       matrix:
         node-version: [22.x]
     env:
-      USE_SSH: true
       GIT_USER: github-actions[bot]
       GIT_PASS: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
