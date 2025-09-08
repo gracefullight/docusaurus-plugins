@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_gracefullight_docusaurus_plugin_docs=self.webpackChunk_gracefullight_docusaurus_plugin_docs||[]).push([[583],{7963:(u,r,s)=>{s.r(r),s.d(r,{default:()=>l});var c=s(2605),a=s(5510),e=s(1360);function l(){var u=(0,a.Ay)("/intro");return(0,e.jsx)(c.rd,{to:u})}}}]);
