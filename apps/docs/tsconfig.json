@@ -1,4 +1,14 @@
 {
-  "extends": "../../packages/tsconfig/base.json",
-  "include": ["."]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "types": [
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/theme-classic"
+    ]
+  },
+  "exclude": [".docusaurus", "build"],
+  "extends": "@docusaurus/tsconfig"
 }
