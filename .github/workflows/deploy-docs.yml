@@ -16,17 +16,19 @@ jobs:
       matrix:
         node-version: [22.x]
     env:
+      USE_SSH: true
       GIT_USER: github-actions[bot]
+      GIT_PASS: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
           version: 10
       - name: SETUP_NODE_${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -37,7 +39,5 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: INSTALL_PACKAGES
         run: pnpm install --frozen-lockfile
-      - name: BUILD
-        run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" run build
       - name: DEPLOY
         run: pnpm --filter "@gracefullight/docusaurus-plugin-docs" run deploy
