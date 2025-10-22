@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -22,7 +22,8 @@
           }
         },
         "useSortedAttributes": "on",
-        "useSortedKeys": "on"
+        "useSortedKeys": "on",
+        "useSortedProperties": "on"
       }
     },
     "enabled": true
@@ -37,8 +38,7 @@
       "!**/dist",
       "!**/node_modules",
       "!**/pnpm-lock.yaml",
-      "!**/*.log",
-      "!turbo/generators/templates/**"
+      "!**/*.log"
     ]
   },
   "formatter": {
@@ -66,12 +66,7 @@
       "test": "all"
     },
     "enabled": true,
-    "includes": [
-      "**",
-      "!**/.vscode",
-      "!**/dist",
-      "!turbo/generators/templates/**"
-    ],
+    "includes": ["**", "!**/.vscode", "!**/dist"],
     "rules": {
       "complexity": {
         "noExcessiveCognitiveComplexity": "error",
@@ -81,26 +76,21 @@
       },
       "correctness": {
         "noConstantMathMinMaxClamp": "error",
+        "noNestedComponentDefinitions": "error",
         "noPrivateImports": "error",
         "noUnusedFunctionParameters": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "useHookAtTopLevel": "error"
+        "useHookAtTopLevel": "error",
+        "useJsxKeyInIterable": "error",
+        "useParseIntRadix": "error",
+        "useSingleJsDocAsterisk": "error"
       },
       "nursery": {
         "noFloatingPromises": "error",
-        "noUselessBackrefInRegex": "error",
-        "noUselessEscapeInString": "error",
         "noUselessUndefined": "error",
-        "useConsistentObjectDefinition": "error",
-        "useConsistentResponse": "error",
-        "useExhaustiveSwitchCases": "error",
-        "useNumericSeparators": "error",
-        "useObjectSpread": "error",
-        "useParseIntRadix": "error",
-        "useSingleJsDocAsterisk": "error",
-        "useSymbolDescription": "error"
+        "useExhaustiveSwitchCases": "error"
       },
       "recommended": true,
       "style": {
@@ -118,6 +108,7 @@
         "useCollapsedElseIf": "error",
         "useConsistentArrayType": "error",
         "useConsistentBuiltinInstantiation": "error",
+        "useConsistentObjectDefinitions": "error",
         "useDefaultParameterLast": "error",
         "useDefaultSwitchClause": "error",
         "useEnumInitializers": "error",
@@ -136,20 +127,25 @@
           }
         },
         "useNumberNamespace": "error",
+        "useNumericSeparators": "error",
+        "useObjectSpread": "error",
         "useSelfClosingElements": "error",
         "useSingleVarDeclarator": "error",
+        "useSymbolDescription": "error",
         "useThrowNewError": "error"
       },
       "suspicious": {
         "noEmptyBlockStatements": "error",
-        "useAwait": "off",
-        "useErrorMessage": "error"
+        "noUselessEscapeInString": "error",
+        "noUselessRegexBackrefs": "error",
+        "useErrorMessage": "error",
+        "useStaticResponseMethods": "error"
       }
     }
   },
   "vcs": {
     "clientKind": "git",
-    "enabled": false,
-    "useIgnoreFile": false
+    "enabled": true,
+    "useIgnoreFile": true
   }
 }

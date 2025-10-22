@@ -4,26 +4,26 @@
     "name": "gracefullight"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.1",
-    "@changesets/cli": "^2.29.6",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@commitlint/types": "^19.8.1",
-    "@turbo/gen": "^2.5.6",
+    "@biomejs/biome": "^2.2.6",
+    "@changesets/cli": "^2.29.7",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/types": "^20.0.0",
+    "@turbo/gen": "^2.5.8",
     "devmoji": "^2.3.0",
-    "es-toolkit": "^1.39.10",
+    "es-toolkit": "^1.40.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.6",
+    "lint-staged": "^16.2.5",
     "tsup": "^8.5.0",
-    "tsx": "^4.20.5",
-    "turbo": "^2.5.6"
+    "tsx": "^4.20.6",
+    "turbo": "^2.5.8"
   },
   "engines": {
     "node": "22",
     "pnpm": "10"
   },
   "name": "@gracefullight/docusaurus-plugins",
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.19.0",
   "private": true,
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
