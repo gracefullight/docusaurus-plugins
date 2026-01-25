@@ -8,13 +8,13 @@
 - .changeset: Versioning and release metadata.
 
 ## Build, Test, and Development Commands
-- `pnpm build`: Build all packages via Turbo (`dist/**`).
-- `pnpm dev`: Watch builds across packages.
-- `pnpm --filter <pkg> build`: Build a single package (e.g., `@gracefullight/docusaurus-plugin-sentry`).
-- `pnpm format`: Format code with Biome.
-- `pnpm lint`: Lint and auto-fix with Biome.
-- `pnpm publish-packages`: Build + version + publish with Changesets.
-- Requirements: Node `22`, pnpm `10`.
+- `bun run build`: Build all packages via Turbo (`dist/**`).
+- `bun run dev`: Watch builds across packages.
+- `bun run --filter <pkg> build`: Build a single package (e.g., `@gracefullight/docusaurus-plugin-sentry`).
+- `bun run format`: Format code with Biome.
+- `bun run lint`: Lint and auto-fix with Biome.
+- `bun run publish-packages`: Build + version + publish with Changesets.
+- Requirements: Node `24`, bun `1`.
 
 ## Coding Style & Naming Conventions
 - Indentation: 2 spaces; line width 80; LF endings; JS quotes: double (Biome enforced).

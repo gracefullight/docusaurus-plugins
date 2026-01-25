@@ -19,11 +19,16 @@
     "turbo": "^2.5.8"
   },
   "engines": {
-    "node": "22",
-    "pnpm": "10"
+    "node": "24",
+    "bun": "1"
   },
   "name": "@gracefullight/docusaurus-plugins",
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "bun@1.2.14",
+  "workspaces": [
+    "packages/*",
+    "apps/**",
+    "!**/test/**"
+  ],
   "private": true,
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
