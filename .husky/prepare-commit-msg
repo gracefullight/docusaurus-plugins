@@ -1,1 +1,1 @@
-pnpm devmoji -e
+bun run devmoji -e
