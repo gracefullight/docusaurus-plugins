@@ -1,0 +1,41 @@
+{
+  "author": {
+    "email": "gracefullight.dev@gmail.com",
+    "name": "gracefullight"
+  },
+  "dependencies": {
+    "@docusaurus/utils": "^3",
+    "@docusaurus/utils-validation": "^3",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^3",
+    "@gracefullight-docusaurus/tsconfig": "workspace:^",
+    "tsup": "*",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "files": [
+    "dist",
+    "src/client"
+  ],
+  "keywords": [
+    "copy",
+    "markdown",
+    "docusaurus",
+    "docusaurus plugin",
+    "blog",
+    "clipboard"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "name": "@gracefullight/docusaurus-plugin-copy-markdown",
+  "repository": "https://github.com/gracefullight/docusaurus-plugins",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --minify",
+    "dev": "bun run build --watch",
+    "test": "vitest run"
+  },
+  "types": "./dist/index.d.ts",
+  "version": "1.0.0"
+}

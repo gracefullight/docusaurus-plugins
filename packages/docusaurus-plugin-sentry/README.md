@@ -4,10 +4,10 @@ This Docusaurus plugin adds support for Sentry on your website.
 
 ## Installation
 
-You can install this plugin via pnpm:
+You can install this plugin via bun:
 
 ```bash
-pnpm add @gracefullight/docusaurus-plugin-sentry
+bun add @gracefullight/docusaurus-plugin-sentry
 ```
 
 ## Usage

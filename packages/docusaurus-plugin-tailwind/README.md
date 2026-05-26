@@ -4,10 +4,10 @@ This plugin provides an easy way to add TailwindCSS to your Docusaurus documenta
 
 ## Installation
 
-You can install this plugin via pnpm:
+You can install this plugin via bun:
 
 ```bash
-pnpm add @gracefullight/docusaurus-plugin-tailwind
+bun add @gracefullight/docusaurus-plugin-tailwind
 ```
 
 To use this plugin, you will need to configure it in your Docusaurus `docusaurus.config.js` file. You can add the following configuration to enable the plugin:

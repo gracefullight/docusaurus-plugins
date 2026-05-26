@@ -4,10 +4,10 @@ This Docusaurus plugin adds support for Google AdSense on your website.
 
 ## Installation
 
-You can install this plugin via pnpm:
+You can install this plugin via bun:
 
 ```bash
-pnpm add @gracefullight/docusaurus-plugin-google-adsense
+bun add @gracefullight/docusaurus-plugin-google-adsense
 ```
 
 ## Usage

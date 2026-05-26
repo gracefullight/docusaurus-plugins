@@ -7,6 +7,9 @@
     },
     "dev": {
       "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"]
     }
   },
   "ui": "tui"

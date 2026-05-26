@@ -25,7 +25,7 @@
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
     "build": "tsup src/index.ts --format cjs --dts --minify",
-    "dev": "pnpm build --watch"
+    "dev": "bun run build --watch"
   },
   "types": "./dist/index.d.ts",
   "version": "1.0.0"

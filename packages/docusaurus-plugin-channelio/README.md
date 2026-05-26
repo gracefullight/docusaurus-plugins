@@ -4,10 +4,10 @@ This plugin provides an easy way to add channel.io to your Docusaurus documentat
 
 ## Installation
 
-You can install this plugin via pnpm:
+You can install this plugin via bun:
 
 ```bash
-pnpm add @gracefullight/docusaurus-plugin-channelio
+bun add @gracefullight/docusaurus-plugin-channelio
 ```
 
 To use this plugin, you will need to configure it in your Docusaurus `docusaurus.config.js` file. You can add the following configuration to enable the plugin:

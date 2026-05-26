@@ -4,10 +4,10 @@ This Docusaurus plugin adds support for Naver Analytics on your website.
 
 ## Installation
 
-You can install this plugin via pnpm:
+You can install this plugin via bun:
 
 ```bash
-pnpm add @gracefullight/docusaurus-plugin-naver-analytics
+bun add @gracefullight/docusaurus-plugin-naver-analytics
 ```
 
 ## Usage

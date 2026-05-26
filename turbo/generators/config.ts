@@ -33,7 +33,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI) {
           type: "addMany",
         },
         () => {
-          execSync("pnpm install", { stdio: "inherit" });
+          execSync("bun install", { stdio: "inherit" });
           return "installed dependencies";
         },
       ];

@@ -23,11 +23,14 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   organizationName: "gracefullight",
+  plugins: ["@gracefullight/docusaurus-plugin-copy-markdown"],
   presets: [
     [
       "classic",
       {
-        blog: false,
+        blog: {
+          showReadingTime: true,
+        },
         docs: {
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",

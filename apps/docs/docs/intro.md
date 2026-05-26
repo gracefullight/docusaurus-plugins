@@ -6,6 +6,7 @@ This monorepo contains a collection of plugins for [Docusaurus](https://docusaur
 - [@gracefullight/docusaurus-plugin-channelio](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-channelio)
 - [@gracefullight/docusaurus-plugin-chatra](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-chatra)
 - [@gracefullight/docusaurus-plugin-cloudflare-analytics](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-cloudflare-analytics)
+- [@gracefullight/docusaurus-plugin-copy-markdown](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-copy-markdown)
 - [@gracefullight/docusaurus-plugin-gitter](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-gitter)
 - [@gracefullight/docusaurus-plugin-google-adsense](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-google-adsense)
 - [@gracefullight/docusaurus-plugin-intercom](https://www.npmjs.com/package/@gracefullight/docusaurus-plugin-intercom)
@@ -19,10 +20,10 @@ This monorepo contains a collection of plugins for [Docusaurus](https://docusaur
 
 ## Installation
 
-You can install these plugins via pnpm:
+You can install these plugins via bun:
 
 ```bash
-pnpm add @gracefullight/docusaurus-plugin-${PLUGIN_NAME}
+bun add @gracefullight/docusaurus-plugin-${PLUGIN_NAME}
 ```
 
 ## Usage
@@ -31,7 +32,7 @@ To use these plugins, you will need to configure them in your Docusaurus `docusa
 
 ## Contributing
 
-Contributions are welcome. If you find a bug or want to suggest a new feature, please open an issue or a pull request. To contribute a new plugin, you can use the command `pnpm gen plugin`.
+Contributions are welcome. If you find a bug or want to suggest a new feature, please open an issue or a pull request. To contribute a new plugin, you can use the command `bun run gen plugin`.
 
 ## License
 

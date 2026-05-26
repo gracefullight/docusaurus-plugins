@@ -3,6 +3,7 @@
     "@docusaurus/core": "3.8.1",
     "@docusaurus/preset-classic": "3.8.1",
     "@docusaurus/theme-classic": "^3.8.1",
+    "@gracefullight/docusaurus-plugin-copy-markdown": "workspace:^",
     "@mdx-js/react": "^3.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -18,9 +19,9 @@
   "name": "@gracefullight/docusaurus-plugin-docs",
   "private": true,
   "scripts": {
-    "build": "pnpm prepare-docs && docusaurus build",
-    "deploy": "pnpm prepare-docs && docusaurus deploy",
-    "dev": "pnpm prepare-docs && docusaurus start",
+    "build": "bun run prepare-docs && docusaurus build",
+    "deploy": "bun run prepare-docs && docusaurus deploy",
+    "dev": "bun run prepare-docs && docusaurus start",
     "prepare-docs": "tsx ./scripts/prepare-docs.ts"
   }
 }

@@ -19,16 +19,11 @@
     "turbo": "^2.5.8"
   },
   "engines": {
-    "node": "24",
-    "bun": "1"
+    "bun": "1",
+    "node": "24"
   },
   "name": "@gracefullight/docusaurus-plugins",
   "packageManager": "bun@1.2.14",
-  "workspaces": [
-    "packages/*",
-    "apps/**",
-    "!**/test/**"
-  ],
   "private": true,
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
@@ -38,7 +33,13 @@
     "gen": "turbo gen",
     "lint": "biome check --fix --unsafe --no-errors-on-unmatched",
     "prepare": "husky",
-    "publish-packages": "turbo run build && changeset version && changeset publish"
+    "publish-packages": "turbo run build && changeset version && changeset publish",
+    "test": "turbo run test"
   },
-  "version": "0.3.0"
+  "version": "0.3.0",
+  "workspaces": [
+    "packages/*",
+    "apps/**",
+    "!**/test/**"
+  ]
 }
