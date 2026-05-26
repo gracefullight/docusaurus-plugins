@@ -1,7 +1,7 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
-## 1.0.0
+## 0.1.0
 
-### Major Changes
+### Minor Changes
 
-- Initial release: copy docs and blog source markdown to clipboard via a single button below the page title
+- Initial release: copy docs and blog source markdown to the clipboard with a single button below the page title.
