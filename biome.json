@@ -37,6 +37,7 @@
       "!**/coverage",
       "!**/dist",
       "!**/node_modules",
+      "!**/.agents",
       "!**/pnpm-lock.yaml",
       "!**/*.log"
     ]

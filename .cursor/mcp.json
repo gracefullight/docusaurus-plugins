@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics",
+        "--isolated"
+      ],
+      "command": "npx"
+    },
+    "context7": {
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "command": "npx"
+    },
+    "serena": {
+      "args": ["start-mcp-server", "--context", "ide", "--project", "."],
+      "command": "serena",
+      "env": {
+        "SERENA_LOG_LEVEL": "info"
+      }
+    }
+  }
+}

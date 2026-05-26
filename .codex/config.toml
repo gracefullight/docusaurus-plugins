@@ -1,0 +1,17 @@
+[mcp_servers.serena]
+command = "serena"
+args = [ "start-mcp-server", "--context", "codex", "--project", "." ]
+
+[mcp_servers.serena.env]
+SERENA_LOG_LEVEL = "info"
+
+[features]
+goals = true
+child_agents_md = true
+
+[analytics]
+enabled = false
+
+[feedback]
+enabled = false
+

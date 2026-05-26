@@ -1,0 +1,20 @@
+{
+  "experimental": {
+    "enableAgents": true
+  },
+  "general": {
+    "enableNotifications": true
+  },
+  "mcpServers": {
+    "serena": {
+      "args": ["start-mcp-server", "--context", "ide", "--project", "."],
+      "command": "serena",
+      "env": {
+        "SERENA_LOG_LEVEL": "info"
+      }
+    }
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  }
+}
