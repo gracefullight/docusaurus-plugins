@@ -35,5 +35,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: INSTALL_PACKAGES
         run: bun install --frozen-lockfile
+      - name: BUILD_PACKAGES
+        run: bunx turbo run build --filter=@gracefullight/docusaurus-plugin-docs...
       - name: DEPLOY
         run: bun run --filter "@gracefullight/docusaurus-plugin-docs" deploy
