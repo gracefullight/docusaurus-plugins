@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_gracefullight_docusaurus_plugin_docs=self.webpackChunk_gracefullight_docusaurus_plugin_docs||[]).push([[440],{9946(u){u.exports=JSON.parse('{"authors":[{"name":"gracefullight","title":"Maintainer","url":"https://github.com/gracefullight","imageURL":"https://github.com/gracefullight.png","key":"gracefullight","page":null,"count":1}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_gracefullight_docusaurus_plugin_docs=self.webpackChunk_gracefullight_docusaurus_plugin_docs||[]).push([[32],{8430(u){u.exports=JSON.parse('{"tags":[{"label":"announcement","permalink":"/docusaurus-plugins/blog/tags/announcement","count":1}]}')}}]);

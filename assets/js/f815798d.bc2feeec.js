@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_gracefullight_docusaurus_plugin_docs=self.webpackChunk_gracefullight_docusaurus_plugin_docs||[]).push([[239],{8188(s){s.exports=JSON.parse('{"metadata":{"permalink":"/docusaurus-plugins/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

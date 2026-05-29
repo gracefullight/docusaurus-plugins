@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>docusaurus-plugins Blog</title>
+        <link>https://gracefullight.github.io/docusaurus-plugins/blog/</link>
+        <description>docusaurus-plugins Blog</description>
+        <lastBuildDate>Tue, 26 May 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://gracefullight.github.io/docusaurus-plugins/blog/welcome/</link>
+            <guid>https://gracefullight.github.io/docusaurus-plugins/blog/welcome/</guid>
+            <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Copy markdown from blog posts with one click.]]></description>
+            <content:encoded><![CDATA[<p>Copy markdown from blog posts with one click.</p>
+<p>This sample post demonstrates the copy button below the title.</p>
+<div class="language-md codeBlockContainer_VrFx theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_thqL"><pre tabindex="0" class="prism-code language-md codeBlock_lnlg thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_Omyp"><span class="token-line" style="color:#bfc7d5"><span class="token title important punctuation" style="color:rgb(199, 146, 234)">#</span><span class="token title important"> Example</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">Your copied content appears here.</span><br></span></code></pre></div></div>]]></content:encoded>
+            <category>announcement</category>
+        </item>
+    </channel>
+</rss>

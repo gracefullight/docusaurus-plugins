@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_gracefullight_docusaurus_plugin_docs=self.webpackChunk_gracefullight_docusaurus_plugin_docs||[]).push([[91],{5513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/docusaurus-plugins/blog/welcome","unlisted":false,"date":"2026-05-26T00:00:00.000Z"}]}')}}]);
