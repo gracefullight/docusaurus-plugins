@@ -1,5 +1,5 @@
 import type { ClientModule } from "@docusaurus/types";
-import type { CopyMarkdownGlobalData } from "../constants";
+import type { ButtonAlignment, CopyMarkdownGlobalData } from "../constants";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import codeTranslations from "@generated/codeTranslations";
@@ -17,13 +17,14 @@ const CONTAINER_ATTR = "data-copy-markdown-button";
 
 const COPY_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
 
-const DOC_TITLE_SELECTORS = [
-  "article .theme-doc-markdown header",
-  "article .markdown header",
-  "article header:has(h1)",
+// We now primarily target the main <h1> inside the article.
+// This gives the most reliable "right below the visible page title" behavior
+// across docs and blog pages, even on heavily customized themes.
+const TITLE_SELECTORS = [
+  "article h1",
+  "article .theme-doc-markdown h1",
+  "article .markdown h1",
 ];
-
-const BLOG_TITLE_SELECTORS = ["article header", "article .markdown header"];
 
 type PluginGlobalData = CopyMarkdownGlobalData;
 
@@ -73,18 +74,14 @@ function lookupRoute(
   return;
 }
 
-function findTitleAnchor(): HTMLElement | null {
-  const selectors = [...DOC_TITLE_SELECTORS, ...BLOG_TITLE_SELECTORS];
-
-  for (const selector of selectors) {
+function findTitleElement(): HTMLElement | null {
+  for (const selector of TITLE_SELECTORS) {
     const element = document.querySelector<HTMLElement>(selector);
     if (element) {
       return element;
     }
   }
-
-  const heading = document.querySelector<HTMLElement>("article h1");
-  return heading;
+  return null;
 }
 
 function removeExistingButton(): void {
@@ -93,17 +90,82 @@ function removeExistingButton(): void {
   }
 }
 
+/**
+ * Injects a one-time base stylesheet for the copy button.
+ * These styles are intentionally self-contained so the button looks decent
+ * even when the host site heavily customizes or resets button styles.
+ */
+function ensureBaseStylesInjected(): void {
+  const styleId = "copy-markdown-base-styles";
+  if (document.getElementById(styleId)) return;
+
+  const style = document.createElement("style");
+  style.id = styleId;
+  style.textContent = `
+.copy-markdown-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+.copy-markdown-button:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.copy-markdown-button:active {
+  opacity: 0.85;
+}
+@media (prefers-color-scheme: dark) {
+  .copy-markdown-button:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+}
+`;
+  document.head.appendChild(style);
+}
+
 function createCopyButton(
   pluginData: PluginGlobalData,
   buttonLabel: string,
 ): { button: HTMLButtonElement; label: HTMLSpanElement } {
+  ensureBaseStylesInjected();
+
   const button = document.createElement("button");
   button.type = "button";
-  button.className = `${pluginData.buttonClassName} copy-markdown-button`;
+
+  // Base class + optional user-provided class for further customization
+  const userClass = pluginData.buttonClassName?.trim();
+  button.className = userClass
+    ? `copy-markdown-button ${userClass}`
+    : "copy-markdown-button";
+
   button.setAttribute("aria-label", buttonLabel);
-  button.style.display = "inline-flex";
-  button.style.alignItems = "center";
-  button.style.gap = "0.375rem";
+
+  // Strong inline styles as a resilient fallback layer.
+  // These win over most host CSS resets for the core "outlined button" look.
+  Object.assign(button.style, {
+    alignItems: "center",
+    background: "transparent",
+    border: "1px solid currentColor",
+    borderRadius: "6px",
+    color: "inherit",
+    cursor: "pointer",
+    display: "inline-flex",
+    fontSize: "0.875rem",
+    gap: "0.375rem",
+    lineHeight: "1.25",
+    padding: "0.375rem 0.75rem",
+    transition: "opacity 0.15s ease, background-color 0.15s ease",
+    whiteSpace: "nowrap",
+  } as Partial<CSSStyleDeclaration>);
 
   const icon = document.createElement("span");
   icon.className = "copy-markdown-button__icon";
@@ -153,18 +215,36 @@ function injectButton(pluginData: PluginGlobalData, pathname: string): void {
     return;
   }
 
-  const anchor = findTitleAnchor();
-  if (!anchor) {
+  const titleEl = findTitleElement();
+  if (!titleEl) {
     return;
   }
 
   const buttonLabel = resolveButtonLabel(pluginData);
   const copiedLabel = resolveCopiedLabel(pluginData);
+  const alignment = pluginData.buttonAlignment ?? "right";
 
   const container = document.createElement("div");
   container.setAttribute(CONTAINER_ATTR, "true");
   container.className = "copy-markdown-button-container";
-  container.style.marginBottom = "1rem";
+
+  // Position right after the title (h1), before any author/date metadata on blogs.
+  // This is the key behavioral improvement.
+  titleEl.insertAdjacentElement("afterend", container);
+
+  // Alignment control
+  const justifyMap: Record<ButtonAlignment, string> = {
+    center: "center",
+    left: "flex-start",
+    right: "flex-end",
+  };
+
+  Object.assign(container.style, {
+    display: "flex",
+    justifyContent: justifyMap[alignment],
+    marginBottom: "1rem",
+    marginTop: "0.5rem",
+  } as Partial<CSSStyleDeclaration>);
 
   const { button, label } = createCopyButton(pluginData, buttonLabel);
 
@@ -193,7 +273,6 @@ function injectButton(pluginData: PluginGlobalData, pathname: string): void {
   });
 
   container.append(button, liveRegion);
-  anchor.insertAdjacentElement("afterend", container);
 }
 
 function handleRoute(pathname: string): void {

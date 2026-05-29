@@ -8,7 +8,7 @@ export const COPY_MARKDOWN_BUTTON_LABEL_ID = "copyMarkdown.buttonLabel";
 
 export const COPY_MARKDOWN_COPIED_LABEL_ID = "copyMarkdown.copiedLabel";
 
-export const DEFAULT_BUTTON_CLASS_NAME = "button button--outline button--sm";
+export const DEFAULT_BUTTON_CLASS_NAME = ""; // Styling is now primarily driven by inline styles + this optional class for further customization.
 
 export const DEFAULT_EXCLUDED_ROUTES = [
   "/search",
@@ -28,9 +28,12 @@ export type RouteMarkdownEntry = {
   contentType: ContentType;
 };
 
+export type ButtonAlignment = "left" | "center" | "right";
+
 export type CopyMarkdownGlobalData = {
   routes: Record<string, RouteMarkdownEntry>;
   buttonClassName: string;
+  buttonAlignment: ButtonAlignment;
   /** Overrides i18n when set in plugin options */
   customButtonLabel?: string;
   /** Overrides i18n when set in plugin options */

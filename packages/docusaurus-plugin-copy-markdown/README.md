@@ -95,7 +95,8 @@ At runtime the client reads `@generated/codeTranslations` for the active locale.
 | `injectTitleFromFrontmatter` | `boolean` | `true` | Prepend `# title` when the body has no leading heading |
 | `buttonLabel` | `string` | _(from i18n)_ | Visible button label; overrides locale translation |
 | `copiedLabel` | `string` | _(from i18n)_ | Success feedback label; overrides locale translation |
-| `buttonClassName` | `string` | `"button button--outline button--sm"` | Button CSS classes |
+| `buttonClassName` | `string` | `""` | Additional CSS classes appended to the button (for theme-specific styling) |
+| `buttonAlignment` | `"left" \| "center" \| "right"` | `"right"` | Horizontal alignment of the button below the page title |
 | `includeDocs` | `boolean` | `true` | Process documentation pages |
 | `includeBlog` | `boolean` | `true` | Process blog posts |
 
@@ -103,7 +104,10 @@ At runtime the client reads `@generated/codeTranslations` for the active locale.
 
 - Reads `.md` / `.mdx` source files at build time through Docusaurus content plugins.
 - Strips frontmatter and lightly cleans MDX imports and JSX comments from copied text.
-- Injects one button directly below the title header on each supported page.
+- Finds the main page title (`<h1>`) and inserts the button **immediately after it**. This works reliably on both docs and blog posts even when the theme wraps the title in a larger `<header>` containing author/date metadata.
+- The button uses self-contained inline styles + a small injected stylesheet so it renders as a clean outlined button with the copy icon on the left, regardless of how heavily the host site customizes or resets native `<button>` styles.
+- `buttonClassName` can still be used for additional theme-specific classes.
+- Supports `buttonAlignment` (`left` | `center` | `right`) to control horizontal placement below the title.
 - Copies processed markdown to the clipboard when clicked.
 
 ## Limitations

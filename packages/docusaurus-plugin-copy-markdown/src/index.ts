@@ -3,6 +3,7 @@ import type {
   OptionValidationContext,
   Plugin,
 } from "@docusaurus/types";
+import type { ButtonAlignment } from "./constants";
 
 import path from "node:path";
 import { Joi } from "@docusaurus/utils-validation";
@@ -24,6 +25,8 @@ export interface PluginOptions {
   /** Overrides locale translations when set */
   copiedLabel?: string;
   buttonClassName?: string;
+  /** Horizontal alignment of the button below the title. Default: "left" */
+  buttonAlignment?: ButtonAlignment;
   includeDocs?: boolean;
   includeBlog?: boolean;
 }
@@ -31,6 +34,9 @@ export interface PluginOptions {
 export type Options = Partial<PluginOptions>;
 
 const pluginOptionsSchema = Joi.object({
+  buttonAlignment: Joi.string()
+    .valid("left", "center", "right")
+    .default("right"),
   buttonClassName: Joi.string().default(DEFAULT_BUTTON_CLASS_NAME),
   buttonLabel: Joi.string(),
   copiedLabel: Joi.string(),
@@ -45,6 +51,7 @@ export default async function copyMarkdownPlugin(
   options: PluginOptions,
 ): Promise<Plugin> {
   const resolvedOptions = {
+    buttonAlignment: (options.buttonAlignment ?? "right") as ButtonAlignment,
     buttonClassName: options.buttonClassName ?? DEFAULT_BUTTON_CLASS_NAME,
     includeBlog: options.includeBlog ?? true,
     includeDocs: options.includeDocs ?? true,
@@ -61,6 +68,7 @@ export default async function copyMarkdownPlugin(
       );
 
       actions.setGlobalData({
+        buttonAlignment: resolvedOptions.buttonAlignment,
         buttonClassName: resolvedOptions.buttonClassName,
         customButtonLabel: options.buttonLabel,
         customCopiedLabel: options.copiedLabel,
