@@ -46,6 +46,15 @@ const pluginOptionsSchema = Joi.object({
   stripFrontmatter: Joi.bool().default(true),
 });
 
+function resolveClientModulePath(): string {
+  const distDir =
+    path.basename(__dirname) === "dist"
+      ? __dirname
+      : path.resolve(__dirname, "../dist");
+
+  return path.resolve(distDir, "client/copy-markdown-button.js");
+}
+
 export default async function copyMarkdownPlugin(
   context: LoadContext,
   options: PluginOptions,
@@ -77,7 +86,7 @@ export default async function copyMarkdownPlugin(
     },
 
     getClientModules() {
-      return [path.resolve(__dirname, "../src/client/copy-markdown-button.ts")];
+      return [resolveClientModulePath()];
     },
 
     getDefaultCodeTranslationMessages() {
