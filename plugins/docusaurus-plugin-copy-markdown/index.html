@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">@gracefullight/docusaurus-plugin-copy-markdown | docusaurus-plugins</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gracefullight.github.io/docusaurus-plugins/plugins/docusaurus-plugin-copy-markdown/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="@gracefullight/docusaurus-plugin-copy-markdown | docusaurus-plugins"><meta data-rh="true" name="description" content="Add a single Copy page as Markdown button below the title on Docusaurus docs and blog pages. Copied content comes from the source markdown file with frontmatter removed."><meta data-rh="true" property="og:description" content="Add a single Copy page as Markdown button below the title on Docusaurus docs and blog pages. Copied content comes from the source markdown file with frontmatter removed."><link data-rh="true" rel="icon" href="/docusaurus-plugins/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gracefullight.github.io/docusaurus-plugins/plugins/docusaurus-plugin-copy-markdown/"><link data-rh="true" rel="alternate" href="https://gracefullight.github.io/docusaurus-plugins/plugins/docusaurus-plugin-copy-markdown/" hreflang="en"><link data-rh="true" rel="alternate" href="https://gracefullight.github.io/docusaurus-plugins/plugins/docusaurus-plugin-copy-markdown/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"@gracefullight/docusaurus-plugin-copy-markdown","item":"https://gracefullight.github.io/docusaurus-plugins/plugins/docusaurus-plugin-copy-markdown"}]}</script><link rel="alternate" type="application/rss+xml" href="/docusaurus-plugins/blog/rss.xml" title="docusaurus-plugins RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/docusaurus-plugins/blog/atom.xml" title="docusaurus-plugins Atom Feed"><link rel="stylesheet" href="/docusaurus-plugins/assets/css/styles.50c6a4ac.css">
-<script src="/docusaurus-plugins/assets/js/runtime~main.a2b9cb48.js" defer="defer"></script>
-<script src="/docusaurus-plugins/assets/js/main.6fd73f20.js" defer="defer"></script>
+<script src="/docusaurus-plugins/assets/js/runtime~main.9ec4fd1a.js" defer="defer"></script>
+<script src="/docusaurus-plugins/assets/js/main.7856056e.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -43,7 +43,12 @@
 <ul>
 <li class="">Reads <code>.md</code> / <code>.mdx</code> source files at build time through Docusaurus content plugins.</li>
 <li class="">Strips frontmatter and lightly cleans MDX imports and JSX comments from copied text.</li>
-<li class="">Finds the main page title (<code>&lt;h1&gt;</code>) and inserts the button <strong>immediately after it</strong>. This works reliably on both docs and blog posts even when the theme wraps the title in a larger <code>&lt;header&gt;</code> containing author/date metadata.</li>
+<li class="">Finds the main page title (<code>&lt;h1&gt;</code>) and inserts the button next to it:<!-- -->
+<ul>
+<li class=""><strong>Docs</strong>: immediately after the <code>&lt;h1&gt;</code>.</li>
+<li class=""><strong>Blog</strong>: after the whole post <code>&lt;header&gt;</code>, so the button sits below the author/date metadata (title → profile → button) instead of being wedged between the title and the profile.</li>
+</ul>
+</li>
 <li class="">The button uses self-contained inline styles + a small injected stylesheet so it renders as a clean outlined button with the copy icon on the left, regardless of how heavily the host site customizes or resets native <code>&lt;button&gt;</code> styles.</li>
 <li class=""><code>buttonClassName</code> can still be used for additional theme-specific classes.</li>
 <li class="">Supports <code>buttonAlignment</code> (<code>left</code> | <code>center</code> | <code>right</code>) to control horizontal placement below the title.</li>
