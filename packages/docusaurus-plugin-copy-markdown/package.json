@@ -11,6 +11,7 @@
   "devDependencies": {
     "@docusaurus/types": "^3",
     "@gracefullight-docusaurus/tsconfig": "workspace:^",
+    "happy-dom": "^20.9.0",
     "tsup": "*",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"

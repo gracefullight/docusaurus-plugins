@@ -11,20 +11,12 @@ import {
   DEFAULT_COPIED_LABEL,
   PLUGIN_NAME,
 } from "../constants";
+import { findTitleElement, insertButtonContainer } from "./dom";
 
 const COPIED_RESET_MS = 2000;
 const CONTAINER_ATTR = "data-copy-markdown-button";
 
 const COPY_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
-
-// We now primarily target the main <h1> inside the article.
-// This gives the most reliable "right below the visible page title" behavior
-// across docs and blog pages, even on heavily customized themes.
-const TITLE_SELECTORS = [
-  "article h1",
-  "article .theme-doc-markdown h1",
-  "article .markdown h1",
-];
 
 type PluginGlobalData = CopyMarkdownGlobalData;
 
@@ -72,16 +64,6 @@ function lookupRoute(
   }
 
   return;
-}
-
-function findTitleElement(): HTMLElement | null {
-  for (const selector of TITLE_SELECTORS) {
-    const element = document.querySelector<HTMLElement>(selector);
-    if (element) {
-      return element;
-    }
-  }
-  return null;
 }
 
 function removeExistingButton(): void {
@@ -228,9 +210,10 @@ function injectButton(pluginData: PluginGlobalData, pathname: string): void {
   container.setAttribute(CONTAINER_ATTR, "true");
   container.className = "copy-markdown-button-container";
 
-  // Position right after the title (h1), before any author/date metadata on blogs.
-  // This is the key behavioral improvement.
-  titleEl.insertAdjacentElement("afterend", container);
+  // Docs: right after the title (h1).
+  // Blog: after the whole <header> so the button sits below the author/date
+  // metadata (title -> profile -> button), not wedged between title and profile.
+  insertButtonContainer(titleEl, route.contentType, container);
 
   // Alignment control
   const justifyMap: Record<ButtonAlignment, string> = {

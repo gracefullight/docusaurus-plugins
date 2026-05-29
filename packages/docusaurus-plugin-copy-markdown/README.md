@@ -104,7 +104,9 @@ At runtime the client reads `@generated/codeTranslations` for the active locale.
 
 - Reads `.md` / `.mdx` source files at build time through Docusaurus content plugins.
 - Strips frontmatter and lightly cleans MDX imports and JSX comments from copied text.
-- Finds the main page title (`<h1>`) and inserts the button **immediately after it**. This works reliably on both docs and blog posts even when the theme wraps the title in a larger `<header>` containing author/date metadata.
+- Finds the main page title (`<h1>`) and inserts the button next to it:
+  - **Docs**: immediately after the `<h1>`.
+  - **Blog**: after the whole post `<header>`, so the button sits below the author/date metadata (title → profile → button) instead of being wedged between the title and the profile.
 - The button uses self-contained inline styles + a small injected stylesheet so it renders as a clean outlined button with the copy icon on the left, regardless of how heavily the host site customizes or resets native `<button>` styles.
 - `buttonClassName` can still be used for additional theme-specific classes.
 - Supports `buttonAlignment` (`left` | `center` | `right`) to control horizontal placement below the title.
