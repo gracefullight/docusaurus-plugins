@@ -20,8 +20,12 @@ const config: Config = {
   // Ensure branch-based GH Pages deploys target the right branch
   deploymentBranch: "gh-pages",
   favicon: "img/favicon.ico",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
   organizationName: "gracefullight",
   plugins: ["@gracefullight/docusaurus-plugin-copy-markdown"],
   presets: [
