@@ -1,5 +1,11 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
+## 0.1.2
+
+### Patch Changes
+
+- ef713fd: Fix the published client module path so Docusaurus loads built JavaScript instead of source TypeScript.
+
 ## 0.1.1
 
 ### Patch Changes
