@@ -18,6 +18,10 @@ const CONTAINER_ATTR = "data-copy-markdown-button";
 
 const COPY_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
 
+// Default outline + icon color. Uses Infima's emphasis-300 in a Docusaurus
+// context and falls back to its light-mode value when the variable is absent.
+const OUTLINE_COLOR = "var(--ifm-color-emphasis-300, #dadde1)";
+
 type PluginGlobalData = CopyMarkdownGlobalData;
 
 function getPluginData(): PluginGlobalData | undefined {
@@ -91,13 +95,16 @@ function ensureBaseStylesInjected(): void {
   padding: 0.375rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25;
-  border: 1px solid currentColor;
+  border: 1px solid ${OUTLINE_COLOR};
   border-radius: 6px;
   background: transparent;
   color: inherit;
   cursor: pointer;
   transition: opacity 0.15s ease, background-color 0.15s ease;
   white-space: nowrap;
+}
+.copy-markdown-button__icon {
+  color: ${OUTLINE_COLOR};
 }
 .copy-markdown-button:hover {
   background-color: rgba(0, 0, 0, 0.04);
@@ -136,7 +143,7 @@ function createCopyButton(
   Object.assign(button.style, {
     alignItems: "center",
     background: "transparent",
-    border: "1px solid currentColor",
+    border: `1px solid ${OUTLINE_COLOR}`,
     borderRadius: "6px",
     color: "inherit",
     cursor: "pointer",
@@ -152,6 +159,7 @@ function createCopyButton(
   const icon = document.createElement("span");
   icon.className = "copy-markdown-button__icon";
   icon.innerHTML = COPY_ICON_SVG;
+  icon.style.color = OUTLINE_COLOR;
   icon.style.display = "inline-flex";
   icon.style.flexShrink = "0";
 
