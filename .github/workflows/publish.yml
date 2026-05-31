@@ -1,0 +1,45 @@
+name: Manual Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package to publish'
+        required: true
+        type: choice
+        options:
+          - packages/docusaurus-plugin-baidu-analytics
+          - packages/docusaurus-plugin-channelio
+          - packages/docusaurus-plugin-chatra
+          - packages/docusaurus-plugin-cloudflare-analytics
+          - packages/docusaurus-plugin-copy-markdown
+          - packages/docusaurus-plugin-gitter
+          - packages/docusaurus-plugin-google-adsense
+          - packages/docusaurus-plugin-intercom
+          - packages/docusaurus-plugin-meta-pixel
+          - packages/docusaurus-plugin-microsoft-clarity
+          - packages/docusaurus-plugin-naver-analytics
+          - packages/docusaurus-plugin-sentry
+          - packages/docusaurus-plugin-tailwind
+          - packages/docusaurus-plugin-vercel-analytics
+          - packages/docusaurus-plugin-yandex-metrica
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - name: INSTALL_PACKAGES
+        run: bun install --frozen-lockfile
+      - name: BUILD_PACKAGE
+        run: bunx turbo run build --filter=./${{ inputs.package }}
+      - name: PUBLISH_TO_NPM
+        working-directory: ${{ inputs.package }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          printf '//registry.npmjs.org/:_authToken=%s\n' "$NPM_TOKEN" > "$HOME/.npmrc"
+          printf '//registry.npmjs.org/:_authToken=%s\n' "$NPM_TOKEN" > .npmrc
+          bun publish --access public --tolerate-republish
