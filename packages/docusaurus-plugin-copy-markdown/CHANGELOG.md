@@ -1,5 +1,12 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
+## [0.2.0](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.1.3...docusaurus-plugin-copy-markdown-v0.2.0) (2026-05-31)
+
+
+### Features
+
+* **copy-markdown:** ✨ use emphasis-300 for button outline and icon ([326e6cf](https://github.com/gracefullight/docusaurus-plugins/commit/326e6cf77f03e01f8961149ee10609bccdd8b8f6))
+
 ## 0.1.3
 
 ### Patch Changes
