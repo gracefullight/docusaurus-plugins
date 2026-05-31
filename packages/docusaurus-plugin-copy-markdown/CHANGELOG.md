@@ -1,5 +1,12 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
+## [0.2.1](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.2.0...docusaurus-plugin-copy-markdown-v0.2.1) (2026-05-31)
+
+
+### Bug Fixes
+
+* **copy-markdown:** 🐛 fix border color serialization bug on copy button ([acbdb57](https://github.com/gracefullight/docusaurus-plugins/commit/acbdb57a2eb7e04565243976be823a31abfac6c5))
+
 ## [0.2.0](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.1.3...docusaurus-plugin-copy-markdown-v0.2.0) (2026-05-31)
 
 

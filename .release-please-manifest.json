@@ -3,7 +3,7 @@
   "packages/docusaurus-plugin-channelio": "1.0.0",
   "packages/docusaurus-plugin-chatra": "1.0.0",
   "packages/docusaurus-plugin-cloudflare-analytics": "1.0.0",
-  "packages/docusaurus-plugin-copy-markdown": "0.2.0",
+  "packages/docusaurus-plugin-copy-markdown": "0.2.1",
   "packages/docusaurus-plugin-gitter": "1.0.0",
   "packages/docusaurus-plugin-google-adsense": "1.0.0",
   "packages/docusaurus-plugin-intercom": "1.0.0",
