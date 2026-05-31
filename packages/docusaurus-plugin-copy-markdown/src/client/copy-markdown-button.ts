@@ -143,8 +143,10 @@ function createCopyButton(
   Object.assign(button.style, {
     alignItems: "center",
     background: "transparent",
-    border: `1px solid ${OUTLINE_COLOR}`,
+    borderColor: OUTLINE_COLOR,
     borderRadius: "6px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     color: "inherit",
     cursor: "pointer",
     display: "inline-flex",
