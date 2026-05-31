@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bootstrap-sha": "cf482486ae761b6ee08907fd34470b3336c3a1a4",
+  "bump-minor-pre-major": true,
+  "changelog-sections": [
+    { "section": "Features", "type": "feat" },
+    { "section": "Bug Fixes", "type": "fix" },
+    { "section": "Performance Improvements", "type": "perf" },
+    { "section": "Code Refactoring", "type": "refactor" },
+    { "section": "Reverts", "type": "revert" },
+    { "section": "Documentation", "type": "docs" },
+    { "section": "Dependencies", "type": "deps" },
+    { "hidden": true, "section": "Styles", "type": "style" },
+    { "hidden": true, "section": "Miscellaneous", "type": "chore" },
+    { "hidden": true, "section": "Tests", "type": "test" }
+  ],
+  "include-component-in-tag": true,
+  "packages": {
+    "packages/docusaurus-plugin-baidu-analytics": {},
+    "packages/docusaurus-plugin-channelio": {},
+    "packages/docusaurus-plugin-chatra": {},
+    "packages/docusaurus-plugin-cloudflare-analytics": {},
+    "packages/docusaurus-plugin-copy-markdown": {},
+    "packages/docusaurus-plugin-gitter": {},
+    "packages/docusaurus-plugin-google-adsense": {},
+    "packages/docusaurus-plugin-intercom": {},
+    "packages/docusaurus-plugin-meta-pixel": {},
+    "packages/docusaurus-plugin-microsoft-clarity": {},
+    "packages/docusaurus-plugin-naver-analytics": {},
+    "packages/docusaurus-plugin-sentry": {},
+    "packages/docusaurus-plugin-tailwind": {},
+    "packages/docusaurus-plugin-vercel-analytics": {},
+    "packages/docusaurus-plugin-yandex-metrica": {}
+  },
+  "release-type": "node",
+  "separate-pull-requests": true
+}

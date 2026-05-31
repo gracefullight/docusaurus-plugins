@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # 1. On every push to main, open/update a per-package release PR with the
+  #    generated CHANGELOG + version bump. When a release PR is merged, this
+  #    step instead tags the release and emits `paths_released`.
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      paths_released: ${{ steps.release.outputs.paths_released }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  # 2. Publish only the packages that were just released. The matrix is the
+  #    JSON array of released package paths, so it is empty (job skipped) on
+  #    plain commits and only fans out when a release PR merge tags packages.
+  publish:
+    needs: release-please
+    if: needs.release-please.outputs.paths_released != '[]' && needs.release-please.outputs.paths_released != ''
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path: ${{ fromJson(needs.release-please.outputs.paths_released) }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - name: INSTALL_PACKAGES
+        run: bun install --frozen-lockfile
+      - name: BUILD_PACKAGE
+        run: bunx turbo run build --filter=./${{ matrix.path }}
+      - name: PUBLISH_TO_NPM
+        working-directory: ${{ matrix.path }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          printf '//registry.npmjs.org/:_authToken=%s\n' "$NPM_TOKEN" > "$HOME/.npmrc"
+          bun publish --access public --tolerate-republish

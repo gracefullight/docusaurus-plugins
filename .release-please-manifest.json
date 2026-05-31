@@ -1,0 +1,17 @@
+{
+  "packages/docusaurus-plugin-baidu-analytics": "1.0.0",
+  "packages/docusaurus-plugin-channelio": "1.0.0",
+  "packages/docusaurus-plugin-chatra": "1.0.0",
+  "packages/docusaurus-plugin-cloudflare-analytics": "1.0.0",
+  "packages/docusaurus-plugin-copy-markdown": "0.1.3",
+  "packages/docusaurus-plugin-gitter": "1.0.0",
+  "packages/docusaurus-plugin-google-adsense": "1.0.0",
+  "packages/docusaurus-plugin-intercom": "1.0.0",
+  "packages/docusaurus-plugin-meta-pixel": "1.0.0",
+  "packages/docusaurus-plugin-microsoft-clarity": "1.0.0",
+  "packages/docusaurus-plugin-naver-analytics": "1.0.0",
+  "packages/docusaurus-plugin-sentry": "1.0.0",
+  "packages/docusaurus-plugin-tailwind": "1.1.0",
+  "packages/docusaurus-plugin-vercel-analytics": "1.0.1",
+  "packages/docusaurus-plugin-yandex-metrica": "1.0.1"
+}

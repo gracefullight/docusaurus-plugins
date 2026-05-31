@@ -1,5 +1,11 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
+## 0.1.3
+
+### Patch Changes
+
+- cf48248: Place the blog copy button below the post header (after the author/date metadata) instead of wedging it between the title and the profile. Docs pages keep the button directly under the title. The insertion logic is now split into a dependency-free `dom` module with DOM regression tests covering blog post, blog list, and docs pages.
+
 ## 0.1.2
 
 ### Patch Changes
