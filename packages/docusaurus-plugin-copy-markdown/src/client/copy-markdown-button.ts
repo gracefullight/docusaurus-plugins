@@ -18,9 +18,13 @@ const CONTAINER_ATTR = "data-copy-markdown-button";
 
 const COPY_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
 
-// Default outline + icon color. Uses Infima's emphasis-300 in a Docusaurus
-// context and falls back to its light-mode value when the variable is absent.
+// Outline (border) color. Uses Infima's emphasis-300 in a Docusaurus context
+// and falls back to its light-mode value when the variable is absent.
 const OUTLINE_COLOR = "var(--ifm-color-emphasis-300, #dadde1)";
+
+// Icon + label text color. Uses Infima's secondary content color, with a
+// fallback to its light-mode value for non-Docusaurus contexts.
+const CONTENT_COLOR = "var(--ifm-color-content-secondary, #525860)";
 
 type PluginGlobalData = CopyMarkdownGlobalData;
 
@@ -98,13 +102,13 @@ function ensureBaseStylesInjected(): void {
   border: 1px solid ${OUTLINE_COLOR};
   border-radius: 6px;
   background: transparent;
-  color: inherit;
+  color: ${CONTENT_COLOR};
   cursor: pointer;
   transition: opacity 0.15s ease, background-color 0.15s ease;
   white-space: nowrap;
 }
 .copy-markdown-button__icon {
-  color: ${OUTLINE_COLOR};
+  color: ${CONTENT_COLOR};
 }
 .copy-markdown-button:hover {
   background-color: rgba(0, 0, 0, 0.04);
@@ -147,7 +151,7 @@ function createCopyButton(
     borderRadius: "6px",
     borderStyle: "solid",
     borderWidth: "1px",
-    color: "inherit",
+    color: CONTENT_COLOR,
     cursor: "pointer",
     display: "inline-flex",
     fontSize: "0.875rem",
@@ -161,7 +165,7 @@ function createCopyButton(
   const icon = document.createElement("span");
   icon.className = "copy-markdown-button__icon";
   icon.innerHTML = COPY_ICON_SVG;
-  icon.style.color = OUTLINE_COLOR;
+  icon.style.color = CONTENT_COLOR;
   icon.style.display = "inline-flex";
   icon.style.flexShrink = "0";
 
