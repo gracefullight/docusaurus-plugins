@@ -1,5 +1,12 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
+## [0.3.0](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.2.1...docusaurus-plugin-copy-markdown-v0.3.0) (2026-06-01)
+
+
+### Features
+
+* **copy-markdown:** ✨ use content-secondary for icon and label color ([653417f](https://github.com/gracefullight/docusaurus-plugins/commit/653417fc5fed93952bd9b0f1bf59db5710659c53))
+
 ## [0.2.1](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.2.0...docusaurus-plugin-copy-markdown-v0.2.1) (2026-05-31)
 
 
