@@ -30,7 +30,7 @@ describe("copyMarkdownPlugin", () => {
     const normalizedClientModule = clientModule.split(path.sep).join("/");
 
     expect(normalizedClientModule).toMatch(
-      /dist\/client\/copy-markdown-button\.js$/,
+      /dist\/client\/copy-markdown-button\.(js|mjs)$/,
     );
     expect(normalizedClientModule).not.toContain("/src/");
     expect(normalizedClientModule).not.toMatch(/\.ts$/);
