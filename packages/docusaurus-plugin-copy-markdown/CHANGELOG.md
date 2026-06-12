@@ -1,5 +1,17 @@
 # @gracefullight/docusaurus-plugin-copy-markdown
 
+## [0.4.0](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.3.0...docusaurus-plugin-copy-markdown-v0.4.0) (2026-06-12)
+
+
+### Features
+
+* ✨ integrate oh-my-agent with multi-vendor skills and workflows ([e75d1ce](https://github.com/gracefullight/docusaurus-plugins/commit/e75d1cee02577e6e2961f9b3771028ab015b89d5))
+
+
+### Code Refactoring
+
+* **test:** ♻️ 🚨 make client module path assertion robust to cjs/esm output ([ced9d31](https://github.com/gracefullight/docusaurus-plugins/commit/ced9d31f299fcc627a96df62f60addadd3ef716c))
+
 ## [0.3.0](https://github.com/gracefullight/docusaurus-plugins/compare/docusaurus-plugin-copy-markdown-v0.2.1...docusaurus-plugin-copy-markdown-v0.3.0) (2026-06-01)
 
 
