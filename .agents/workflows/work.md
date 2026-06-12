@@ -1,5 +1,7 @@
 ---
+name: work
 description: Coordinate multiple agents for a complex multi-domain project using PM planning, parallel agent spawning, and QA review
+disable-model-invocation: true
 ---
 
 # MANDATORY RULES: VIOLATION IS FORBIDDEN
@@ -10,7 +12,7 @@ description: Coordinate multiple agents for a complex multi-domain project using
   - Use code analysis tools (`get_symbols_overview`, `find_symbol`, `find_referencing_symbols`, `search_for_pattern`) for code exploration.
   - Use memory tools (read/write/edit) for progress tracking.
   - Memory path: configurable via `memoryConfig.basePath` (default: `.serena/memories`)
-  - Tool names: configurable via `memoryConfig.tools` in `mcp.json`
+  - Tool names: configurable via `memoryConfig.tools` in `.agents/mcp.json`
   - Do NOT use raw file reads or grep as substitutes. MCP tools are the primary interface for code and memory operations.
 - **Read the oma-coordination skill BEFORE starting.** Read `.agents/skills/oma-coordination/SKILL.md` and follow its Core Rules.
 - **Follow the context-loading guide.** Read `.agents/skills/_shared/core/context-loading.md` and load only task-relevant resources.
@@ -30,14 +32,7 @@ The detected runtime vendor and each agent's target vendor determine how agents 
 2. Read `.agents/skills/_shared/core/context-loading.md` for resource loading strategy.
 3. Read `.agents/skills/_shared/runtime/memory-protocol.md` for memory protocol.
 4. Read `.agents/skills/_shared/runtime/event-spec.md` for L1 event protocol.
-5. Define the `oma_emit` helper for required L1 decisions:
-   ```bash
-   oma_emit() {
-     kind="$1"
-     payload="$2"
-     oma emit "$kind" "$payload"
-   }
-   ```
+5. Use the `oma_emit` helper documented in `.agents/skills/_shared/runtime/event-spec.md` for required L1 decisions. The helper wraps `oma state:emit`.
 6. Record session start using memory write tool:
    - Create `session-work.md` in the memory base path
    - Include: session start time, user request summary.
@@ -130,7 +125,7 @@ After all implementation agents complete, spawn QA Agent to review all deliverab
 
 - Security (OWASP Top 10)
 - Performance
-- Accessibility (WCAG 2.1 AA)
+- Accessibility (WCAG 2.2 AA)
 - Code quality
 
 ---
@@ -152,7 +147,7 @@ If QA finds CRITICAL or HIGH issues:
 2. Emit and verify the remediation decision before accepting any fix/ignore choice:
    ```bash
    oma_emit "decision.made" '{"subject":"work.remediation-choice","decision":"Fix the responsible QA finding with root-cause remediation or explicitly defer it.","rationale":"QA identified a CRITICAL/HIGH issue requiring a recorded remediation choice."}'
-   oma state:verify-decisions --workflow work --checkpoint remediation-choice
+   oma state:verify --workflow work --checkpoint remediation-choice
    ```
 3. If Quality Score is active: measure after fix, apply Keep/Discard rule, record in Experiment Ledger.
 4. Repeat Steps 5-7.

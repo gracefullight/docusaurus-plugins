@@ -1,5 +1,7 @@
 ---
+name: plan
 description: PM planning workflow that gathers requirements, decomposes them into prioritized tasks, defines API contracts, and produces both a machine-readable plan and a human-readable tracker in docs/plans/
+disable-model-invocation: true
 ---
 
 # MANDATORY RULES: VIOLATION IS FORBIDDEN
@@ -10,12 +12,18 @@ description: PM planning workflow that gathers requirements, decomposes them int
   - Use code analysis tools (`get_symbols_overview`, `find_symbol`, `search_for_pattern`) to analyze the existing codebase.
   - Use memory tools (write/edit) to record planning results.
   - Memory path: configurable via `memoryConfig.basePath` (default: `.serena/memories`)
-  - Tool names: configurable via `memoryConfig.tools` in `mcp.json`
+  - Tool names: configurable via `memoryConfig.tools` in `.agents/mcp.json`
   - Do NOT use raw file reads or grep as substitutes.
 
 ---
 
 > **Vendor note:** This workflow executes inline (no subagent spawning). All vendors use their native code analysis tools. Plan artifacts (`.agents/results/plan-{sessionId}.json` and `docs/plans/work/{NNN}-{name}.md`) are consumed by `/orchestrate` or `/work`, which handle their own vendor detection.
+
+---
+
+## L1 Decision Events
+
+Use the `oma_emit` helper documented in `.agents/skills/_shared/runtime/event-spec.md` before required L1 decision checkpoints. The helper wraps `oma state:emit`.
 
 ---
 
@@ -69,7 +77,7 @@ Also search `docs/plans/work/` for related past or in-progress plans, and `docs/
 
 ## Step 3: Assess Complexity
 
-Use `_shared/core/difficulty-guide.md` to classify:
+Use `.agents/skills/_shared/core/difficulty-guide.md` to classify:
 
 - **Simple** → no plan artifact needed; execute directly via `/work`.
 - **Medium** → produce both JSON and a lightweight markdown tracker (skip Step 4 API contracts if not cross-boundary).
@@ -84,11 +92,16 @@ Report scope assessment to the user. Get confirmation before proceeding.
 // turbo
 If the plan involves cross-boundary work (frontend ↔ backend, service ↔ service):
 
-1. Design API contracts using `_shared/core/api-contracts/template.md`. Per endpoint:
+1. Design API contracts using `.agents/skills/_shared/core/api-contracts/template.md`. Per endpoint:
    - Method, path, request/response schemas
    - Auth requirements, error responses
 2. Save to `.agents/skills/_shared/core/api-contracts/{contract-name}.md`.
 3. Reference from the markdown tracker generated in Step 6.
+4. Emit and verify the required API contract decision:
+   ```bash
+   oma_emit "decision.made" '{"subject":"plan.api-contract","decision":"Use the approved endpoint and contract shape for this plan.","rationale":"The cross-boundary API contract has been reviewed and accepted before task decomposition."}'
+   oma state:verify --workflow plan --checkpoint api-contract
+   ```
 
 ---
 

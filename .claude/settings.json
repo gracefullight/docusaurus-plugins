@@ -16,6 +16,57 @@
     "DISABLE_TELEMETRY": "1",
     "ENABLE_PROMPT_CACHING_1H": "1"
   },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/oma-hook.sh\" --vendor 'claude' --event 'PreToolUse' --matcher 'Bash'",
+            "name": "oma-hook-PreToolUse",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/oma-hook.sh\" --vendor 'claude' --event 'Stop'",
+            "name": "oma-hook-Stop",
+            "timeout": 10,
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/oma-hook.sh\" --vendor 'claude' --event 'UserPromptSubmit'",
+            "name": "oma-hook-UserPromptSubmit",
+            "timeout": 21,
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bun run:*)",
+      "Bash(bunx tsx:*)",
+      "Bash(git add:*)",
+      "mcp__serena__*"
+    ]
+  },
   "skillListingBudgetFraction": 0.02,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "command": "'bun' \"$CLAUDE_PROJECT_DIR/.claude/hooks/hud.ts\"",
+    "type": "command"
+  }
 }

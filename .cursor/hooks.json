@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "'.cursor/hooks/oma-hook.sh' --vendor 'cursor' --event 'beforeSubmitPrompt'",
+        "timeout": 21
+      }
+    ]
+  },
+  "version": 1
+}

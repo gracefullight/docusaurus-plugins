@@ -1,5 +1,7 @@
 ---
-description: Automated CLI-based parallel agent execution that spawns subagents via Gemini CLI, coordinates through MCP Memory, monitors progress, and runs verification
+name: orchestrate
+description: Automated parallel agent execution that spawns CLI subagents via native dispatch or `oma agent:spawn`, coordinates through MCP Memory, monitors progress, and runs verification
+disable-model-invocation: true
 ---
 
 # MANDATORY RULES: VIOLATION IS FORBIDDEN
@@ -10,7 +12,7 @@ description: Automated CLI-based parallel agent execution that spawns subagents 
   - Use code analysis tools (`get_symbols_overview`, `find_symbol`, `find_referencing_symbols`, `search_for_pattern`) for code exploration.
   - Use memory tools (read/write/edit) for progress tracking.
   - Memory path: configurable via `memoryConfig.basePath` (default: `.serena/memories`)
-  - Tool names: configurable via `memoryConfig.tools` in `mcp.json`
+  - Tool names: configurable via `memoryConfig.tools` in `.agents/mcp.json`
   - Do NOT use raw file reads or grep as substitutes. MCP tools are the primary interface.
 - **Read required documents BEFORE starting.**
 
@@ -29,14 +31,7 @@ The detected runtime vendor and each agent's target vendor determine how agents 
 2. Read `.agents/skills/_shared/core/context-loading.md` for resource loading strategy.
 3. Read `.agents/skills/_shared/runtime/memory-protocol.md` for memory protocol.
 4. Read `.agents/skills/_shared/runtime/event-spec.md` for L1 event protocol.
-5. Define the `oma_emit` helper for required L1 decisions:
-   ```bash
-   oma_emit() {
-     kind="$1"
-     payload="$2"
-     oma emit "$kind" "$payload"
-   }
-   ```
+5. Use the `oma_emit` helper documented in `.agents/skills/_shared/runtime/event-spec.md` for required L1 decisions. The helper wraps `oma state:emit`.
 
 ---
 
@@ -55,20 +50,20 @@ Look for a plan file:
 
 // turbo
 
-1. 설정 파일 로드:
-   - `.agents/oma-config.yaml` (언어, CLI 매핑)
-2. CLI 매핑 현황 표시:
+1. Load configuration:
+   - `.agents/oma-config.yaml` (`language`, `model_preset`, and per-agent `agents:` overrides)
+2. Display the resolved agent-to-model mapping:
 
    ```
-   CLI 에이전트 매핑
-   ┌──────────┬─────────┐
-   │ Agent    │ CLI     │
-   ├──────────┼─────────┤
-   │ frontend │ codex   │
-   │ backend  │ codex   │
-   │ mobile   │ claude  │
-   │ pm       │ claude  │
-   └──────────┴─────────┘
+   Resolved agent models (model_preset + overrides)
+   ┌──────────┬───────────────────┐
+   │ Agent    │ Vendor / Model    │
+   ├──────────┼───────────────────┤
+   │ frontend │ (resolved value)  │
+   │ backend  │ (resolved value)  │
+   │ mobile   │ (resolved value)  │
+   │ pm       │ (resolved value)  │
+   └──────────┴───────────────────┘
    ```
 
 3. Generate session ID (format: `session-YYYYMMDD-HHMMSS`).
@@ -84,7 +79,7 @@ Before spawning agents, emit and verify the required fan-out decision:
 
 ```bash
 oma_emit "decision.made" '{"subject":"orchestrate.fanout-strategy","decision":"Spawn agents by priority tier using the loaded plan.","rationale":"The plan is available and determines which agents run in parallel."}'
-oma state:verify-decisions --workflow orchestrate --checkpoint fanout-strategy
+oma state:verify --workflow orchestrate --checkpoint fanout-strategy
 ```
 
 For each priority tier (P0 first, then P1, etc.):
@@ -185,7 +180,7 @@ bash .agents/skills/oma-orchestrator/scripts/verify.sh {agent-type} {workspace}
 
   > **Review Loop termination conditions** (OR, whichever fires first wins):
   > 1. Retry count for this agent has reached the configured maximum (default: 2 retries). Do not start another retry cycle.
-  > 2. Session cost cap exceeded: call `checkCap(sessionId, loadQuotaCap())` from `cli/io/session-cost.ts`. If `exceeded === true`, print `formatPromptMessage(result)` to the user and stop the loop immediately. Save the current agent's partial results before stopping, then report early termination due to quota. Do not spawn the next retry or any remaining agents in the tier.
+  > 2. Session cost cap exceeded: if `loadQuotaCap()` from `cli/io/session-cost.ts` returns non-null, call `checkCap(sessionId, cap)` (no cap configured → skip this condition). If `exceeded === true`, print `formatPromptMessage(result)` to the user and stop the loop immediately. Save the current agent's partial results before stopping, then report early termination due to quota. Do not spawn the next retry or any remaining agents in the tier.
   >
   > If neither condition is met, re-spawn the agent with error context and increment the retry counter.
 
@@ -208,7 +203,7 @@ Emit and verify the required QA verdict decision before the final report:
 
 ```bash
 oma_emit "decision.made" '{"subject":"orchestrate.qa-verdict","decision":"Accept completed agents or record change requests.","rationale":"Agent verification results have been collected and classified."}'
-oma state:verify-decisions --workflow orchestrate --checkpoint qa-verdict
+oma state:verify --workflow orchestrate --checkpoint qa-verdict
 ```
 
 ---

@@ -17,6 +17,7 @@ const COPIED_RESET_MS = 2000;
 const CONTAINER_ATTR = "data-copy-markdown-button";
 
 const COPY_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
+const CHEVRON_DOWN_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
 
 // Outline (border) color. Uses Infima's emphasis-300 in a Docusaurus context
 // and falls back to its light-mode value when the variable is absent.
@@ -92,6 +93,11 @@ function ensureBaseStylesInjected(): void {
   const style = document.createElement("style");
   style.id = styleId;
   style.textContent = `
+.copy-markdown-group {
+  display: inline-flex;
+  position: relative;
+  align-items: stretch;
+}
 .copy-markdown-button {
   display: inline-flex;
   align-items: center;
@@ -106,6 +112,18 @@ function ensureBaseStylesInjected(): void {
   cursor: pointer;
   transition: opacity 0.15s ease, background-color 0.15s ease;
   white-space: nowrap;
+  box-sizing: border-box;
+}
+.copy-markdown-button--split-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none !important;
+}
+.copy-markdown-button--split-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 1px solid var(--ifm-color-emphasis-200, #e3e6e9) !important;
+  padding: 0.375rem 0.5rem;
 }
 .copy-markdown-button__icon {
   color: ${CONTENT_COLOR};
@@ -116,8 +134,49 @@ function ensureBaseStylesInjected(): void {
 .copy-markdown-button:active {
   opacity: 0.85;
 }
+.copy-markdown-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  background: var(--ifm-background-surface-color, #fff);
+  border: 1px solid ${OUTLINE_COLOR};
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 100;
+  padding: 0.25rem;
+}
+.copy-markdown-dropdown.show {
+  display: flex;
+}
+.copy-markdown-dropdown-item {
+  background: transparent;
+  border: none;
+  color: ${CONTENT_COLOR};
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: block;
+}
+.copy-markdown-dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: ${CONTENT_COLOR};
+}
 @media (prefers-color-scheme: dark) {
   .copy-markdown-button:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  .copy-markdown-dropdown {
+    background: var(--ifm-background-surface-color, #242526);
+  }
+  .copy-markdown-dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.06);
   }
 }
@@ -125,42 +184,26 @@ function ensureBaseStylesInjected(): void {
   document.head.appendChild(style);
 }
 
-function createCopyButton(
+function createCopyButtonGroup(
   pluginData: PluginGlobalData,
   buttonLabel: string,
-): { button: HTMLButtonElement; label: HTMLSpanElement } {
+  markdown: string,
+  copiedLabel: string,
+): { group: HTMLDivElement } {
   ensureBaseStylesInjected();
+
+  const group = document.createElement("div");
+  group.className = "copy-markdown-group";
 
   const button = document.createElement("button");
   button.type = "button";
 
-  // Base class + optional user-provided class for further customization
   const userClass = pluginData.buttonClassName?.trim();
   button.className = userClass
-    ? `copy-markdown-button ${userClass}`
-    : "copy-markdown-button";
+    ? `copy-markdown-button copy-markdown-button--split-left ${userClass}`
+    : "copy-markdown-button copy-markdown-button--split-left";
 
   button.setAttribute("aria-label", buttonLabel);
-
-  // Strong inline styles as a resilient fallback layer.
-  // These win over most host CSS resets for the core "outlined button" look.
-  Object.assign(button.style, {
-    alignItems: "center",
-    background: "transparent",
-    borderColor: OUTLINE_COLOR,
-    borderRadius: "6px",
-    borderStyle: "solid",
-    borderWidth: "1px",
-    color: CONTENT_COLOR,
-    cursor: "pointer",
-    display: "inline-flex",
-    fontSize: "0.875rem",
-    gap: "0.375rem",
-    lineHeight: "1.25",
-    padding: "0.375rem 0.75rem",
-    transition: "opacity 0.15s ease, background-color 0.15s ease",
-    whiteSpace: "nowrap",
-  } as Partial<CSSStyleDeclaration>);
 
   const icon = document.createElement("span");
   icon.className = "copy-markdown-button__icon";
@@ -175,7 +218,91 @@ function createCopyButton(
 
   button.append(icon, label);
 
-  return { button, label };
+  const toggleButton = document.createElement("button");
+  toggleButton.type = "button";
+  toggleButton.className =
+    "copy-markdown-button copy-markdown-button--split-right";
+  toggleButton.setAttribute("aria-label", "Toggle Dropdown");
+
+  const chevron = document.createElement("span");
+  chevron.innerHTML = CHEVRON_DOWN_SVG;
+  chevron.style.display = "inline-flex";
+  toggleButton.append(chevron);
+
+  const dropdown = document.createElement("div");
+  dropdown.className = "copy-markdown-dropdown";
+
+  const copyPageItem = document.createElement("button");
+  copyPageItem.type = "button";
+  copyPageItem.className = "copy-markdown-dropdown-item";
+  copyPageItem.textContent = "Copy Page";
+
+  const chatGptItem = document.createElement("a");
+  chatGptItem.className = "copy-markdown-dropdown-item";
+  chatGptItem.textContent = "Open in ChatGPT";
+  chatGptItem.target = "_blank";
+  chatGptItem.rel = "noopener noreferrer";
+
+  const claudeItem = document.createElement("a");
+  claudeItem.className = "copy-markdown-dropdown-item";
+  claudeItem.textContent = "Open in Claude";
+  claudeItem.target = "_blank";
+  claudeItem.rel = "noopener noreferrer";
+
+  dropdown.append(copyPageItem, chatGptItem, claudeItem);
+
+  const liveRegion = document.createElement("span");
+  liveRegion.setAttribute("aria-live", "polite");
+  liveRegion.className = "copy-markdown-button__status";
+  liveRegion.style.position = "absolute";
+  liveRegion.style.width = "1px";
+  liveRegion.style.height = "1px";
+  liveRegion.style.overflow = "hidden";
+  liveRegion.style.clip = "rect(0, 0, 0, 0)";
+
+  group.append(button, toggleButton, dropdown, liveRegion);
+
+  toggleButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!group.contains(e.target as Node)) {
+      dropdown.classList.remove("show");
+    }
+  });
+
+  const url = window.location.href;
+  const encodedUrl = encodeURIComponent(url);
+
+  chatGptItem.href = `https://chatgpt.com/?hint=search&q=Read%20${encodedUrl}%20so%20I%20can%20ask%20questions%20about%20it.`;
+  claudeItem.href = `https://claude.ai/new?q=Read%20${encodedUrl}%20so%20I%20can%20ask%20questions%20about%20it.`;
+
+  const doCopy = async () => {
+    const copied = await copyText(markdown);
+    if (!copied) {
+      return;
+    }
+
+    label.textContent = copiedLabel;
+    liveRegion.textContent = copiedLabel;
+
+    window.setTimeout(() => {
+      label.textContent = buttonLabel;
+      liveRegion.textContent = "";
+    }, COPIED_RESET_MS);
+  };
+
+  button.addEventListener("click", () => {
+    void doCopy();
+  });
+  copyPageItem.addEventListener("click", () => {
+    dropdown.classList.remove("show");
+    void doCopy();
+  });
+
+  return { group };
 }
 
 async function copyText(text: string): Promise<boolean> {
@@ -243,33 +370,14 @@ function injectButton(pluginData: PluginGlobalData, pathname: string): void {
     marginTop: "0.5rem",
   } as Partial<CSSStyleDeclaration>);
 
-  const { button, label } = createCopyButton(pluginData, buttonLabel);
+  const { group } = createCopyButtonGroup(
+    pluginData,
+    buttonLabel,
+    route.markdown,
+    copiedLabel,
+  );
 
-  const liveRegion = document.createElement("span");
-  liveRegion.setAttribute("aria-live", "polite");
-  liveRegion.className = "copy-markdown-button__status";
-  liveRegion.style.position = "absolute";
-  liveRegion.style.width = "1px";
-  liveRegion.style.height = "1px";
-  liveRegion.style.overflow = "hidden";
-  liveRegion.style.clip = "rect(0, 0, 0, 0)";
-
-  button.addEventListener("click", async () => {
-    const copied = await copyText(route.markdown);
-    if (!copied) {
-      return;
-    }
-
-    label.textContent = copiedLabel;
-    liveRegion.textContent = copiedLabel;
-
-    window.setTimeout(() => {
-      label.textContent = buttonLabel;
-      liveRegion.textContent = "";
-    }, COPIED_RESET_MS);
-  });
-
-  container.append(button, liveRegion);
+  container.append(group);
 }
 
 function handleRoute(pathname: string): void {

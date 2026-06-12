@@ -52,7 +52,7 @@ function resolveClientModulePath(): string {
       ? __dirname
       : path.resolve(__dirname, "../dist");
 
-  return path.resolve(distDir, "client/copy-markdown-button.js");
+  return path.resolve(distDir, "client/copy-markdown-button.mjs");
 }
 
 export default async function copyMarkdownPlugin(

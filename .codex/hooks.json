@@ -1,0 +1,41 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "'.codex/hooks/oma-hook.sh' --vendor 'codex' --event 'PreToolUse' --matcher 'Bash'",
+            "name": "oma-hook-PreToolUse",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "'.codex/hooks/oma-hook.sh' --vendor 'codex' --event 'Stop'",
+            "name": "oma-hook-Stop",
+            "timeout": 10,
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "'.codex/hooks/oma-hook.sh' --vendor 'codex' --event 'UserPromptSubmit'",
+            "name": "oma-hook-UserPromptSubmit",
+            "timeout": 21,
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -32,7 +32,7 @@
   "name": "@gracefullight/docusaurus-plugin-copy-markdown",
   "repository": "https://github.com/gracefullight/docusaurus-plugins",
   "scripts": {
-    "build": "tsup src/index.ts src/client/copy-markdown-button.ts --format cjs --dts --minify --external @docusaurus/ExecutionEnvironment --external @generated/codeTranslations --external @generated/globalData",
+    "build": "tsup src/index.ts src/client/copy-markdown-button.ts --format cjs,esm --dts --minify --external @docusaurus/ExecutionEnvironment --external @generated/codeTranslations --external @generated/globalData",
     "dev": "bun run build --watch",
     "test": "vitest run"
   },

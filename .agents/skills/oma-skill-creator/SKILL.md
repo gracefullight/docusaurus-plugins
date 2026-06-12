@@ -28,8 +28,8 @@ Create, revise, and validate OMA skills using the SSL-lite Markdown structure de
 - Deciding whether detailed examples belong inline or in `resources/`
 
 ### When NOT to use
-- Installing third-party skills into `$CODEX_HOME/skills` -> use skill installer
-- Creating a Codex plugin bundle -> use plugin creator
+- Installing third-party skills into `$CODEX_HOME/skills` -> use Codex's built-in skill installer (external; not an OMA skill)
+- Creating a Codex plugin bundle -> use Codex's plugin tooling (external; not an OMA skill)
 - Writing a general project plan unrelated to skill authoring -> use PM Agent
 - Editing product code, infrastructure, frontend, backend, or mobile implementation directly -> use the matching specialist skill
 
@@ -161,3 +161,4 @@ Create, revise, and validate OMA skills using the SSL-lite Markdown structure de
 - Validation checklist: `resources/validation-checklist.md`
 - Shared context loading: `../_shared/core/context-loading.md`
 - Shared quality principles: `../_shared/core/quality-principles.md`
+- Skill utility eval: when creating a new skill, consider adding held-out task fixtures under `.agents/eval/<skill>/` so `oma skills eval` can measure whether the skill improves task outcomes. See `web/docs/guide/skill-eval.md` for the fixture schema and checker types.

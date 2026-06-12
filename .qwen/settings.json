@@ -1,7 +1,63 @@
 {
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "\"$QWEN_PROJECT_DIR/.qwen/hooks/oma-hook.sh\" --vendor 'qwen' --event 'PreToolUse' --matcher 'Bash'",
+            "name": "oma-hook-PreToolUse",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "\"$QWEN_PROJECT_DIR/.qwen/hooks/oma-hook.sh\" --vendor 'qwen' --event 'Stop'",
+            "name": "oma-hook-Stop",
+            "timeout": 10,
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "\"$QWEN_PROJECT_DIR/.qwen/hooks/oma-hook.sh\" --vendor 'qwen' --event 'UserPromptSubmit'",
+            "name": "oma-hook-UserPromptSubmit",
+            "timeout": 21,
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  },
   "mcpServers": {
+    "chrome-devtools": {
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics",
+        "--isolated"
+      ],
+      "command": "npx"
+    },
     "serena": {
-      "args": ["start-mcp-server", "--context", "ide", "--project", "."],
+      "args": [
+        "start-mcp-server",
+        "--context",
+        "ide",
+        "--project",
+        ".",
+        "--open-web-dashboard",
+        "false"
+      ],
       "command": "serena",
       "env": {
         "SERENA_LOG_LEVEL": "info"
@@ -10,5 +66,11 @@
   },
   "privacy": {
     "usageStatisticsEnabled": false
+  },
+  "ui": {
+    "statusLine": {
+      "command": "'bun' \"$QWEN_PROJECT_DIR/.qwen/hooks/hud.ts\"",
+      "type": "command"
+    }
   }
 }

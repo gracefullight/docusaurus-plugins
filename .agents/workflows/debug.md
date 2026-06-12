@@ -1,5 +1,7 @@
 ---
+name: debug
 description: Structured bug diagnosis and fixing workflow that reproduces, diagnoses root cause, applies a minimal fix, writes regression tests, and scans for similar patterns
+disable-model-invocation: true
 ---
 
 # MANDATORY RULES: VIOLATION IS FORBIDDEN
@@ -10,7 +12,7 @@ description: Structured bug diagnosis and fixing workflow that reproduces, diagn
   - Use code analysis tools (`find_symbol`, `find_referencing_symbols`, `search_for_pattern`) for bug investigation, NOT raw file reads or grep.
   - Use memory write tool to record debugging results.
   - Memory path: configurable via `memoryConfig.basePath` (default: `.serena/memories`)
-  - Tool names: configurable via `memoryConfig.tools` in `mcp.json`
+  - Tool names: configurable via `memoryConfig.tools` in `.agents/mcp.json`
   - MCP tools are the primary interface for all code exploration.
 
 ---
@@ -20,6 +22,10 @@ description: Structured bug diagnosis and fixing workflow that reproduces, diagn
 Before starting, determine your runtime environment by following `.agents/skills/_shared/core/vendor-detection.md`.
 
 Steps 1-5 execute inline for all vendors. Step 6 (similar pattern scanning) may delegate to a `debug-investigator` subagent when the scan scope is broad.
+
+### L1 Decision Events
+
+Use the `oma_emit` helper documented in `.agents/skills/_shared/runtime/event-spec.md` before required L1 decision checkpoints. The helper wraps `oma state:emit`.
 
 ### Subagent Spawn Criteria
 
@@ -41,6 +47,8 @@ Request subagent execution via model-mediated subagent request.
 Include diagnosis results and scan scope. Results returned as JSON output.
 
 #### If Gemini CLI
+
+Use the native `.gemini/agents/{name}.md` subagent when available (per `_shared/core/vendor-detection.md`); otherwise fall back to:
 
 ```bash
 oma agent:spawn debug "scan prompt with diagnosis context" {session_id} -w {workspace}
@@ -83,6 +91,13 @@ Identify the root cause, not just the symptom. Check:
 - Wrong data types
 - Stale state
 
+When the root cause is confirmed, emit and verify the required diagnosis decision:
+
+```bash
+oma_emit "decision.made" '{"subject":"debug.root-cause","decision":"Treat the confirmed root cause as the basis for the minimal fix.","rationale":"The diagnosis traced the failure path and distinguished the root cause from symptoms."}'
+oma state:verify --workflow debug --checkpoint root-cause
+```
+
 ---
 
 ## Step 4: Propose Minimal Fix
@@ -113,7 +128,7 @@ Report any other locations that may have the same vulnerability. Fix them if con
 
 ## Step 7: Document the Bug
 
-Use memory write tool to record a bug report:
+Use memory write tool to record a bug report (for durable artifacts, also save it under `.agents/results/bugs/` per the oma-debug skill's expected outputs):
 - Symptom, root cause
 - Fix applied, files changed
 - Regression test location

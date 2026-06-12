@@ -5,9 +5,93 @@
   "general": {
     "enableNotifications": true
   },
+  "hooks": {
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "command": "\"$GEMINI_PROJECT_DIR/.gemini/hooks/oma-hook.sh\" --vendor 'gemini' --event 'AfterAgent' --matcher '*'",
+            "name": "oma-hook-AfterAgent",
+            "timeout": 5005,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "AfterTool": [
+      {
+        "hooks": [
+          {
+            "command": "'bun' \"$GEMINI_PROJECT_DIR/.gemini/hooks/hud.ts\"",
+            "name": "hud",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "BeforeAgent": [
+      {
+        "hooks": [
+          {
+            "command": "\"$GEMINI_PROJECT_DIR/.gemini/hooks/oma-hook.sh\" --vendor 'gemini' --event 'BeforeAgent' --matcher '*'",
+            "name": "oma-hook-BeforeAgent",
+            "timeout": 16005,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "BeforeTool": [
+      {
+        "hooks": [
+          {
+            "command": "\"$GEMINI_PROJECT_DIR/.gemini/hooks/oma-hook.sh\" --vendor 'gemini' --event 'BeforeTool' --matcher 'run_shell_command'",
+            "name": "oma-hook-BeforeTool",
+            "timeout": 5005,
+            "type": "command"
+          }
+        ],
+        "matcher": "run_shell_command"
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "'bun' \"$GEMINI_PROJECT_DIR/.gemini/hooks/hud.ts\"",
+            "name": "hud",
+            "timeout": 3000,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
   "mcpServers": {
+    "chrome-devtools": {
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics",
+        "--isolated"
+      ],
+      "command": "npx"
+    },
     "serena": {
-      "args": ["start-mcp-server", "--context", "ide", "--project", "."],
+      "args": [
+        "start-mcp-server",
+        "--context",
+        "ide",
+        "--project",
+        ".",
+        "--open-web-dashboard",
+        "false"
+      ],
       "command": "serena",
       "env": {
         "SERENA_LOG_LEVEL": "info"

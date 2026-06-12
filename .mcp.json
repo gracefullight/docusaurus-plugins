@@ -19,7 +19,9 @@
         "--context",
         "claude-code",
         "--project",
-        "."
+        ".",
+        "--open-web-dashboard",
+        "false"
       ],
       "command": "serena",
       "env": {
